@@ -1,0 +1,303 @@
+@import '../../../theme.less';
+.form-lable-radio{
+    /*min-width: 800px;*/
+    .form-lable{
+        display: inline-block;
+        font-size: 14px;
+        width: 170px;
+        margin-top: 30px;
+        margin-right: 10px;
+        color: #000;
+    }
+    .form-radio{ 
+        display: inline-block;
+    }
+}
+
+.form-label-input{
+    .form-time{
+        display: inline-block;
+        input{
+            width:150px;
+            &:hover,&:focus{
+                width:150px
+            }
+        }
+    }
+    .ant-select{
+        font-size: 14px;
+        padding: 0 15px;
+        border: 1Px solid #e0e0e0;
+        border-radius: 25px;
+        width: 330px;
+        height: 100%;
+        background: #fff;
+        background-color: #fff;
+        &:hover,&:focus{
+            border: 1Px solid @mainthem-bg;
+        }
+        .ant-select-selection{            
+            background-color: #fff;
+            background: #fff;
+            border: 0;
+        }
+    }
+    .form-lable{
+        display: inline-block;
+        font-size: 14px;
+        width: 170px;
+        margin-top: 30px;
+        margin-right: 10px;
+        color: #000;
+    }
+    .form-mobile-btn{
+        display: inline-block;
+        width: 170px;
+        margin-top: 30px;
+        margin-right: 10px;
+    }
+
+    input,input[type=text],input[type=password]{
+        
+        margin-top: 30px;
+        font-size: 14px;
+        padding: 0 45px 0 15px;
+        border: 1Px solid #e0e0e0;
+        border-radius: 25px;
+        width: 330px;
+        height: 30px;
+        background: #fff;
+        background-color: #fff;
+        &:hover,&:focus{
+            border: 1Px solid @mainthem-bg;
+            border-radius: 25px;
+            width: 330px;
+            background: #fff;
+            background-color: #fff;
+            outline:none;
+        }
+        &:disabled{
+            border: 1Px solid #e0e0e0;
+            cursor: not-allowed;
+        }
+    }
+    /*.form-input{
+        font-size: 14px;
+        padding: 0 15px;
+        border: 1Px;
+        border-radius: 25px;
+        width: 330px;
+        height: 30px;
+        background: #f3f3f3;
+        background-color: #f3f3f3;
+        &:hover,&:focus{
+            border: 1Px solid #007DFF ;
+            border-radius: 25px;
+            width: 330px;
+            background: #f3f3f3;
+            background-color: #f3f3f3;
+            outline:none;
+        }
+    }*/
+    .tip-err{
+        color: red;
+        margin-left: 185px;
+        font-size: 14px;
+        max-width: 330px;
+    }
+    .tip{
+        color: #585454;
+        padding-top:5px;
+        margin-left: 185px;
+        font-size: 14px;
+        max-width: 500px;//330px
+    }
+    .password-eye{        
+        margin-left: -42px;
+        margin-top: 7px;
+        color: #b9b2b3;
+    }
+    .form-select{
+        margin-top: 30px;
+        cursor: pointer;
+        font-size: 14px;
+        padding: 0 15px;
+        border: 1Px solid #e0e0e0;
+        border-radius: 25px;
+        width: 330px;
+        height: 30px;
+        background: #fff;
+        background-color: #fff;
+        &:hover,&:focus{
+            border: 1Px solid @mainthem-bg ;
+            border-radius: 25px;
+            width: 330px;
+            height: 30px;
+            background: #fff;
+            background-color: #fff;
+            outline:none;
+        }
+    }
+    .form-button{        
+        cursor: pointer;
+        color: @mainthem-bg;
+        font-size: 16px;
+        padding: 0 15px;
+        border: 1Px;
+        border-radius: 25px;
+        width: 330px;
+        height: 40px;
+        margin-top: 50px;
+        border: 1Px solid #e0e0e0;
+        background: #fff;
+        background-color: #fff;
+        outline:none;
+        &:hover{
+            border-radius: 25px;
+            width: 330px;
+            background: #fff;
+            background-color: #fff;
+        }
+        &:disabled{
+            color: #ACD1F9;
+            cursor: not-allowed;
+        }
+    }
+}
+
+
+.login-input{
+    font-size: 16px;
+    padding: 0 32px;
+    border: 1Px;
+    border-radius: 25px;
+    width: 300px;
+    height: 40px;
+    background: #fff;
+    background-color: #fff;
+    background-image: url('./../../../img/pwd.png');
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    &:hover,&:focus{
+        border: none;
+        // border-radius: 25px;
+        width: 300px;
+        // background: #f3f3f3;
+        // background-color: #f3f3f3;
+        outline:none;
+    }
+}
+.login-button{
+    
+    cursor: pointer;
+    color: #fff;
+    font-size: 16px;
+    padding: 0 15px;
+    border: none;
+    // border-radius: 25px;
+    width: 164px;
+    height: 47px;
+    margin-top: 20px;
+    // border: 1Px solid #e0e0e0;
+    background-image: url('./../../../img/login.png');
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    // background: @mainthem-bg;
+    // background-color: @mainthem-bg;
+    outline:none;
+    &:hover{
+        // border-radius: 25px;
+        // width: 300px;
+        // background: @secondthem-bg;
+        // background-color: @secondthem-bg;
+    }
+    
+}
+/*更多WLAN设置*/
+    .wifi-tip{
+        width: 330px;
+        text-align: center;        
+        a{
+            color: @mainthem-bg;
+        }
+}
+
+.tip-err{
+    color: red;
+    margin-left: 185px;
+    font-size: 14px;
+    max-width: 330px;
+}
+.tip{
+    color: #585454;
+    padding-top:5px;
+    margin-left: 185px;
+    font-size: 14px;
+    max-width: 330px;
+}
+
+@media screen and (max-width: 768px) {
+    .form-label-input{
+        .form-lable{
+            width: 35%;
+        }
+        
+        .form-mobile-btn{
+            width: 38px;
+        }
+        .form-time{
+            display: inline-block;
+            input{
+                width:80px;
+                &:hover,&:focus{
+                    width:80px;
+                }
+            }
+        }
+        .ant-select{
+            width: 58%;
+
+        }
+        input,input[type=text],input[type=password]{
+            width: 58%;
+            &:hover,&:focus{
+                width: 58%;
+            }
+        }
+        .form-button{       
+            width: 58%;
+            &:hover,&:focus{
+                width: 58%;
+            }
+        }
+        .tip-err{
+            margin-left: 38%;
+        }
+        .tip{
+            margin-left: 38%;
+
+        }
+    }
+    .click-btn{
+        .form-button{
+            display: block;
+            margin: 0 auto;
+            margin-top: 50px;
+        }
+    }
+    .form-lable-radio{
+        .form-lable{
+            width: 35%;
+        }
+        .form-radio{ 
+            display: inline-block;
+            max-width: 63%;
+        }
+    }
+    .tip-err{
+        margin-left: 38%;
+    }
+    .tip{
+        margin-left: 38%;
+    }
+}

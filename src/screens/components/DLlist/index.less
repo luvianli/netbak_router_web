@@ -1,0 +1,46 @@
+.dllist{
+    display: table;
+    margin-right:60px;
+    dl{    
+        display: table-row;
+        width: 100%;
+        line-height: 28px;
+        dt{        
+        line-height: 24px;
+        width: 150px;
+        font-size: 12px;
+        font-weight: 400;
+        color: #969ba3;
+        }
+        dd{
+            display: table-cell;
+            vertical-align: middle;
+        }
+        dt{
+            display: table-cell;
+            vertical-align: top; 
+        }
+    }
+}
+.pre-msg{
+    // padding: 5px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    white-space: pre-wrap;
+    // word-wrap: break-word;
+    font-family:'Arial';
+    word-break: break-all;
+}
+
+@media screen and (max-width: 768px) {   
+    .dllist{
+        margin-bottom: 20px;
+        width: 100%;
+        dl{  
+            dd,dt{
+                width: 48%;
+                font-size: 14px;
+            }
+        }
+    }   
+}

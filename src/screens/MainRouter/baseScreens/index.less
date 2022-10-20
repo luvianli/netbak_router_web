@@ -1,0 +1,76 @@
+@import '../../../theme.less';
+
+.base-status-bg{
+    background: @base-status;
+}
+.base-sysmode-bg{
+    background: @base-sysmode;
+}
+.base-lan-bg{
+    background: @base-lan;
+}
+.base-wifi-bg{
+    background: @base-wifi;
+}
+
+.base-theme{
+    /*输入框，选择框，应用按键*/
+    .form-label-input .form-lable,.form-lable-radio .form-lable{        
+        color:#fff !important;
+    }
+    .form-label-input .ant-select,
+    .form-label-input .form-button,
+    .form-label-input input, 
+    .form-label-input input[type=text], 
+    .form-label-input input[type=password]{
+        color: #000;        
+    }
+    .tip-err{        
+        color: #fff;        
+    }
+
+    .main-wizard .wiz-table{
+        
+    }
+}
+
+
+@media screen and (max-width: 650px) {
+    body{
+        /*overflow: auto;*/
+    }
+}
+
+.wizard-box{
+    background: -webkit-linear-gradient(@mainthem-bg,  #fff); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(@mainthem-bg,  #fff); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(@mainthem-bg,  #fff); /* Firefox 3.6 - 15 */
+    background: linear-gradient(@mainthem-bg, #fff);/* 标准的语法（必须放在最后） */
+    height: 95vh;
+    padding-top: 20px;
+    margin-top: 10px;
+    .wizard-title{
+        width: 100%;
+        font-size: 22px;
+        color: #fff;
+        border-bottom: 1px solid #fff;
+        text-align: center;
+        margin: auto;
+        padding: 30px;
+    }
+    .wizard-btn{
+        margin: 50px auto;
+        display: block;
+        text-align: center;
+        width: 300px;
+        padding: 10px;
+        font-size: 16px;
+        color: #fff;
+        background:rgba(255, 255, 255, 0);
+        border: 2px solid #fff;
+        cursor: pointer;
+        &:active{
+  
+        }
+    }
+  }

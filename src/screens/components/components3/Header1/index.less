@@ -1,0 +1,98 @@
+@import '../../../../theme.less';
+/*头部LOGO部分*/
+.header1{
+    height: 56px;
+    width: 100%;
+    /* position: absolute; */
+    border-bottom: 1Px solid #ccc;
+    padding-top: 8px;
+    .logo-img{
+        float: left;
+        img{            
+            width: 200px;
+            margin-left: 20px;
+            margin-top: 6px;
+        }
+    }
+    .bar-right{
+      float: right; 
+      padding-right: 40px;  
+      padding-top: 10px;   
+      .language{
+          float: left;
+          height: 28px;
+      }
+      .bar-icon{
+          float: right;
+          padding-left: 10px;
+          line-height: 40px;
+          margin-left: 10px;
+          i{
+              cursor: pointer;
+              font-size: 24px;
+              color:@mainthem-bg;
+              padding-right: 25px;
+          }
+          img{
+              cursor: pointer;
+              margin-bottom: 8px;
+              padding-right: 23px;
+          }
+      }
+      
+    .bar-button{ 
+        float: left;
+        button{            
+            background: @mainthem-bg;
+            border: 3px solid @mainthem-bg;
+            color: #fff;
+            font-size: 14px;
+            line-height: 14px;
+            padding: 5px 9px;
+            border-radius: 20px;
+            margin: 0 2px;
+            cursor: pointer;
+            outline:none;
+        }
+    }
+    }    
+    .language .ant-select-selection--single {
+            border:0!important;
+            font-size: 16px;
+            padding-right: 20px;
+            color: #000;
+    }
+    .bar{        
+        display: inline;
+        font-size: 22px;
+        border-right: 2px solid #bbb;
+    }
+  }
+  
+@media screen and (max-width: 650px) {
+    .header1{
+        /*height: 69px;*/
+        width: 100%;
+        padding-top: 10px;   
+        .logo-img{
+            img{   
+                width: 140px;
+            }
+        } 
+        .bar-right{
+          float: right; 
+          padding: 0px;
+          .bar-button{
+              button{
+                  
+    border: 1Px solid @mainthem-bg;
+              }
+          }
+          .bar-icon{              
+            padding-left: 0px;
+            line-height: 0px;
+            margin-left: 0px;
+          }
+        }
+    }
+}

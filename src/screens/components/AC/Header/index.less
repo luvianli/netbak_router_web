@@ -1,0 +1,64 @@
+@import '../../../../theme.less';
+/*头部LOGO部分*/
+.header{
+    height: 56px;
+    width: 100%;
+    .header-content{
+        height: 35px;
+        margin: 0 0 0 0;
+        width: 100%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-right: 40px;
+        position: relative;
+        img{
+          margin-left: 42px;        
+          width: 222px;
+        }
+    }
+    .bar-right{
+      float: right;      
+      .language{
+          float: left;
+      }
+      .bar-icon{
+          float: right;
+          border-left: 2px solid #bbb;
+          padding-left: 20px;
+          line-height: 26px;
+          margin-left: 10px;
+          min-width: 180px;
+          i{
+              cursor: pointer;
+              font-size: 24px;
+              color:@mainthem-bg;
+              padding-right: 25px;
+          }
+          img{
+              cursor: pointer;
+              margin-bottom: 8px;
+              padding-right: 23px;
+          }
+      }
+    }
+    
+      .language .ant-select-selection--single {
+              border:0!important;
+              font-size: 16px;
+              padding-right: 20px;
+              color: #000;
+      }
+  }
+  
+@media screen and (max-width: 768px) {
+    .header{
+        .header-content{
+            .bar-right{
+                .bar-icon{
+                    display: none;
+                }
+            }
+        }
+    }
+
+}

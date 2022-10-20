@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <!-- <link rel="icon" href="%PUBLIC_URL%/favicon.ico" /> -->
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <title></title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+  </body>
+  <script language="javascript">    
+  //判断是否是手机登陆
+  var ua = navigator.userAgent;
+  var ipad = ua.match(/(iPad).*OS\s([\d_]+)/),
+  isIphone =!ipad && ua.match(/(iPhone\sOS)\s([\d_]+)/),
+  isAndroid = ua.match(/(Android)\s+([\d.]+)/),
+  isMobile = isIphone || isAndroid;
+
+  var sUserAgent = navigator.userAgent.toLowerCase();
+
+  //手机登陆防止左右滑动后退前进,但某些手机百度浏览器页面跳转会默认成右滑方式
+  if(isMobile){
+    if(sUserAgent.indexOf("baidu") > 0){
+      // console.log("baidu")
+    }else{
+      history.pushState(null, null, document.URL);
+        window.addEventListener('popstate', function () {
+        history.pushState(null, null, document.URL);
+        if(localStorage.getItem("showBase")!="base"){
+          location.reload(true)
+          history.pushState(null, null, null);
+          window.history.forward(1);
+        }
+      });  
+    }  
+  }
+  
+</script>
+  <script>document.title='\u200E'</script>
+</html>

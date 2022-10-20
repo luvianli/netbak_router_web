@@ -1,0 +1,163 @@
+{
+  "id": "1780340",
+  "name": "RA1201-D5-01",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "11061437",
+      "name": "信号",
+      "font_class": "-",
+      "unicode": "e62d",
+      "unicode_decimal": 58925
+    },
+    {
+      "icon_id": "7239581",
+      "name": "usb",
+      "font_class": "usb",
+      "unicode": "e70e",
+      "unicode_decimal": 59150
+    },
+    {
+      "icon_id": "18429587",
+      "name": "设备监控",
+      "font_class": "shebeijiankongbeifen",
+      "unicode": "e667",
+      "unicode_decimal": 58983
+    },
+    {
+      "icon_id": "424154",
+      "name": "模式切换",
+      "font_class": "moshiqiehuan",
+      "unicode": "e7d7",
+      "unicode_decimal": 59351
+    },
+    {
+      "icon_id": "586366",
+      "name": "QoS",
+      "font_class": "qos",
+      "unicode": "e73a",
+      "unicode_decimal": 59194
+    },
+    {
+      "icon_id": "2665036",
+      "name": "网络",
+      "font_class": "wangluo",
+      "unicode": "e61e",
+      "unicode_decimal": 58910
+    },
+    {
+      "icon_id": "2941400",
+      "name": "菜单",
+      "font_class": "caidan",
+      "unicode": "e69e",
+      "unicode_decimal": 59038
+    },
+    {
+      "icon_id": "3013948",
+      "name": "2.4G",
+      "font_class": "G",
+      "unicode": "e61a",
+      "unicode_decimal": 58906
+    },
+    {
+      "icon_id": "3086552",
+      "name": "wifi",
+      "font_class": "wifi",
+      "unicode": "e632",
+      "unicode_decimal": 58930
+    },
+    {
+      "icon_id": "4675538",
+      "name": "系统状态",
+      "font_class": "xitongzhuangtai",
+      "unicode": "e612",
+      "unicode_decimal": 58898
+    },
+    {
+      "icon_id": "5536884",
+      "name": "网口",
+      "font_class": "wangkou",
+      "unicode": "e944",
+      "unicode_decimal": 59716
+    },
+    {
+      "icon_id": "6932673",
+      "name": "icon-显示密码",
+      "font_class": "icon-xianshimima",
+      "unicode": "e6f8",
+      "unicode_decimal": 59128
+    },
+    {
+      "icon_id": "6933432",
+      "name": "icon-不显示密码",
+      "font_class": "icon-buxianshimima",
+      "unicode": "e6fa",
+      "unicode_decimal": 59130
+    },
+    {
+      "icon_id": "6985255",
+      "name": "防火墙",
+      "font_class": "fanghuoqiang",
+      "unicode": "e659",
+      "unicode_decimal": 58969
+    },
+    {
+      "icon_id": "7625093",
+      "name": "箭头",
+      "font_class": "shangsheng",
+      "unicode": "e61d",
+      "unicode_decimal": 58909
+    },
+    {
+      "icon_id": "7755830",
+      "name": "箭头",
+      "font_class": "jiantou-copy",
+      "unicode": "e618",
+      "unicode_decimal": 58904
+    },
+    {
+      "icon_id": "8063317",
+      "name": "快速设置",
+      "font_class": "kuaisushezhi",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    },
+    {
+      "icon_id": "8225515",
+      "name": "网络设置",
+      "font_class": "wangluoshezhi",
+      "unicode": "e624",
+      "unicode_decimal": 58916
+    },
+    {
+      "icon_id": "9170007",
+      "name": "5G (2)",
+      "font_class": "G1",
+      "unicode": "e60a",
+      "unicode_decimal": 58890
+    },
+    {
+      "icon_id": "10213448",
+      "name": "网络",
+      "font_class": "wangluo2",
+      "unicode": "e780",
+      "unicode_decimal": 59264
+    },
+    {
+      "icon_id": "10342047",
+      "name": "系统管理",
+      "font_class": "xitongguanli",
+      "unicode": "e610",
+      "unicode_decimal": 58896
+    },
+    {
+      "icon_id": "11169408",
+      "name": "工具",
+      "font_class": "gongju",
+      "unicode": "e755",
+      "unicode_decimal": 59221
+    }
+  ]
+}

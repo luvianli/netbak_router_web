@@ -1,0 +1,68 @@
+@import '../../../../../../theme.less';
+.sys-cfg{
+    a{
+        color: @mainthem-bg;
+        font-size: 16px;
+        display: block;
+    }
+}
+.down-btn{
+    text-align: center;
+    margin-left: 188px;
+    cursor: pointer;
+    color: #007dff;
+    font-size: 16px;
+    padding: 0 15px;
+    border: 1Px;
+    border-radius: 25px;
+    width: 330px;
+    height: 40px;
+    line-height: 40px;
+    margin-top: 50px;
+    border: 1Px solid #e0e0e0;
+    background: #f7f7f7;
+    background-color: #f7f7f7;
+    outline: none;
+    a{
+        color: @mainthem-bg;
+        font-size: 16px;
+        display: block;
+    }
+}
+.sys-upload{
+    margin-left: 60px;
+}
+
+@media screen and (max-width: 768px) {
+    // .sys-upload{
+    //     margin-left: 0px;
+    // }
+    .down-btn{        
+        margin: 0 auto;
+        margin-top: 50px;
+    }
+    .sys-upload{
+        margin-top: 70px;
+        margin-left: 0;
+        .input-file{
+            .uploader{
+                display: block;
+                width: fit-content;
+                margin: 0 auto;
+            }
+            .file{
+                margin-left: 0;
+                .filename{
+                    width: 190px;
+                }
+                .button_up{
+                    width: 110px;
+                }
+            }
+            .button_sumit{
+                width: 300px;
+            }
+        }
+    }
+}
+

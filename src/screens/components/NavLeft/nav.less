@@ -1,0 +1,215 @@
+@import '../../../theme.less';
+/*顶部一级菜单*/
+.adv_bg{
+    // background-image: url('./../../../img/content.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    // background: #fff;
+}
+.navbar-menu{    
+    height: 76px;
+    font-size: 18px;
+    width: 100%;
+    // width: 1024px;
+    /*min-width: 1350px;*/
+    // background: @mainthem-bg;
+    text-align: center;
+    .nav{
+        text-align: center;
+        width: fit-content;
+        margin: 0 auto;
+        .nav_div{
+            width: 170px;
+            height: 72px;
+            line-height: 72px;
+            a{
+                text-align: center;
+                // color: @menu-mobile-color;
+                color: #000;
+                font-size: 18px;
+                line-height: 26px;
+                margin: auto;
+                background: url('./../../../img/pwd.png') no-repeat;
+                background-color: #fff;
+                background-size: 100% 100%;
+                display: inline-block;
+                width: 170px;
+                padding-top: 1px;
+            }
+            .active{            
+                // color: #fff;
+                background: url('./../../../img/main_menu.png') no-repeat;
+                background-size: 100% 100%;
+                background-color: none;
+            }
+        }
+    }
+  }
+  
+  /*左边菜单及内容大框架*/
+  .fram_test{        
+    a{color: #000;}
+    width: 100%;
+    .fram-content{
+        width: 1024px;
+        margin: 0 auto;
+        overflow-y: auto;
+        // padding: 20px 0;
+        // padding-right: 10px;
+        // overflow: auto;
+        height: 730px;
+        border: 2px solid @mainthem-bg;
+        padding: 15px 0;
+        .fram-navleft{
+            width: 254px;
+            float: left;
+            // padding: 20px 0;
+            // background: #FCF5EF;
+            height: 760px;
+            .nav-left{
+                font-size: 14px;
+                cursor: pointer;
+                // background: #FCF5EF;
+                a{
+                    text-align: center;
+                    line-height: 48px;
+                    margin: auto;
+                }
+                a:hover{
+                    color: @mainthem-bg;
+                }
+                .active{            
+                    color:@mainthem-bg;
+                }
+                .menu-li{
+                    line-height: 48px;
+                    clear: both;
+                    text-align: center;
+                    .bar-menu{
+                        margin: auto;
+                        text-align: left;
+                        display: inline-block;
+                        line-height: 30px;
+                        margin-left: 10px; 
+                        background: url('./../../../img/second_menu.png') no-repeat;
+                        background-size: 100% auto;
+                        width: 170px; 
+                        text-align: center;  
+                    }
+                    // .bar-menu:hover{
+                    //     color:#fff;
+                    // }
+                    .logout-li{
+                        width: 100%;
+                    }
+                    .active{            
+                        color:#fff;
+                    }
+                    .arrow-right{
+                        float: right;
+                        margin-right: 10px;
+                    }
+                }
+                .li-active{
+                    // background-color: #e6f6ff;
+                }
+                .li-sub-content{
+                    .point-to{                       
+                        display: inline-block;
+                        width: 5px;
+                        height: 5px;
+                        border-radius: 50%;
+                    }
+                    .point-display{
+                        background: #268082;
+                    }
+                    .bar-menu{
+                        margin-left: 25px;
+                        background: none;
+                        line-height: 48px;
+                        text-align: left;
+                    }
+                    .active{            
+                        color:#268082;
+                    }
+                    .third-li{
+                        padding-left: 15px;
+                    }
+                    .li-sub-content{
+                        .bar-menu{
+                            margin-left: 50px;
+                        }
+                    }
+                }
+                .anticon-down{
+                    color: @mainthem-bg;
+                }
+            }
+        }
+        .page-content{
+            min-height: 100%;
+            float: left;
+            padding-right: 20px;
+            padding-left: 50px;
+            width: 750px;            
+            border-left: 1Px solid #e8e8e8;
+        }
+    }
+    .fram-content::-webkit-scrollbar {
+        width: 4px;    
+        /*height: 4px;*/
+    }
+    .fram-content::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        -webkit-box-shadow: inset 0 0 5px @mainthem-bg;
+        background-color: @mainthem-bg;
+    }
+    .fram-content::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+        border-radius: 0;
+        background: rgba(0,0,0,0.1);
+
+    }
+    .fram-no-border{
+        border: none;
+        overflow-x: hidden;
+    }
+  }
+
+@media screen and (min-width: 768.1px) and (max-width:1024px) {
+    .navbar-menu{        
+        .nav{
+            min-width: 100%;
+            max-width: 1024px;
+            display: -webkit-box;
+            display: flex; 
+            a{
+                padding: 0 10px;
+            }
+        }
+    }
+    .fram_test{
+      min-width: 100%;
+      max-width: 1024px;
+    }
+}
+@media screen and (min-width: 1024px) {
+    .adv_bg{
+        min-width: 1190px;
+    }
+    .navbar-menu{    
+        // width: 100%;
+        .nav{
+            text-align: center;
+            display: -webkit-box;
+            margin: auto;
+            a{
+                padding: 0 5px;
+            }
+        }
+    }
+    
+  .fram_test{       
+    min-width: 100%;
+  }
+}

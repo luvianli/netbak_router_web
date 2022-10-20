@@ -1,0 +1,108 @@
+@import '../../../theme.less';
+/*头部LOGO部分*/
+.header{
+    height: 90px;
+    width: 100%;
+    min-width: 100%;
+    border-bottom: 1Px solid #ccc;
+    .header-content{
+        height: 75px;
+        /*width: 1074px;*/
+        padding-top: 5px;
+        padding-bottom: 10px;
+        padding-right: 40px;
+        margin: 0 auto;
+        position: relative;
+        img{
+          margin-left: 42px;        
+          width: 75px;
+        }
+    }
+    .pc-bar-right{
+      float: right;  
+      padding-top: 20px;    
+      .language{
+          float: left;
+      }
+      .bar-icon{
+          float: right;
+          border-left: 2px solid #bbb;
+          padding-left: 20px;
+          line-height: 26px;
+          margin-left: 10px;
+          i{
+              cursor: pointer;
+              font-size: 24px;
+              color:@mainthem-bg;
+              padding-right: 25px;
+          }
+          img{
+              cursor: pointer;
+              margin-bottom: 8px;
+              padding-right: 23px;
+          }
+          .newMsg{
+            width: 24px;
+            height: 24px;
+            padding-right: 0;
+            margin-right: 25px;
+          }
+      }
+    }
+    
+    .mobile-bar-right{
+        display: none;
+        float: right; 
+        .bar-icon{
+            float: right;
+            padding-left: 20px;
+            line-height: 26px;
+            margin-left: 10px;
+            i{
+                cursor: pointer;
+                font-size: 24px;
+                color:@mainthem-bg;
+                padding-right: 25px;
+            }
+            img{
+                cursor: pointer;
+                margin-bottom: 8px;
+                padding-right: 23px;
+            }
+            .newMsg{
+              width: 24px;
+              height: 24px;
+              padding-right: 0;
+              margin-right: 25px;
+            }
+        }
+    }
+        
+      .language .ant-select-selection--single {
+              border:0!important;
+              font-size: 16px;
+              padding-right: 20px;
+              color: #000;
+      }
+  }
+  
+@media screen and (min-width: 1024px) {
+    .header{
+        /*min-width: 1350px;*/
+        .header-content{
+            width: 1024px;
+            padding-right: 40px;
+        }
+    }
+}
+@media screen and (max-width: 768px) {
+    .header{
+        max-width: 100%;
+        .pc-bar-right{
+            display: none;
+        }
+        .mobile-bar-right{
+            display: block;
+        }
+    }
+}
