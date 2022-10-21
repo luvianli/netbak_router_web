@@ -65,5 +65,7 @@ export const network ={
     'Wired priority':'有线优先',
     'Detect External Network Address':'检测外网地址',
     'Detection Interval(s)':'检测时间间隔(秒)',
-    
+    'Wireless WAN+4G': "无线WAN+4G",
+    'Wireless WAN': "无线WAN",
+    'Please select a wireless WAN!':'请选择无线WAN!',
 }

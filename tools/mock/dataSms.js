@@ -64,34 +64,17 @@ module.exports = function (data) {
             //     "errcode":    2000,
             //     "progresstime":    0
             // }
-        /**获取外网配置  */
-        case 1://get_wan_config
+        /**获取无线WAN+4G  */
+        case 1://cgi_get_wan_or_wan4g_config
             return{
-                "huayi_r":    {
-                    "wan_mode":"prior",
-                    "proto":	"dhcp",
-                    "ip_addr":	"192.168.90.13",
-                    "subnet_mask":	"255.255.255.0",
-                    "gateway":	"192.168.90.1",
-                    "dns_arr":	['114.114.114.114','8.8.8.8'],
-                    "usr":	"pppoe@gd.com",
-                    "pwd":	"password@gd.com",
-                    "ac":	"",
-                    "service":	"",
-                    "hostname":    "HUAYI",
-                    "mac_addr":    "00:E0:19:00:00:30",
-                    "def_mac_addr":    "00:E0:19:00:00:30",
-                    "ppp_mtu":    1492,
-                    "cc_mtu":    1500,
-                    "link":    0,
+                "huayi_r": {
+                    "wan_type":"rep",  //wired表示有线，mobile表示4G，prior表示有线优先，rep4g表示无线WAN+4G, rep表示无线WAN
                     "auth_type":    "0",
                     "apn_name":    "3gnet",
                     "apn_usr":    " ",
                     "apn_pwd":    " ",
                     "use_apn":    1,
-                    "proto_4g":    "dhcp",
-                    "detect_ip":'192.168.90.13',
-                },
+                  },
                 "huayierrtype":    "success",
                 "errcode":    2000,
                 "progresstime":    0

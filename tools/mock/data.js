@@ -84,7 +84,7 @@ module.exports = function (data) {
          case 9://get_quick_setting_config
             return {
                 "huayi_r":	{
-                    "wan_type":	"prior",
+                    "wan_type":	"rep4g",
                     "ssid_config":	{
                         "ssid_2g":	"HUAYI-2.4G",
                         "encry_2g":	0,

@@ -15,10 +15,15 @@ export const smsurl = 'cgi-bin/cgi_modem.cgi';
 export const sms_HYID = { 
     /**获取首页状态  */
     get_overview_info:0,
-    /**获取外网配置  */
-    get_wan_config:1,
-    /**设置以太网上网参数  */
-    set_eth_wan_config:2,   
+    // /**获取外网配置  */
+    // get_wan_config:1,
+    // /**设置以太网上网参数  */
+    // set_eth_wan_config:2,   
+    //4G300-H002-HY07产品特有替换接口
+    /**获取无线WAN+4G  */
+    cgi_get_wan_or_wan4g_config :1,
+    /**设置无线WAN+4G  */
+    cgi_set_wan_or_wan4g_config :2,
    
     /**获取新信息状态  */
     get_new_sms_state :3,
@@ -274,6 +279,10 @@ export const HYID = {
     set_thinap:112,
     /**设置第一次登陆 */
     set_first_boot: 185,
+    /**获取快速设置网络策略配置 */
+    get_quick_prior_config:187,
+    /**设置快速设置网络策略配置 */
+    set_quick_prior_config: 188,
 }
 
 export default {}
