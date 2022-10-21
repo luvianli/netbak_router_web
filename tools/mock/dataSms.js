@@ -68,7 +68,7 @@ module.exports = function (data) {
         case 1://cgi_get_wan_or_wan4g_config
             return{
                 "huayi_r": {
-                    "wan_type":"rep",  //wired表示有线，mobile表示4G，prior表示有线优先，rep4g表示无线WAN+4G, rep表示无线WAN
+                    "wan_mode":"rep",  //wired表示有线，mobile表示4G，prior表示有线优先，rep4g表示无线WAN+4G, rep表示无线WAN
                     "auth_type":    "0",
                     "apn_name":    "3gnet",
                     "apn_usr":    " ",

@@ -95,9 +95,9 @@ export default class WANPrior extends Component {
     let result = deepCopy(this.state.result);
     let result_src = deepCopy(this.state.result_src);
     let values = {}
-    if(result.wan_type==="rep"){
+    if(result.wan_mode==="rep"){
       values = {
-        wan_type: "rep",
+        wan_mode: "rep",
         ...this.state.selectList,
       }
       if(!values.ssid){
@@ -105,22 +105,22 @@ export default class WANPrior extends Component {
         return
       }
       this.setEthWanConfig(values)
-    }else if(result.wan_type==="mobile"){
+    }else if(result.wan_mode==="mobile"){
       if(this.state.mobileChange===1){
         return;
       }
-      if(this.state.mobileChange===2&&(result.wan_type===result_src.wan_type)){
+      if(this.state.mobileChange===2&&(result.wan_mode===result_src.wan_mode)){
         message.success(window.__('Data Up to Date'))  
         return;
       }
       values = {
-        wan_type: "mobile",
+        wan_mode: "mobile",
         ...this.state.mobileValue
       }
       this.setEthWanConfig(values)
     }else{
       values = {
-        wan_type: "rep4g", 
+        wan_mode: "rep4g", 
         detect_ip: this.state.result.detect_ip,
         ...this.state.mobileValue,
         ...this.state.selectList,
@@ -134,7 +134,7 @@ export default class WANPrior extends Component {
   }
   handleSelect= name => value =>{ 
     let result = deepCopy(this.state.result);
-    if(name==='wan_type'){
+    if(name==='wan_mode'){
         if(value==='mobile'){
           result.proto='dhcp';
         }
@@ -166,7 +166,7 @@ export default class WANPrior extends Component {
     let mobileValue = {}
     let result = deepCopy(this.state.result);
     let result_src = deepCopy(this.state.result_src)
-    if(result.wan_type==="mobile"){//4g
+    if(result.wan_mode==="mobile"){//4g
       if(result.use_apn===0){//自动
         if( this.validator.someValid(['mhostname','mcc_mtu','mmac_addr']) ){
           if(result_src.use_apn===result.use_apn&&
@@ -189,7 +189,7 @@ export default class WANPrior extends Component {
         }
       }
     }
-    if(result.wan_type==="rep4g"){//有线优先下的4g
+    if(result.wan_mode==="rep4g"){//有线优先下的4g
       if(result.use_apn===0){//自动
         if(result_src.use_apn===result.use_apn){
           mobileChange = 2;
@@ -202,7 +202,7 @@ export default class WANPrior extends Component {
         }
       }
     }
-    if(result.wan_type==="rep4g"||result.wan_type==="mobile"){
+    if(result.wan_mode==="rep4g"||result.wan_mode==="mobile"){
       if(result.use_apn===1){//手动
         if( this.validator.someValid(['apn_name','apn_usr','apn_pwd']) ){
           if(result_src.use_apn===result.use_apn&&
@@ -231,11 +231,11 @@ export default class WANPrior extends Component {
   }
   handleSave=()=>{
     let result = deepCopy(this.state.result);
-    if(result.wan_type==="rep"){      
+    if(result.wan_mode==="rep"){      
       if(this.childRef.handleRepConfig()){
         this.setState({selectList:this.refs.childData.state.selectList},()=>{this.handleSetData()})       
       }
-    }else if(result.wan_type==="mobile"){
+    }else if(result.wan_mode==="mobile"){
       this.mobileData().then(()=>{
 				this.handleSetData()
       })
@@ -268,11 +268,11 @@ export default class WANPrior extends Component {
   }
   handleCloseModal=()=>{
     this.setState({
-      showRelaySSID:false
+      showRelaySSID:false,
     })
   }
   render(){
-    const {result:{wan_type,def_mac_addr,hostname,mac_addr,cc_mtu,auth_type,apn_name,
+    const {result:{wan_mode,def_mac_addr,hostname,mac_addr,cc_mtu,auth_type,apn_name,
       apn_usr,apn_pwd,use_apn,detect_ip},selectList} = this.state;
     return (
       <div ref='mainWizard'>
@@ -284,13 +284,13 @@ export default class WANPrior extends Component {
           helpmsg={window.__("The Access Point Name (APN) is the name for the settings your device reads to set up a connection to the gateway between your carrier's cellular network and the public Internet. Most of the time, your device already has these settings in the system files, and can fill in the APN information automatically when it connects. If the APN can't connect to the Internet automatically, you can change the APN manually.")}
 					/>
           <FormGroup lable={window.__('Internet Type')}>
-            <Select value={wan_type ||''} onChange={this.handleSelect('wan_type')}>
+            <Select value={wan_mode ||''} onChange={this.handleSelect('wan_mode')}>
               <Option value={'rep4g'}>{window.__('Wireless WAN+4G')}</Option>
               <Option value={'rep'}>{window.__('Wireless WAN')}</Option>
               <Option value={'mobile'}>{window.__('4G')}</Option>
             </Select>
           </FormGroup>
-          {wan_type==='rep4g'&&
+          {wan_mode==='rep4g'&&
             <FormGroup lable={window.__('Detect External Network Address')}>
                 <input value={detect_ip||''} onChange={this.handleChange('detect_ip')}/>
                 <div className="tip-err">
@@ -303,15 +303,15 @@ export default class WANPrior extends Component {
             </FormGroup>
           }
           <div style={{height:20}}></div>
-					{wan_type!=='mobile'&&<>
-						{wan_type==='rep4g'&&<div style={{fontSize:22}}>{window.__('Wireless WAN')}</div>}
+					{wan_mode!=='mobile'&&<>
+						{wan_mode==='rep4g'&&<div style={{fontSize:22}}>{window.__('Wireless WAN')}</div>}
               <Repeater opmode={3} {...this.props} selectTo={this.selectTo}
                 onChildEvent={this.handleChildEvent}
                 ref='childData'
               />
             </>}
-					{(wan_type==='rep4g'||wan_type==='mobile')&&<>
-            {wan_type==='rep4g'&&<>
+					{(wan_mode==='rep4g'||wan_mode==='mobile')&&<>
+            {wan_mode==='rep4g'&&<>
               <div style={{fontSize:22}}>{window.__('4G')}</div>
             </>}
 						<FormGroup lable={window.__('Dialing 4G')}>
@@ -321,7 +321,7 @@ export default class WANPrior extends Component {
 							</Select>
 						</FormGroup>
 						{use_apn===0?<>
-              {wan_type==='mobile'&&<>
+              {wan_mode==='mobile'&&<>
                 <FormGroup lable={window.__('Internet Access Mode')}>
                   <Select disabled value={'dhcp'} onChange={this.handleSelect('proto_4g')}>
                     <Option value={'static'}>{window.__('STATIC')}</Option>
@@ -364,7 +364,7 @@ export default class WANPrior extends Component {
 						</>:<>	
 									<FormGroup lable={window.__('APN Name')}>
 											<input value={apn_name||''}               
-												// disabled={wan_type==='rep'}
+												// disabled={wan_mode==='rep'}
 												onChange={this.handleChange('apn_name')}/>
 											<div className="tip-err">
 											{this.validator.message('apn_name', apn_name, 'required&&apnname&&max:64','',{
@@ -375,7 +375,7 @@ export default class WANPrior extends Component {
 										
 									<FormGroup lable={window.__('User Name')}>
 										<input value={apn_usr||''}
-										// disabled={wan_type==='rep'}
+										// disabled={wan_mode==='rep'}
 										onChange={this.handleChange('apn_usr')}/>
 										<div className="tip-err">
 										{this.validator.message('apn_usr',apn_usr, 'apnusername&&max:32','',{
@@ -383,7 +383,7 @@ export default class WANPrior extends Component {
 												max: window.__('User Name At Most 32 Characters!'),})}</div>  
 									</FormGroup>
 									<FormPassword lable={window.__('Password')}  
-										// disabled={wan_type==='rep'}      
+										// disabled={wan_mode==='rep'}      
 										value ={apn_pwd||""} 
 										onChange={this.handleChange('apn_pwd')}>
 									</FormPassword>                
@@ -394,7 +394,7 @@ export default class WANPrior extends Component {
 									
 									<FormGroup lable={window.__('Authentication')}>
 										<Select value={auth_type||'0'}
-										// disabled={wan_type==='rep'}
+										// disabled={wan_mode==='rep'}
 										onChange={this.handleSelect('auth_type')}>
 											<Option value="0">NONE</Option>
 											<Option value="1">PAP</Option>
