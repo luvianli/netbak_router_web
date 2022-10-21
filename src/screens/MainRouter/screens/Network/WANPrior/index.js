@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import {FormGroup,FormButton,PageText,Progress,FormPassword,FormRadioCheck} from '@/screens/components';
+import {FormGroup,FormButton,PageText,Progress,FormPassword,FormRadioCheck,Modal} from '@/screens/components';
 import {axios,HYID ,posturl,smsurl,sms_HYID,deepCopy,handleRedir} from '@/share';
 import {message,Icon,Select,Checkbox,Radio} from 'antd';
 import ReactValidator from '@/share/validator/index.js';
@@ -266,9 +266,14 @@ export default class WANPrior extends Component {
   handleChildEvent = (ref) =>{
     this.childRef = ref
   }
+  handleCloseModal=()=>{
+    this.setState({
+      showRelaySSID:false
+    })
+  }
   render(){
     const {result:{wan_type,def_mac_addr,hostname,mac_addr,cc_mtu,auth_type,apn_name,
-      apn_usr,apn_pwd,use_apn,detect_ip}} = this.state;
+      apn_usr,apn_pwd,use_apn,detect_ip},selectList} = this.state;
     return (
       <div ref='mainWizard'>
         <div style={{height:20}}></div>
@@ -303,7 +308,6 @@ export default class WANPrior extends Component {
               <Repeater opmode={3} {...this.props} selectTo={this.selectTo}
                 onChildEvent={this.handleChildEvent}
                 ref='childData'
-                showRelaySSID={this.state.showRelaySSID}
               />
             </>}
 					{(wan_type==='rep4g'||wan_type==='mobile')&&<>
@@ -400,7 +404,19 @@ export default class WANPrior extends Component {
 						</>}
 					</>}
 					<FormButton onClick={this.handleSave}>{window.__('Apply')}</FormButton>
-        
+          <Modal
+              style={{width:650,height:260,marginTop:20}}
+              visible={this.state.showRelaySSID}
+              closeModel={this.handleCloseModal}
+              close={true}
+              >          
+              <div className="relaysucess">
+                <span><Icon type="check-circle"/>{window.__('Success! Please Reconnect To Network!')}</span>
+                <div><div className="textleft">{window.__("Wireless SSID After Relay:")}</div>{selectList.rep_ssid_24g}</div>
+                {selectList.auth_mode!=='NONE'&&<div><div className="textleft">{window.__("Wireless Passowrd After Relay:")}</div>{selectList.key}</div>}
+                {/* <div className="visitPage">{window.__('After reconnecting to the network, launch the browser and enter')}<span className="setup_url">&nbsp;{this.props.domainName}&nbsp;</span>{window.__('in the address')}</div> */}
+              </div>
+          </Modal>
           <Progress 
             showProgress={this.state.showProgress} 
             locktime={this.state.locktime}

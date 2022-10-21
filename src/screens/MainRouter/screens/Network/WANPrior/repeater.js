@@ -34,11 +34,6 @@ class BaseLan extends Component {
   componentWillUnmount(){
     clearInterval(this.intervalId);
   }
-  componentWillReceiveProps(nextProps){
-      this.setState({
-        showRelaySSID:nextProps.showRelaySSID,
-      })
-  }
   setWirelessScan=()=>{
     axios.post({
       data:{
