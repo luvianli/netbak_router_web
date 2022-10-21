@@ -6,14 +6,6 @@ import ReactValidator from '@/share/validator/index.js';
 import logo_img from '@/logo.png';
 import './index.less'
 import Repeater from '@/screens/MainRouter/screens/Network/WANPrior/repeater'
-import lock1 from '@/screens/MainRouter/screens/Network/WANPrior/img/lock1.png'
-import lock2 from '@/screens/MainRouter/screens/Network/WANPrior/img/lock2.png'
-import lock3 from '@/screens/MainRouter/screens/Network/WANPrior/img/lock3.png'
-import lock4 from '@/screens/MainRouter/screens/Network/WANPrior/img/lock4.png'
-import unlock1 from '@/screens/MainRouter/screens/Network/WANPrior/img/unlock1.png'
-import unlock2 from '@/screens/MainRouter/screens/Network/WANPrior/img/unlock2.png'
-import unlock3 from '@/screens/MainRouter/screens/Network/WANPrior/img/unlock3.png'
-import unlock4 from '@/screens/MainRouter/screens/Network/WANPrior/img/unlock4.png'
 
 const {Option} = Select;
 export default class Quick extends React.Component{
@@ -395,14 +387,7 @@ class QuickNetSetting extends React.Component{
             <Repeater opmode={3} {...this.props} selectTo={this.selectTo}
                 onChildEvent={this.handleChildEvent}
                 ref='childData'
-                lock1={lock1} 
-                lock2={lock2} 
-                lock3={lock3} 
-                lock4={lock4} 
-                unlock1={unlock1} 
-                unlock2={unlock2} 
-                unlock3={unlock3} 
-                unlock4={unlock4} />
+            />
             </>}
 					{(wan_type==='rep4g'||wan_type==='mobile')&&<>
             {wan_type==='rep4g'&&<>

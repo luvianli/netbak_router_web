@@ -1,11 +1,17 @@
 import React, { Component } from 'react';
 import { Table,Progress,FormPassword,FormGroup,FormButton,Modal} from '@/screens/components';
 import {axios,HYID ,posturl,deepCopy,handleRedir} from '@/share';
-
 import './index.less'
 import { Input,Button,Spin,Icon } from 'antd';
-
 import ReactValidator from '@/share/validator/index.js';
+import lock1 from './img/lock1.png'
+import lock2 from './img/lock2.png'
+import lock3 from './img/lock3.png'
+import lock4 from './img/lock4.png'
+import unlock1 from './img/unlock1.png'
+import unlock2 from './img/unlock2.png'
+import unlock3 from './img/unlock3.png'
+import unlock4 from './img/unlock4.png'
 
 class BaseLan extends Component {
   
@@ -120,60 +126,60 @@ class BaseLan extends Component {
           scan_24G_arr.map((item,index)=>{
             if(item.auth_mode==='NONE'){
               if(item.signal>=60){              
-                scan_24G_arr[index].img=this.props.unlock1
+                scan_24G_arr[index].img=unlock1
               }
               else if(item.signal>=45&&item.signal<60){              
-                scan_24G_arr[index].img=this.props.unlock2
+                scan_24G_arr[index].img=unlock2
               }
               else if(item.signal>=30&&item.signal<45){              
-                scan_24G_arr[index].img=this.props.unlock3
+                scan_24G_arr[index].img=unlock3
               }
               else{  
-                scan_24G_arr[index].img=this.props.unlock4
+                scan_24G_arr[index].img=unlock4
               }
             }
             else{              
               if(item.signal>=60){              
-                scan_24G_arr[index].img=this.props.lock1
+                scan_24G_arr[index].img=lock1
               }
               else if(item.signal>=45&&item.signal<60){      
-                scan_24G_arr[index].img=this.props.lock2
+                scan_24G_arr[index].img=lock2
               }
               else if(item.signal>=30&&item.signal<45){      
-                scan_24G_arr[index].img=this.props.lock3
+                scan_24G_arr[index].img=lock3
               }
               else{  
-                scan_24G_arr[index].img=this.props.lock4
+                scan_24G_arr[index].img=lock4
               }
             }
           })
           // scan_58G_arr.map((item,index)=>{
           //   if(item.auth_mode==='NONE'){
           //     if(item.signal>=60){              
-          //       scan_58G_arr[index].img=this.props.unlock1
+          //       scan_58G_arr[index].img=unlock1
           //     }
           //     else if(item.signal>=45&&item.signal<60){        
-          //       scan_58G_arr[index].img=this.props.unlock2
+          //       scan_58G_arr[index].img=unlock2
           //     }
           //     else if(item.signal>=30&&item.signal<45){      
-          //       scan_58G_arr[index].img=this.props.unlock3
+          //       scan_58G_arr[index].img=unlock3
           //     }
           //     else{  
-          //       scan_58G_arr[index].img=this.props.unlock4
+          //       scan_58G_arr[index].img=unlock4
           //     }
           //   }
           //   else{              
           //     if(item.signal>=60){              
-          //       scan_58G_arr[index].img=this.props.lock1
+          //       scan_58G_arr[index].img=lock1
           //     }
           //     else if(item.signal>=45&&item.signal<60){      
-          //       scan_58G_arr[index].img=this.props.lock2
+          //       scan_58G_arr[index].img=lock2
           //     }
           //     else if(item.signal>=30&&item.signal<45){            
-          //       scan_58G_arr[index].img=this.props.lock3
+          //       scan_58G_arr[index].img=lock3
           //     }
           //     else{  
-          //       scan_58G_arr[index].img=this.props.lock4
+          //       scan_58G_arr[index].img=lock4
           //     }
           //   }            
           // })

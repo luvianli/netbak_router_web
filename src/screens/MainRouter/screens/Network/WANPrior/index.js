@@ -4,15 +4,6 @@ import {axios,HYID ,posturl,smsurl,sms_HYID,deepCopy,handleRedir} from '@/share'
 import {message,Icon,Select,Checkbox,Radio} from 'antd';
 import ReactValidator from '@/share/validator/index.js';
 import Repeater from './repeater'
-import lock1 from './img/lock1.png'
-import lock2 from './img/lock2.png'
-import lock3 from './img/lock3.png'
-import lock4 from './img/lock4.png'
-import unlock1 from './img/unlock1.png'
-import unlock2 from './img/unlock2.png'
-import unlock3 from './img/unlock3.png'
-import unlock4 from './img/unlock4.png'
-
 
 const { Option } = Select;
 
@@ -294,14 +285,7 @@ export default class WANPrior extends Component {
                 onChildEvent={this.handleChildEvent}
                 ref='childData'
                 showRelaySSID={this.state.showRelaySSID}
-                lock1={lock1} 
-                lock2={lock2} 
-                lock3={lock3} 
-                lock4={lock4} 
-                unlock1={unlock1} 
-                unlock2={unlock2} 
-                unlock3={unlock3} 
-                unlock4={unlock4} />
+              />
             </>}
 					{(wan_type==='rep4g'||wan_type==='mobile')&&<>
             {wan_type==='rep4g'&&<>
