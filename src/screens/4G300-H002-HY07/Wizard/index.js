@@ -60,6 +60,7 @@ export default class Quick extends React.Component{
           apn_pwd: res.huayi_r.apn_pwd,
           use_apn: res.huayi_r.use_apn,
           proto_4g: res.huayi_r.proto_4g,
+          detect_ip: res.huayi_r.detect_ip
         }
         this.setState({
           ssid_config: res.huayi_r.ssid_config,
@@ -315,6 +316,7 @@ class QuickNetSetting extends React.Component{
       }
       values = {
         wan_type: "rep4g",
+        detect_ip: wanmsg.detect_ip,
         ...this.state.mobileValue,
         ...this.state.selectList,
       }
@@ -338,11 +340,16 @@ class QuickNetSetting extends React.Component{
 				this.handleSetData()
       })
     }else{
-      if(this.childRef.handleRepConfig()){
-        this.setState({selectList:this.refs.childData.state.selectList})
-        this.mobileData().then(()=>{
-          this.handleSetData()
-        })
+      if( this.validator.someValid(['detect_ip']) ){        
+        if(this.childRef.handleRepConfig()){
+          this.setState({selectList:this.refs.childData.state.selectList})
+          this.mobileData().then(()=>{
+            this.handleSetData()
+          })
+        }
+      }else{
+        this.validator.showMessages();
+        this.forceUpdate();
       }
     }
   }
@@ -367,7 +374,7 @@ class QuickNetSetting extends React.Component{
   }
 
   render() {
-    const {speed, loading, wanmsg,wanmsg:{wan_type,auth_type,apn_name,
+    const {speed, loading, wanmsg,wanmsg:{detect_ip,wan_type,auth_type,apn_name,
       apn_usr,apn_pwd,use_apn}} = this.state
     return(
       <div>
@@ -380,7 +387,16 @@ class QuickNetSetting extends React.Component{
               <Option value={'rep'}>{window.__('Wireless WAN')}</Option>
               <Option value={'mobile'}>{window.__('4G')}</Option>
             </Select>
-          </FormGroup>         
+          </FormGroup> 
+          {wan_type==='rep4g'&&
+            <FormGroup lable={window.__('Detect External Network Address')}>
+                <input value={detect_ip||''} onChange={this.handleChange('detect_ip')}/>
+                <div className="tip-err">
+                {this.validator.message('detect_ip', detect_ip, 'required&&ip','',{
+                    default: window.__('IP Address Field Required!'),
+                    ip: window.__('IP Address Format Invalid!'),})}</div>  
+            </FormGroup>
+          }        
           <div style={{height:20}}></div>
 					{wan_type!=='mobile'&&<>
 						{wan_type==='rep4g'&&<div style={{fontSize:22}}>{window.__('Wired')}</div>}

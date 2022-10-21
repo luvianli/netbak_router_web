@@ -120,7 +120,8 @@ export default class WANPrior extends Component {
       this.setEthWanConfig(values)
     }else{
       values = {
-        wan_type: "rep4g",    
+        wan_type: "rep4g", 
+        detect_ip: this.state.result.detect_ip,
         ...this.state.mobileValue,
         ...this.state.selectList,
       }
@@ -239,11 +240,17 @@ export default class WANPrior extends Component {
 				this.handleSetData()
       })
     }else{ 
-      if(this.childRef.handleRepConfig()){
-        this.setState({selectList:this.refs.childData.state.selectList})
-        this.mobileData().then(()=>{
-          this.handleSetData()
-        })
+      if( this.validator.someValid(['detect_ip']) ){       
+        if(this.childRef.handleRepConfig()){
+          this.setState({selectList:this.refs.childData.state.selectList})
+          this.mobileData().then(()=>{
+            this.handleSetData()
+          })
+        } 
+      }else{
+        this.validator.showMessages();
+        this.forceUpdate();
+        return false
       }
     }
   }
@@ -261,7 +268,7 @@ export default class WANPrior extends Component {
   }
   render(){
     const {result:{wan_type,def_mac_addr,hostname,mac_addr,cc_mtu,auth_type,apn_name,
-      apn_usr,apn_pwd,use_apn}} = this.state;
+      apn_usr,apn_pwd,use_apn,detect_ip}} = this.state;
     return (
       <div ref='mainWizard'>
         <div style={{height:20}}></div>
@@ -278,6 +285,15 @@ export default class WANPrior extends Component {
               <Option value={'mobile'}>{window.__('4G')}</Option>
             </Select>
           </FormGroup>
+          {wan_type==='rep4g'&&
+            <FormGroup lable={window.__('Detect External Network Address')}>
+                <input value={detect_ip||''} onChange={this.handleChange('detect_ip')}/>
+                <div className="tip-err">
+                {this.validator.message('detect_ip', detect_ip, 'required&&ip','',{
+                    default: window.__('IP Address Field Required!'),
+                    ip: window.__('IP Address Format Invalid!'),})}</div>  
+            </FormGroup>
+          }
           <div style={{height:20}}></div>
 					{wan_type!=='mobile'&&<>
 						{wan_type==='rep4g'&&<div style={{fontSize:22}}>{window.__('Wireless WAN')}</div>}
