@@ -289,9 +289,12 @@ export default class WANPrior extends Component {
             <FormGroup lable={window.__('Detect External Network Address')}>
                 <input value={detect_ip||''} onChange={this.handleChange('detect_ip')}/>
                 <div className="tip-err">
-                {this.validator.message('detect_ip', detect_ip, 'required&&ip','',{
-                    default: window.__('IP Address Field Required!'),
-                    ip: window.__('IP Address Format Invalid!'),})}</div>  
+                  {this.validator.message('detect_ip', detect_ip, 'required&&url&&max:63&&houtais','',{
+                    default:window.__('IP Or Domain Field Required!'),
+                    houtais:window.__('Limited To English Letters And Characters, Numbers, And Chinese Characters,But Not Contain The Following: \" \' ` \\'),
+                    url: window.__('IP Or Domain Format Invalid,Valid Format Is xxx.yyy.zzz(such as baidu.com,www.baidu.com)!'),
+                    max: window.__('IP or Domain Name At Most 63 Characters!')
+                  })}</div>  
             </FormGroup>
           }
           <div style={{height:20}}></div>
