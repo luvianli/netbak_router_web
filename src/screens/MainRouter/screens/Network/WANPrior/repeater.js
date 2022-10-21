@@ -28,6 +28,11 @@ class BaseLan extends Component {
   componentWillUnmount(){
     clearInterval(this.intervalId);
   }
+  componentWillReceiveProps(nextProps){
+      this.setState({
+        showRelaySSID:nextProps.showRelaySSID,
+      })
+  }
   setWirelessScan=()=>{
     axios.post({
       data:{
@@ -250,7 +255,7 @@ class BaseLan extends Component {
       showRelaySSID:false
     })
   }
-  render() {    
+  render() {  
     const {scan_status,selectList:{ssid,signal,channel,auth_mode,encryption,key,rep_ssid_24g},} = this.state  
     this.columns =[
       {
@@ -410,7 +415,7 @@ class BaseLan extends Component {
                 <span><Icon type="check-circle"/>{window.__('Success! Please Reconnect To Network!')}</span>
                 <div><div className="textleft">{window.__("Wireless SSID After Relay:")}</div>{rep_ssid_24g}</div>
                 {auth_mode!=='NONE'&&<div><div className="textleft">{window.__("Wireless Passowrd After Relay:")}</div>{key}</div>}
-                <div className="visitPage">{window.__('After reconnecting to the network, launch the browser and enter')}<span className="setup_url">&nbsp;{this.props.domainName}&nbsp;</span>{window.__('in the address')}</div>
+                {/* <div className="visitPage">{window.__('After reconnecting to the network, launch the browser and enter')}<span className="setup_url">&nbsp;{this.props.domainName}&nbsp;</span>{window.__('in the address')}</div> */}
               </div>
             </Modal>
         <Progress 

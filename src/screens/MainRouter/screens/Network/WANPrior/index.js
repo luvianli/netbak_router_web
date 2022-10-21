@@ -27,7 +27,8 @@ export default class WANPrior extends Component {
 		loadingVisble: false,
     mobileChange: 0,
     mobileValue:{},
-    selectList:[]
+    selectList:[],
+    showRelaySSID: false
   }
   componentWillMount() {
     this.validator = new ReactValidator();
@@ -95,6 +96,7 @@ export default class WANPrior extends Component {
     this.getData();
     this.setState({
       showProgress:false,
+      showRelaySSID: true
     })
   }
   
@@ -291,6 +293,7 @@ export default class WANPrior extends Component {
               <Repeater opmode={3} {...this.props} selectTo={this.selectTo}
                 onChildEvent={this.handleChildEvent}
                 ref='childData'
+                showRelaySSID={this.state.showRelaySSID}
                 lock1={lock1} 
                 lock2={lock2} 
                 lock3={lock3} 

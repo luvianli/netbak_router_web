@@ -1,5 +1,5 @@
 import React from 'react';
-import {Header,FormGroup,Progress,FormPassword,FormRadioCheck} from '@/screens/components';
+import {Header,FormGroup,Progress,FormPassword,FormRadioCheck,Modal} from '@/screens/components';
 import {Card, Button, Icon, Divider,Select,Switch,message,Radio,Checkbox} from 'antd'
 import {axios,HYID ,posturl,handleRedir,deepCopy} from '@/share';
 import ReactValidator from '@/share/validator/index.js';
@@ -104,9 +104,10 @@ export default class Quick extends React.Component{
   handleRedirect=()=>{
     handleRedir(this.state.redir,this.state.redir_ip)      
     this.setState({
-      showProgress:false
+      showProgress:false,
+      showRelaySSID: true
     })
-    window.location.hash="#/Home";
+    // window.location.hash="#/Home";
   }
   setWanmsg=(wanmsg)=>{
     this.setState({wanmsg})
@@ -132,8 +133,15 @@ export default class Quick extends React.Component{
     this.setState({values})
   }
 
+  handleCloseModal=()=>{
+    this.setState({
+      showRelaySSID:false
+    })
+    window.location.hash="#/Home";
+  }
+
   render(){
-    const {step1} = this.state
+    const {step1,values} = this.state
     return (
       <div className="wizard">
         <div><Header 
@@ -166,6 +174,19 @@ export default class Quick extends React.Component{
                 />
               </div>
             }
+            <Modal
+              style={{width:650,height:260,marginTop:20}}
+              visible={this.state.showRelaySSID}
+              closeModel={this.handleCloseModal}
+              close={true}
+              >          
+              <div className="relaysucess">
+                <span><Icon type="check-circle"/>{window.__('Success! Please Reconnect To Network!')}</span>
+                <div><div className="textleft">{window.__("Wireless SSID After Relay:")}</div>{values.rep_ssid_24g}</div>
+                {values.auth_mode!=='NONE'&&<div><div className="textleft">{window.__("Wireless Passowrd After Relay:")}</div>{values.key}</div>}
+                {/* <div className="visitPage">{window.__('After reconnecting to the network, launch the browser and enter')}<span className="setup_url">&nbsp;{this.props.domainName}&nbsp;</span>{window.__('in the address')}</div> */}
+              </div>
+            </Modal>
             <Progress 
             showProgress={this.state.showProgress} 
             locktime={this.state.locktime}
