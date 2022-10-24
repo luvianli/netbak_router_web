@@ -1,5 +1,5 @@
 import React, {Component, useEffect,} from 'react';
-import {Header4G, Footer, HeaderMobile, Modal, NavMobile} from '@/screens/components';
+import {Header, Footer, HeaderMobile, Modal, NavMobile} from '@/screens/components';
 import logo_img from '@/logo.png';
 import NavLeft from '@/screens/components/NavLeft';
 import menu from './menuconfig';
@@ -76,7 +76,7 @@ class Frame extends Component {
     {
       this.state.clientWidth>768?
         <div className="pc-view">
-        <Header4G 
+        <Header 
           // logo={logo_img}
         />
 

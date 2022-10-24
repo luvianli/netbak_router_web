@@ -46,7 +46,7 @@ import  DHCPTest from '@/screens/MainRouter/screens/Advanced/Tool/DHCPTest';
 import  Devices from '@/screens/MainRouter/screens/Devices';
 
 import  QoS from '@/screens/MainRouter/screens/QoS';
-import  SMSConversation from '@/screens/4G300-H002-HY07/SMSConversation';
+// import  SMSConversation from '@/screens/4G300-H002-HY07/SMSConversation';
 // import  MobileNetwork from '@/screens/MainRouter/screens/Network/MobileNetwork';
 import  PINCode from '@/screens/MainRouter/screens/Advanced/System/PINCode';
 import  PINModify from '@/screens/MainRouter/screens/Advanced/System/PINModify';
@@ -66,7 +66,7 @@ export default class IRouter extends React.Component {
               <Switch>
                 <Route  path="/Home"  component={Home}/>
 
-                <Route  path="/SMS/Conversation"  component={SMSConversation}/>
+                {/* <Route  path="/SMS/Conversation"  component={SMSConversation}/> */}
                 <Route  path="/Advanced/System/PINCode"  component={PINCode}/>
                 <Route  path="/Advanced/System/PINModify"  component={PINModify}/>
 
