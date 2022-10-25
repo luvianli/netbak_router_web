@@ -62,7 +62,7 @@ class Home extends Component {
         let pic1_hash = '';
         let conect = 'fail';
         /**有线 */
-        if(result.wan_mode==="wired"||result.wan_mode==="prior"){          
+        if(result.wan_mode==="rep"||result.wan_mode==="rep4g"){          
           if(result.wan_up===1){
             /**网线已连接且能上网 */
             conect='ok';
