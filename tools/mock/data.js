@@ -307,7 +307,8 @@ module.exports = function (data) {
                         "rx_bps":	150,
                         "rx_bytes":	1236271,
                         "tx_bytes":	84964,
-                        "iccid": "8986112125403015233334445522371"
+                        "iccid": "8986112125403015233334445522371",
+                        "net_type": "Wired",//"Wired":有线，"4G","WISP"
                     },
                     "lan_infos":	{
                         "mac_addr":	"E4:63:01:18:84:74",

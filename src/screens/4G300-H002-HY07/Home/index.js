@@ -292,6 +292,7 @@ class Home extends Component {
                     {key:window.__('Downlink Speed'),value:totalTrafficbps(wan_infos.rx_bps)},
                     // {key:window.__('Tx Bytes'),value:totalTrafficByte(wan_infos.tx_bytes)},
                     // {key:window.__('Rx Bytes'),value:totalTrafficByte(wan_infos.rx_bytes)},
+                    {key:window.__('Internet Access Mode'),value:window.__(wan_infos.net_type)},
                 ]:
                 [
                   {key:window.__('ICCID'),value:wan_infos.iccid},
