@@ -120,6 +120,7 @@ export default class Axios{
 									const key = "0"//key是为了页面有多个请求时，只出现一个提示
 									message.error({content:window.__('Request Timeout!'),key});
 									setTimeout(() => {
+                                        localStorage.setItem("status", 4001);
 										window.location.hash="#/Login"
 									}, 3000);
 								}else {// 发送请求时出了点问题
