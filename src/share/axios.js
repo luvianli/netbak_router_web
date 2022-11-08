@@ -122,7 +122,7 @@ export default class Axios{
 									setTimeout(() => {
                                         localStorage.setItem("status", 4001);
 										window.location.hash="#/Login"
-									}, 3000);
+									}, 1000*10);
 								}else {// 发送请求时出了点问题
 									console.log('Error', error.message);
 									window.location.hash="#/Login"
