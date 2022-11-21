@@ -60,7 +60,8 @@ export default class Quick extends React.Component{
           apn_pwd: res.huayi_r.apn_pwd,
           use_apn: res.huayi_r.use_apn,
           proto_4g: res.huayi_r.proto_4g,
-          detect_ip: res.huayi_r.detect_ip
+          detect_ip: res.huayi_r.detect_ip,
+          detect_time: res.huayi_r.detect_time
         }
         this.setState({
           ssid_config: res.huayi_r.ssid_config,
@@ -311,12 +312,13 @@ class QuickNetSetting extends React.Component{
       this.props.setFirstData(values)
       this.props.setStep1False()
     }else{
-      if(this.state.wiredChange===1||this.state.mobileChange===1){
+      if(this.state.mobileChange===1){
         return;
       }
       values = {
         wan_type: "rep4g",
         detect_ip: wanmsg.detect_ip,
+        detect_time: wanmsg.detect_time,
         ...this.state.mobileValue,
         ...this.state.selectList,
       }
@@ -334,13 +336,15 @@ class QuickNetSetting extends React.Component{
     if(wanmsg.wan_type==="rep"){
       if(this.childRef.handleRepConfig()){
         this.setState({selectList:this.refs.childData.state.selectList},()=>{this.handleSetData()})       
+      }else{
+        this.selectTo()
       }
     }else if(wanmsg.wan_type==="mobile"){
       this.mobileData().then(()=>{
 				this.handleSetData()
       })
     }else{
-      if( this.validator.someValid(['detect_ip']) ){        
+      if( this.validator.someValid(['detect_ip','detect_time']) ){        
         if(this.childRef.handleRepConfig()){
           this.setState({selectList:this.refs.childData.state.selectList})
           this.mobileData().then(()=>{
@@ -350,6 +354,7 @@ class QuickNetSetting extends React.Component{
       }else{
         this.validator.showMessages();
         this.forceUpdate();
+        this.selectTo()
       }
     }
   }
@@ -375,7 +380,7 @@ class QuickNetSetting extends React.Component{
 
   render() {
     const {speed, loading, wanmsg,wanmsg:{detect_ip,wan_type,auth_type,apn_name,
-      apn_usr,apn_pwd,use_apn}} = this.state
+      apn_usr,apn_pwd,use_apn,detect_time}} = this.state
     return(
       <div>
         {/* <Divider><h3>{window.__("Network Quick Setting")}</h3></Divider> */}
@@ -389,16 +394,27 @@ class QuickNetSetting extends React.Component{
             </Select>
           </FormGroup> 
           {wan_type==='rep4g'&&
-            <FormGroup lable={window.__('Detect External Network Address')}>
-                <input value={detect_ip||''} onChange={this.handleChange('detect_ip')}/>
+            <>
+              <FormGroup lable={window.__('Detect External Network Address')}>
+                  <input value={detect_ip||''} onChange={this.handleChange('detect_ip')}/>
+                  <div className="tip-err">
+                    {this.validator.message('detect_ip', detect_ip, 'required&&url&&max:63&&houtais','',{
+                      default:window.__('IP Or Domain Field Required!'),
+                      houtais:window.__('Limited To English Letters And Characters, Numbers, And Chinese Characters,But Not Contain The Following: \" \' ` \\'),
+                      url: window.__('IP Or Domain Format Invalid,Valid Format Is xxx.yyy.zzz(such as baidu.com,www.baidu.com)!'),
+                      max: window.__('IP or Domain Name At Most 63 Characters!')
+                    })}</div>  
+              </FormGroup>
+              <FormGroup lable={window.__('Wireless Delay Detection(ms)')}>
+                <input value={detect_time||''} onChange={this.handleChange('detect_time')}/>
+                <div className='tip' >{window.__('Note: After The Wireless Delay Exceeds This Value For Five Consecutive Times, The Network Switches To 4G!')}</div>
                 <div className="tip-err">
-                  {this.validator.message('detect_ip', detect_ip, 'required&&url&&max:63&&houtais','',{
-                    default:window.__('IP Or Domain Field Required!'),
-                    houtais:window.__('Limited To English Letters And Characters, Numbers, And Chinese Characters,But Not Contain The Following: \" \' ` \\'),
-                    url: window.__('IP Or Domain Format Invalid,Valid Format Is xxx.yyy.zzz(such as baidu.com,www.baidu.com)!'),
-                    max: window.__('IP or Domain Name At Most 63 Characters!')
-                  })}</div>  
-            </FormGroup>
+                  {this.validator.message('detect_time', detect_time, 'required&&range:150-1000','',{
+                    default: window.__('Wireless Delay Detection Time Field Required!'),
+                    range: window.__('Wireless Delay Detection Time Range Is 150-1000(Default 300)!'),
+                })}</div>
+              </FormGroup>
+            </>
           }        
           <div style={{height:20}}></div>
 					{wan_type!=='mobile'&&<>

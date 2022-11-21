@@ -122,6 +122,7 @@ export default class WANPrior extends Component {
       values = {
         wan_mode: "rep4g", 
         detect_ip: this.state.result.detect_ip,
+        detect_time: this.state.result.detect_time,
         ...this.state.mobileValue,
         ...this.state.selectList,
       }
@@ -234,13 +235,15 @@ export default class WANPrior extends Component {
     if(result.wan_mode==="rep"){      
       if(this.childRef.handleRepConfig()){
         this.setState({selectList:this.refs.childData.state.selectList},()=>{this.handleSetData()})       
+      }else{
+        this.selectTo()
       }
     }else if(result.wan_mode==="mobile"){
       this.mobileData().then(()=>{
 				this.handleSetData()
       })
     }else{ 
-      if( this.validator.someValid(['detect_ip']) ){       
+      if( this.validator.someValid(['detect_ip','detect_time']) ){       
         if(this.childRef.handleRepConfig()){
           this.setState({selectList:this.refs.childData.state.selectList})
           this.mobileData().then(()=>{
@@ -250,6 +253,7 @@ export default class WANPrior extends Component {
       }else{
         this.validator.showMessages();
         this.forceUpdate();
+        this.selectTo()
         return false
       }
     }
@@ -273,7 +277,7 @@ export default class WANPrior extends Component {
   }
   render(){
     const {result:{wan_mode,def_mac_addr,hostname,mac_addr,cc_mtu,auth_type,apn_name,
-      apn_usr,apn_pwd,use_apn,detect_ip},selectList} = this.state;
+      apn_usr,apn_pwd,use_apn,detect_ip,detect_time},selectList} = this.state;
     return (
       <div ref='mainWizard'>
         <div style={{height:20}}></div>
@@ -291,16 +295,27 @@ export default class WANPrior extends Component {
             </Select>
           </FormGroup>
           {wan_mode==='rep4g'&&
-            <FormGroup lable={window.__('Detect External Network Address')}>
-                <input value={detect_ip||''} onChange={this.handleChange('detect_ip')}/>
+            <>
+              <FormGroup lable={window.__('Detect External Network Address')}>
+                  <input value={detect_ip||''} onChange={this.handleChange('detect_ip')}/>
+                  <div className="tip-err">
+                    {this.validator.message('detect_ip', detect_ip, 'required&&url&&max:63&&houtais','',{
+                      default:window.__('IP Or Domain Field Required!'),
+                      houtais:window.__('Limited To English Letters And Characters, Numbers, And Chinese Characters,But Not Contain The Following: \" \' ` \\'),
+                      url: window.__('IP Or Domain Format Invalid,Valid Format Is xxx.yyy.zzz(such as baidu.com,www.baidu.com)!'),
+                      max: window.__('IP or Domain Name At Most 63 Characters!')
+                    })}</div>  
+              </FormGroup>
+              <FormGroup lable={window.__('Wireless Delay Detection(ms)')}>
+                <input value={detect_time||''} onChange={this.handleChange('detect_time')}/>
+                <div className='tip' >{window.__('Note: After The Wireless Delay Exceeds This Value For Five Consecutive Times, The Network Switches To 4G!')}</div>
                 <div className="tip-err">
-                  {this.validator.message('detect_ip', detect_ip, 'required&&url&&max:63&&houtais','',{
-                    default:window.__('IP Or Domain Field Required!'),
-                    houtais:window.__('Limited To English Letters And Characters, Numbers, And Chinese Characters,But Not Contain The Following: \" \' ` \\'),
-                    url: window.__('IP Or Domain Format Invalid,Valid Format Is xxx.yyy.zzz(such as baidu.com,www.baidu.com)!'),
-                    max: window.__('IP or Domain Name At Most 63 Characters!')
-                  })}</div>  
-            </FormGroup>
+                  {this.validator.message('detect_time', detect_time, 'required&&range:150-1000','',{
+                    default: window.__('Wireless Delay Detection Time Field Required!'),
+                    range: window.__('Wireless Delay Detection Time Range Is 150-1000(Default 300)!'),
+                })}</div>
+              </FormGroup>
+            </>
           }
           <div style={{height:20}}></div>
 					{wan_mode!=='mobile'&&<>

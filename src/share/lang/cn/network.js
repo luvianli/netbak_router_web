@@ -68,4 +68,8 @@ export const network ={
     'Wireless WAN+4G': "无线WAN+4G",
     'Wireless WAN': "无线WAN",
     'Please select a wireless WAN!':'请选择无线WAN!',
+    'Wireless Delay Detection(ms)':'无线延迟检测(毫秒)',
+    'Wireless Delay Detection Time Field Required!': '无线延迟检测时间不能为空!',
+    'Wireless Delay Detection Time Range Is 150-1000(Default 300)!':'无线延迟检测时间只能为150-1000(默认为300)!',
+    'Note: After The Wireless Delay Exceeds This Value For Five Consecutive Times, The Network Switches To 4G!': '注意：无线延迟连续5次超过该值后，网络切换为4G!'
 }

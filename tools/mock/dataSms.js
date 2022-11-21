@@ -75,6 +75,7 @@ module.exports = function (data) {
                     "apn_pwd":    " ",
                     "use_apn":    1,
                     "detect_ip":'192.168.90.13',
+                    "detect_time":300,
                   },
                 "huayierrtype":    "success",
                 "errcode":    2000,

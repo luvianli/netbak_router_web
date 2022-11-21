@@ -114,7 +114,8 @@ module.exports = function (data) {
                     "apn_pwd":    " ",
                     "use_apn":    0,
                     "proto_4g":    "dhcp",
-                    "detect_ip": "192.168.88.1"
+                    "detect_ip": "192.168.88.1",
+                    "detect_time": 300
                 },
                 "huayierrtype":	"success",
                 "errcode":	2000,
