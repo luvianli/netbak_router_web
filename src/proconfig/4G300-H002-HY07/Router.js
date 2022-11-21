@@ -48,8 +48,8 @@ import  Devices from '@/screens/MainRouter/screens/Devices';
 import  QoS from '@/screens/MainRouter/screens/QoS';
 // import  SMSConversation from '@/screens/4G300-H002-HY07/SMSConversation';
 // import  MobileNetwork from '@/screens/MainRouter/screens/Network/MobileNetwork';
-import  PINCode from '@/screens/MainRouter/screens/Advanced/System/PINCode';
-import  PINModify from '@/screens/MainRouter/screens/Advanced/System/PINModify';
+// import  PINCode from '@/screens/MainRouter/screens/Advanced/System/PINCode';
+// import  PINModify from '@/screens/MainRouter/screens/Advanced/System/PINModify';
 import  Home from '@/screens/4G300-H002-HY07/Home';
 
 import  WANPrior from '@/screens/MainRouter/screens/Network/WANPrior';
@@ -67,8 +67,8 @@ export default class IRouter extends React.Component {
                 <Route  path="/Home"  component={Home}/>
 
                 {/* <Route  path="/SMS/Conversation"  component={SMSConversation}/> */}
-                <Route  path="/Advanced/System/PINCode"  component={PINCode}/>
-                <Route  path="/Advanced/System/PINModify"  component={PINModify}/>
+                {/* <Route  path="/Advanced/System/PINCode"  component={PINCode}/>
+                <Route  path="/Advanced/System/PINModify"  component={PINModify}/> */}
 
                 {/* <Route  path="/Network/Ethernet/APN"  component={MobileNetwork}/> */}
                 

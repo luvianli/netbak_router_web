@@ -310,16 +310,16 @@ export default class Menu{
                         key: '/Advanced/System/Modify',
                         type:'',
                     },
-                    {
-                        title:  ('SIM Card Lock'),
-                        key: '/Advanced/System/PINCode',
-                        type:'',
-                    },
-                    {
-                        title:  ('Modify PIN Code'),
-                        key: '/Advanced/System/PINModify',
-                        type:'',
-                    },
+                    // {
+                    //     title:  ('SIM Card Lock'),
+                    //     key: '/Advanced/System/PINCode',
+                    //     type:'',
+                    // },
+                    // {
+                    //     title:  ('Modify PIN Code'),
+                    //     key: '/Advanced/System/PINModify',
+                    //     type:'',
+                    // },
                 ]
             },
             {
