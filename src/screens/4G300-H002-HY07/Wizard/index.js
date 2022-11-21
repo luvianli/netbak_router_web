@@ -402,7 +402,7 @@ class QuickNetSetting extends React.Component{
           }        
           <div style={{height:20}}></div>
 					{wan_type!=='mobile'&&<>
-						{wan_type==='rep4g'&&<div style={{fontSize:22}}>{window.__('Wired')}</div>}
+						{wan_type==='rep4g'&&<div style={{fontSize:22}}>{window.__('Wireless WAN')}</div>}
             <Repeater opmode={3} {...this.props} selectTo={this.selectTo}
                 onChildEvent={this.handleChildEvent}
                 ref='childData'
