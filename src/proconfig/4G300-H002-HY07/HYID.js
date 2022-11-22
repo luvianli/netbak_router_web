@@ -57,6 +57,9 @@ export const sms_HYID = {
 
     /**获取4G信号值  */
     cgi_get_4g_signal :16,
+
+    /**测试数据结构  */
+    cgi_get_no_data: 17,
 }
 
 export const HYID = {

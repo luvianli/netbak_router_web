@@ -439,6 +439,13 @@ module.exports = function (data) {
                 "errcode":    2000,
                 "progresstime":    0
             }
+        case 17:
+            return{
+                "huayi_r": {},
+                "huayierrtype":    "success",
+                "errcode":    2000,
+                "progresstime":    0
+            }
         case 4001:
             return {
                 "huayierrtype":	"permission deny",
