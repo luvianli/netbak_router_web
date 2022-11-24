@@ -9,8 +9,10 @@ export const signal={
     'The detection takes about 10s, please be patient':'检测大约需要10s，请耐心等待',
     'Cancel Detection':'取消检测',
     'Test Results':"检测结果",
+    'Singal Test Results':"信号检测结果",
     'points':"分",
     'Adjustable mobile routing position to detect SIM signal quality in different areas':'可调整移动路由位置，检测不同区域SIM信号质量',
     '4G Signal':'4G 信号',
-    'Ready to test...':'准备检测...'
+    'Ready to test...':'准备检测...',
+    '4G Signal Quality':'4G 信号检测'
   }

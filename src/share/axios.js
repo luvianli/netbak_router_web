@@ -30,7 +30,7 @@ export default class Axios{
                 baseApi,
                 url:options.url,
                 method:'post',
-                timeout:4000,// 如果请求时间超过 `timeout` 的值，则请求会被中断
+                timeout:20000,// 如果请求时间超过 `timeout` 的值，则请求会被中断
                 data: options.data
             }).then((response)=>{
                 if(response.status === 200){
@@ -118,11 +118,13 @@ export default class Axios{
 									console.log(error.response.headers);
 								}else if (error.request) { // 请求已经成功发起，但没有收到响应
 									const key = "0"//key是为了页面有多个请求时，只出现一个提示
-									message.error({content:window.__('Request Timeout!'),key});
-									setTimeout(() => {
+									setTimeout(() => {                                        
+									    message.error({content:window.__('Request Timeout!'),key});
+									}, 1000*20);
+                                    setTimeout(() => {
                                         localStorage.setItem("status", 4001);
 										window.location.hash="#/Login"
-									}, 1000*10);
+									}, 1000*22);
 								}else {// 发送请求时出了点问题
 									console.log('Error', error.message);
 									window.location.hash="#/Login"

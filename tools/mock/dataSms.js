@@ -37,7 +37,8 @@ module.exports = function (data) {
                     "rx_bytes":    8503,
                     "tx_bytes":    37162,
                     "wifi_2g":1,
-                    "wifi_5g":1
+                    "wifi_5g":1,
+                    "signal_4g":"90"
                 },
                 "huayierrtype":    "success",
                 "errcode":    2000,
@@ -68,7 +69,7 @@ module.exports = function (data) {
         case 1://cgi_get_wan_or_wan4g_config
             return{
                 "huayi_r": {
-                    "wan_mode":"rep",  //wired表示有线，mobile表示4G，prior表示有线优先，rep4g表示无线WAN+4G, rep表示无线WAN
+                    "wan_mode":"mobile",  //wired表示有线，mobile表示4G，prior表示有线优先，rep4g表示无线WAN+4G, rep表示无线WAN
                     "auth_type":    "0",
                     "apn_name":    "3gnet",
                     "apn_usr":    " ",

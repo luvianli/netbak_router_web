@@ -230,12 +230,12 @@ class Home extends Component {
     this.setState({radio_id:radio_id});
     this.child.handleScanList(radio_id);
   }
-  handleToabc=()=>{
-    window.location.hash="#/abc";
-  }
+  // handleToabc=()=>{
+  //   window.location.hash="#/abc";
+  // }
     
   render(){
-    const {result:{wan_mode,mobile_type,wifi_2g/*,wifi_5g*/,client_sum,tx_bps,rx_bps,rx_bytes,tx_bytes,wan_uptime},
+    const {result:{wan_mode,mobile_type,wifi_2g/*,wifi_5g*/,client_sum,tx_bps,rx_bps,rx_bytes,tx_bytes,wan_uptime,signal_4g},
       pic1_word,conect,pic1_classname,pic1_hash,system_info,wireless_arr,wan_infos} = this.state;
     return (
       <div className='home'>
@@ -280,16 +280,14 @@ class Home extends Component {
           </div>
           <div className='part part6'>
             <span className="iconfont signal">&#xe62d;</span>
-            <div>{window.__('Test the current signal quality and find the best placement point.')}</div>
-            <Button type="primary" 
-            onClick={this.handleToabc}>{window.__("Test Signal Quality")}</Button>
+            <div style={{fontSize:14}}>{window.__('4G Signal Quality')}</div>
+            <div className='test' style={{fontSize:14,marginTop:15}}>{window.__('current')} <span style={{fontSize:34,fontWeight: 'bold'}}>{signal_4g}</span> {window.__('points')}</div>
           </div>
         </div>
         <div className='mobile_part6'>
           <span className="iconfont signal">&#xe62d;</span>
-          <div>{window.__('Test the current signal quality and find the best placement point.')}</div>
-          <Button type="primary" 
-          onClick={this.handleToabc}>{window.__("Test Signal Quality")}</Button>
+          <div style={{fontSize:14}}>{window.__('4G Signal Quality')}</div>
+            <div className='test' style={{fontSize:14,marginTop:15}}>{window.__('current')} <span style={{fontSize:34,fontWeight: 'bold'}}>{signal_4g}</span> {window.__('points')}</div>
         </div>
 
         <div className='home-footer'>
