@@ -25,7 +25,7 @@ class Home extends Component {
     this.getSystemData()
     this.getNetworkData()
     this.getWANData()
-    this.getNoData()
+    // this.getNoData()
 
     this.interval=setInterval(()=>{
       if(this.props.canFresh){
@@ -46,18 +46,18 @@ class Home extends Component {
       loadingVisble:enabled
     })
   }
-  getNoData= () => {
-    axios.post({
-      data:{
-        HYID:sms_HYID.cgi_get_no_data
-      },
-      url:smsurl
-    }).then((res)=>{
-      if(res.errcode===2000){
-        console.log("test")
-      }
-    })
-  }
+  // getNoData= () => {
+  //   axios.post({
+  //     data:{
+  //       HYID:sms_HYID.cgi_get_no_data
+  //     },
+  //     url:smsurl
+  //   }).then((res)=>{
+  //     if(res.errcode===2000){
+  //       console.log("test")
+  //     }
+  //   })
+  // }
   getData = () => {
     axios.post({
       data:{
