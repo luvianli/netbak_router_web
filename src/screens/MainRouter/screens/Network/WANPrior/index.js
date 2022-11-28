@@ -43,7 +43,7 @@ export default class WANPrior extends Component {
       if(res.errcode===2000){
         let result =deepCopy(res.huayi_r)
         result.mac_addr = res.huayi_r.mac_addr.toUpperCase()
-        // result.def_mac_addr = res.huayi_r.def_mac_addr.toUpperCase()
+        result.def_mac_addr = res.huayi_r.def_mac_addr.toUpperCase()
         this.setState({  
           result:result,
           result_src:result
@@ -266,7 +266,7 @@ export default class WANPrior extends Component {
     if(event.target.checked===true){
       result.mac_addr=this.state.usr_mac.toUpperCase();
     }else{
-      result.mac_addr = result.def_mac_addr.toUpperCase();
+      result.mac_addr = result.def_mac_addr;
     }
     this.setState({ result })
   }
