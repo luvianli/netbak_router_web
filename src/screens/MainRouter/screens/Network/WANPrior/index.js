@@ -265,10 +265,9 @@ export default class WANPrior extends Component {
     let {result} = this.state;
     if(event.target.checked===true){
       result.mac_addr=this.state.usr_mac.toUpperCase();
+    }else{
+      result.mac_addr = result.def_mac_addr.toUpperCase();
     }
-    // else{
-    //   result.mac_addr = result.def_mac_addr;
-    // }
     this.setState({ result })
   }
   handleChildEvent = (ref) =>{
