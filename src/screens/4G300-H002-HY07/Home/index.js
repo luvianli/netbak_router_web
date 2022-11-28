@@ -34,7 +34,7 @@ class Home extends Component {
         this.getNetworkData()
         this.getWANData()
       }
-    },5000)
+    },8000)
   }
   componentWillUnmount(){
     this.props.setIsHome(false)
