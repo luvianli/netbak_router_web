@@ -42,7 +42,8 @@ export default class WANPrior extends Component {
     }).then((res)=>{
       if(res.errcode===2000){
         let result =deepCopy(res.huayi_r)
-        result.mac_addr = res.huayi_r.mac_addr.toUpperCase()
+        // result.mac_addr = res.huayi_r.def_mac_addr.toUpperCase()
+        result.mac_addr = res.huayi_r.def_mac_addr.toUpperCase()
         result.def_mac_addr = res.huayi_r.def_mac_addr.toUpperCase()
         this.setState({  
           result:result,
@@ -372,12 +373,11 @@ export default class WANPrior extends Component {
                       mac: window.__('Valid Format Is XX:XX:XX:XX:XX:XX!')
                       })}</div>  
                 </FormGroup>
-
-                <FormRadioCheck>
+                {mac_addr&&usr_mac&&<FormRadioCheck>
                   <Checkbox checked={mac_addr.toUpperCase()===usr_mac.toUpperCase()} onChange={this.changeCloneMac}>
                     {window.__('Clone MAC Address')}
                   </Checkbox>
-                </FormRadioCheck>
+                </FormRadioCheck>}
               </>}
 						</>:<>	
 									<FormGroup lable={window.__('APN Name')}>
