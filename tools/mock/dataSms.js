@@ -77,6 +77,8 @@ module.exports = function (data) {
                     "use_apn":    1,
                     "detect_ip":'192.168.90.13',
                     "detect_time":300,
+                    "def_mac_addr":'00:19:be:20:03:5b',
+                    "mac_addr":'00:19:be:20:03:5B',
                   },
                 "huayierrtype":    "success",
                 "errcode":    2000,

@@ -41,9 +41,12 @@ export default class WANPrior extends Component {
       url:smsurl
     }).then((res)=>{
       if(res.errcode===2000){
+        let result =deepCopy(res.huayi_r)
+        result.mac_addr = res.huayi_r.mac_addr.toUpperCase()
+        // result.def_mac_addr = res.huayi_r.def_mac_addr.toUpperCase()
         this.setState({  
-          result:deepCopy(res.huayi_r),
-          result_src:deepCopy(res.huayi_r)
+          result:result,
+          result_src:result
         })
       }
     })
@@ -262,9 +265,10 @@ export default class WANPrior extends Component {
     let {result} = this.state;
     if(event.target.checked===true){
       result.mac_addr=this.state.usr_mac.toUpperCase();
-    }else{
-      result.mac_addr = result.def_mac_addr;
     }
+    // else{
+    //   result.mac_addr = result.def_mac_addr;
+    // }
     this.setState({ result })
   }
   handleChildEvent = (ref) =>{
@@ -277,7 +281,7 @@ export default class WANPrior extends Component {
   }
   render(){
     const {result:{wan_mode,def_mac_addr,hostname,mac_addr,cc_mtu,auth_type,apn_name,
-      apn_usr,apn_pwd,use_apn,detect_ip,detect_time},selectList} = this.state;
+      apn_usr,apn_pwd,use_apn,detect_ip,detect_time},selectList,usr_mac} = this.state;
     return (
       <div ref='mainWizard'>
         <div style={{height:20}}></div>
@@ -371,7 +375,7 @@ export default class WANPrior extends Component {
                 </FormGroup>
 
                 <FormRadioCheck>
-                  <Checkbox checked={mac_addr!==def_mac_addr} onChange={this.changeCloneMac}>
+                  <Checkbox checked={mac_addr.toUpperCase()===usr_mac.toUpperCase()} onChange={this.changeCloneMac}>
                     {window.__('Clone MAC Address')}
                   </Checkbox>
                 </FormRadioCheck>

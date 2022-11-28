@@ -237,20 +237,15 @@ module.exports = function (data) {
         case 22:
             return {
                 "huayi_r":	{
-                    "ip_port_filter":	true,
-                    "ipportfilter_arr":	[{
-                            "src_addr":	"192.168.7.3",
-                            "proto":	0,
-                            "start_port":	1,
-                            "end_port":	555,
-                            "com":	"123123"
-                        }, {
-                            "src_addr":	"192.168.7.7",
-                            "proto":	1,
-                            "start_port":	13,
-                            "end_port":	5555,
-                            "com":	"444"
-                        }]
+                    "pro_model": "zn183",
+                    "release_time": "2019-11-25 19:33:05",
+                    "fw_version": "A2_FC_V0.9",
+                    "module_version": "RXLG1H.00.10.201908300238",
+                    "cloudup_sta": 0,
+                    "cloudup_fw": "A2_FC_V01",
+                    "cloudup_module": "RXLG1H.00.10.201908300238",
+                    "maxsize": "8000000",
+                    "maxsize_tip": "8M"
                 },
                 "huayierrtype":	"success",
                 "errcode":	2000,
