@@ -295,7 +295,7 @@ class Home extends Component {
           
             <div className="card-2pic">
               <h2>{window.__('WAN Information')}</h2>
-              <DLlist data={wan_infos.link===1?[
+              <DLlist data={/*wan_infos.link===1?*/[
                     {key:window.__('ICCID'),value:wan_infos.iccid},
                     {key:window.__('IP Address'),value:wan_infos.ip_addr},
                     {key:window.__('Subnet Mask'),value:wan_infos.subnet_mask},
@@ -304,11 +304,13 @@ class Home extends Component {
                     // {key:window.__('Tx Bytes'),value:totalTrafficByte(wan_infos.tx_bytes)},
                     // {key:window.__('Rx Bytes'),value:totalTrafficByte(wan_infos.rx_bytes)},
                     {key:window.__('Internet Access Mode'),value:window.__(wan_infos.net_type)},
-                ]:
-                [
-                  {key:window.__('ICCID'),value:wan_infos.iccid},
-                  {key:window.__('Connection Status'),value:window.__('Disconnected')},
-                ]} />
+                ]
+                // :
+                // [
+                //   {key:window.__('ICCID'),value:wan_infos.iccid},
+                //   {key:window.__('Connection Status'),value:window.__('Disconnected')},
+                // ]
+                } />
             </div>
 
             <div className="card-2pic">
