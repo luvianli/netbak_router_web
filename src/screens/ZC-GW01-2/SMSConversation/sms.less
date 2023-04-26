@@ -1,0 +1,322 @@
+@import '../../../theme.less';
+.sms-sigal{    
+    ::-webkit-scrollbar{
+        width: 5px;
+        height: 8px;
+        background-color: #f5f5f5;
+    }
+    ::-webkit-scrollbar-track{
+        -webkit-box-shadow: inset 0 0 1Px rgba(0,0,0,.3);
+        border-radius: 10px;
+        background-color: #f5f5f5;
+    }
+    ::-webkit-scrollbar-thumb{
+        height: 10px;
+        border-radius: 38px;
+        -webkit-box-shadow: inset 0 0 1Px rgba(0,0,0,.3);
+        background-color: #ccc;
+    }
+    
+    .head{
+        background: #fff;
+        height: 64px;
+        width: 680px;
+        margin: auto;
+        border: 1Px solid #ccc;
+        border-bottom: 0;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        input{            
+            font-size: 14px;
+            padding: 0 15px;
+            border: 1Px;
+            border-radius: 25px;
+            width: 552px;
+            height: 35px;
+            background: #f3f3f3;
+            background-color: #f3f3f3;
+            margin: 0 10px;
+            &:hover,&:focus{
+                border: 1Px solid @mainthem-bg;
+                border-radius: 25px;
+                width: 552px;
+                background: #f3f3f3;
+                background-color: #f3f3f3;
+                outline:none;
+                margin: 0 10px;
+            };
+            &:disabled{
+                border: 1Px solid #f3f3f3 ;
+            }
+        }
+        i{            
+            font-size: 24px;
+            line-height: 64px;
+            padding: 0 10px;
+            color: @mainthem-bg;
+            cursor: pointer;
+        }
+    }
+    .content{        
+        margin: auto;
+        width: 680px;
+        height: 410px;
+        border: 1Px solid #ccc;
+        overflow-y: scroll;    
+        .sms-date{
+            margin:10px 0;
+            font-size: 14px;
+            text-align: center;
+        }  
+        .sms-send>span ,.sms-receive>span{
+                max-width: 480px;
+                min-width: 60px;
+                min-height: 50px;
+                padding: 15px;
+                font-size: 14px;
+                margin: 5px 23px;
+                border-radius: 25px;
+                word-wrap:break-word; 
+                word-break:break-all;
+                display:inline-block;
+                text-align: left;
+                cursor: pointer;
+        }
+        .sms-receive>span{
+            color: #000;
+            background: #efefef;
+            background-color: #efefef;
+        }
+        .sms-send>span{
+            color: #fff;
+            background: @mainthem-bg;
+            background-color: @mainthem-bg;        
+        }
+        .sms-receive{
+            text-align: left;
+            label{
+                margin-left: 5px;
+            }
+        }
+        .sms-send{
+            text-align: right;
+            label{
+                margin-right: 5px;
+            }
+        }
+    }
+    .foot{
+        background: #fff;
+        height: 185px;
+        width: 680px;
+        margin: auto;
+        padding: 10px 15px;
+        font-size: 14px;
+        color: #000;
+        border: 1Px solid #ccc;
+        border-top: 0;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+        .foot-head{
+            i{            
+                float: right;
+                font-size: 24px;
+                padding-right: 10px;
+                color: @mainthem-bg;
+            }
+            background-color: #fff;    
+        }
+        .foot-content{ 
+            textarea{overflow:hidden; resize:none;
+                font-size: 14px;
+                padding: 15px;
+                border: 1Px;
+                border-radius: 25px;
+                width: 640px;
+                height: 112px;
+                background: #f3f3f3;
+                background-color: #f3f3f3;
+                margin-top: 15px;
+                &:hover,&:focus{
+                    border: 1Px solid @mainthem-bg;
+                    border-radius: 25px;
+                    width: 640px;
+                    background: #f3f3f3;
+                    background-color: #f3f3f3;
+                    outline:none;
+                }
+            }
+            .commont{
+                &:hover,&:focus{
+                    border: 1Px solid @mainthem-bg ;
+                }
+            }
+            .super{
+                &:hover,&:focus{
+                    border: 1Px solid red ;
+                }
+            }
+        }
+    }
+}
+
+.sms{    
+    ::-webkit-scrollbar{
+        width: 5px;
+        height: 8px;
+        background-color: #f5f5f5;
+    }
+    ::-webkit-scrollbar-track{
+        -webkit-box-shadow: inset 0 0 1Px rgba(0,0,0,.3);
+        border-radius: 10px;
+        background-color: #f5f5f5;
+    }
+    ::-webkit-scrollbar-thumb{
+        height: 10px;
+        border-radius: 38px;
+        -webkit-box-shadow: inset 0 0 1Px rgba(0,0,0,.3);
+        background-color: #ccc;
+    }
+    
+    .head{
+        background: #fff;
+        height: 64px;
+        width: 680px;
+        margin: auto;
+        border: 1Px solid #ccc;
+        border-bottom: 0;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        i{            
+            float: right;
+            font-size: 24px;
+            line-height: 64px;
+            padding-right: 10px;
+            color: @mainthem-bg;
+            cursor: pointer;
+        }
+    }
+    .content{        
+        margin: auto;
+        width: 680px;
+        height: 410px;
+        border: 1Px solid #ccc;
+        overflow-y: scroll;
+        thead tr,thead td{
+            font-size: 14px;
+            color: #000;
+            background: #f3f3f3;
+        }
+        tbody tr{        
+            font-size: 14px;
+            color: #000;
+            cursor: pointer;
+            border-bottom: 1Px solid #ccc;
+        }
+        td{
+            height: 35px;
+            width:200px;
+            padding: 5px 0px;
+            font-size: 12px;
+            white-space: nowrap;
+        }
+        .text-over{    
+            white-space: normal;
+            font-size: 14px;
+            min-height: 35px;
+            width:328px;
+            word-wrap:break-word; 
+            word-break:break-all;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+    }
+    .foot{
+        background: #fff;
+        height: 52px;
+        width: 680px;
+        margin: auto;
+        border: 1Px solid #ccc;
+        border-top: 0;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+    }
+}
+.show{
+    display: block;
+}
+.showbox{
+    display: inline-block;
+    margin-right: -18px;
+    margin-left: -18px;
+}
+.hide{
+    display: none;
+}
+.red{
+    border: 1Px solid red!important;
+}
+.blue{
+    border: 1Px solid @mainthem-bg !important;
+}
+.unread{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin-left: -5px;
+}
+.read{
+    display: inline-block;
+    margin-left: 25px;
+}
+.disabled{
+    color:#ccc!important;
+}
+@media screen and (max-width: 768px) {
+    .sms{
+        .head{
+            width: 100%;
+        }
+        .content{
+            width: 100%;
+            .text-over{
+                width: 88px;
+            }
+        }
+        .foot{
+            width: 100%;
+        }
+    } 
+    .sms-sigal{
+        .head{
+            width: 100%;
+            input{
+                width: 75%;
+                &:hover,&:focus{
+                    width: 75%;
+                }
+            }
+        }
+        .content{
+            width: 100%;
+            .sms-send>span ,.sms-receive>span{
+                max-width:80%;
+            }
+        }
+        .foot{
+            width: 100%;
+            .foot-content{
+                textarea{
+                    width: 100%;
+                    &:hover,&:focus{                        
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+    }
+}
