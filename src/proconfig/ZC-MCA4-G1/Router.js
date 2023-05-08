@@ -27,7 +27,7 @@ import  LAN from '@/screens/MainRouter/screens/Network/LAN';
 // import  WAN from '@/screens/MainRouter/screens/Network/WAN';
 import  DHCP from '@/screens/MainRouter/screens/Network/DHCP';
 import  EthStatus from '@/screens/MainRouter/screens/Network/EthStatus';
-import  LanStatus from '@/screens/MainRouter/screens/Network/LanStatus';
+import  LanStatus from '@/screens/ZC-MCA4-G1/LanStatus';
 
 import  DeviceInformation from '@/screens/MainRouter/screens/Advanced/System/DeviceInformation';
 import  Upgrade from '@/screens/MainRouter/screens/Advanced/System/Upgrade';
