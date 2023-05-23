@@ -71,5 +71,12 @@ export const network ={
     'Wireless Delay Detection(ms)':'无线延迟检测(毫秒)',
     'Wireless Delay Detection Time Field Required!': '无线延迟检测时间不能为空!',
     'Wireless Delay Detection Time Range Is 150-1000(Default 300)!':'无线延迟检测时间只能为150-1000(默认为300)!',
-    'Note: After The Wireless Delay Exceeds This Value For Five Consecutive Times, The Network Switches To 4G!': '注意：无线延迟连续5次超过该值后，网络切换为4G!'
+    'Note: After The Wireless Delay Exceeds This Value For Five Consecutive Times, The Network Switches To 4G!': '注意：无线延迟连续5次超过该值后，网络切换为4G!',
+    'Currently Used Card':'当前使用卡',
+    'CMCC': '移动',
+    'UNICOM':'联通',
+    'CT':'电信',
+    'External card':'插拔卡',
+    'Internal card':'内置卡',
+    'Note: It takes a certain time for the device to switch to the network. If the blue light is always on, the network can be used normally!':'注意：设备网络切换需要一定时间，指示灯蓝灯常亮表示网络正常可以使用！',
 }

@@ -450,6 +450,36 @@ module.exports = function (data) {
                 "errcode":    2000,
                 "progresstime":    0
             }
+        case 18:
+            return{
+                "huayi_r": {
+                    "card":3,//   1表示卡槽1；2：表示卡槽2；3: 表示卡槽3；4：表示卡槽4。 从小到大顺序，最后一个卡槽一定是拔插卡
+                    "operator":2, //   1表示电信；2表示联通；3表示移动
+                    "card_info":[
+                        {
+                            "card":1,
+                            "operator":1,
+                            "iccid":"89861122219044576047"    //表此卡可以切，值为空时代表卡不可切,切卡按钮至灰
+                        },{
+                            "card":2,
+                            "operator":3,
+                            "iccid":""    //表此卡可以切，值为空时代表卡不可切,切卡按钮至灰
+                        },{
+                            "card":3,
+                            "operator":2,
+                            "iccid":"89861122219044576047"    //表此卡可以切，值为空时代表卡不可切,切卡按钮至灰
+                        },
+                        {
+                            "card":4,
+                            "operator":2,
+                            "iccid":"89861122219044576047"    //表此卡可以切，值为空时代表卡不可切,切卡按钮至灰
+                        }
+                    ]
+                },
+                "huayierrtype":    "success",
+                "errcode":    2000,
+                "progresstime":    0
+            }
         case 4001:
             return {
                 "huayierrtype":	"permission deny",

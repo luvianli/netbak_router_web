@@ -48,5 +48,6 @@ export const menu ={
     'Wireless Schedule':'无线定时',
     'Wireless': '无线',
     'WAN Prior Setting':'网络策略设置',
-    'User List':'用户列表'
+    'User List':'用户列表',
+    'Operator Switching':'运营商切换',
 }
