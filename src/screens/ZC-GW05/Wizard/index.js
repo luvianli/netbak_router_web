@@ -536,12 +536,16 @@ class ACQuickSetting extends React.Component{
 
   handleFinish=()=>{
     let ssid_config = this.state.ssid_config
-    let validarr = ['ssid_2g'];
+    let validarr = ['ssid_2g','ssid_5g'];
     if(ssid_config.encry_2g !="0"){
       validarr.push('key_2g')
     }
+    if(ssid_config.encry_5g !="0"){
+      validarr.push('key_5g')
+    }
     if(this.validator.someValid(validarr)){
       ssid_config.passphrase_2g = ssid_config.encry_2g=="0"?"":ssid_config.passphrase_2g
+      ssid_config.passphrase_5g = ssid_config.encry_5g=="0"?"":ssid_config.passphrase_5g
       this.props.handleFinish(ssid_config)
     }else {
       this.validator.showMessages();
@@ -575,7 +579,7 @@ class ACQuickSetting extends React.Component{
         {/* <Divider><h3>{window.__("WLAN Quick Setting")}</h3></Divider> */}
         <div className="wrapper">
 
-        <FormGroup lable={window.__('SSID')}>
+        <FormGroup lable={window.__('2.4G SSID')}>
             <input value={ssid_config.ssid_2g||''} onChange={this.handleChange('ssid_2g')}/>
             <div className="tip-err">
             {this.validator.message('ssid_2g', ssid_config.ssid_2g, 'required&&max:32&&ssid&&houtais','',{
@@ -610,6 +614,42 @@ class ACQuickSetting extends React.Component{
             })}</div>  
             </>
         }
+        <FormGroup lable={window.__('5.8G SSID')}>
+            <input value={ssid_config.ssid_5g||''} onChange={this.handleChange('ssid_5g')}/>
+            <div className="tip-err">
+            {this.validator.message('ssid_5g', ssid_config.ssid_5g, 'required&&max:32&&ssid&&houtais','',{
+                default: window.__('SSID Field Required!'),                 
+                houtais:  window.__('Limited To English Letters And Characters, Numbers, And Chinese Characters,But Not Contain The Following: \" \' ` \\'),
+                max: window.__('SSID At Most 32 Characters!'),
+                ssid: window.__('Chinese Characters, Numbers, Letters, Underscores, Bars, Spaces Are Vaild!')
+            })}</div>  
+        </FormGroup>
+
+        <FormGroup  lable={window.__('Encryption')}>      
+          <Select onChange={this.handleEncry2g("encry_5g")} value={ssid_config.encry_5g}>
+            <Option value ={0}>{window.__('None')}</Option>
+            <Option value ={1} >{window.__('Encrypted')}</Option>
+          </Select>
+        </FormGroup>
+
+        {
+         ssid_config.encry_5g===0?null:
+          <>
+            <FormPassword lable={window.__('Password')}   
+              value ={ssid_config.passphrase_5g||""}
+              onChange={this.handleChange('passphrase_5g')}>
+            </FormPassword>                       
+            <div className="tip-err">
+            {this.validator.message('key_5g', ssid_config.passphrase_5g, 'required&&min:8&&max:63&&password&&houtais','',{
+                default: window.__('Password Field Required!'),             
+                houtais:  window.__('Limited To English Letters And Characters, Numbers, And Chinese Characters,But Not Contain The Following: \" \' ` \\'),
+                min: window.__('Password At Least 8 Characters!'),
+                max: window.__('Password At Most 63 Characters!'),
+                password: window.__('Only Supports ASCII Code!')
+            })}</div>  
+            </>
+        }
+        
         </div>
 
         <div style={{textAlign:"center"}}>
