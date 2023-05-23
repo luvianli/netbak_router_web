@@ -11,6 +11,7 @@ const paths = {
 const theme={
   '4G300-H002-HY07':'#268082',
   'ZC-GW06':'#268082',
+  'ZC-GW05':'#268082',
   'DEFAULT':'#268082',
 }
 gulp.paths = paths;
