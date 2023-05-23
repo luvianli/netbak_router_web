@@ -4,14 +4,14 @@ import {axios,HYID ,posturl,deepCopy,handleRedir} from '@/share';
 import './index.less'
 import { Input,Button,Spin,Icon } from 'antd';
 import ReactValidator from '@/share/validator/index.js';
-import lock1 from './img/lock1.png'
-import lock2 from './img/lock2.png'
-import lock3 from './img/lock3.png'
-import lock4 from './img/lock4.png'
-import unlock1 from './img/unlock1.png'
-import unlock2 from './img/unlock2.png'
-import unlock3 from './img/unlock3.png'
-import unlock4 from './img/unlock4.png'
+import lock1 from './../../../../img/lock1.png'
+import lock2 from './../../../../img/lock2.png'
+import lock3 from './../../../../img/lock3.png'
+import lock4 from './../../../../img/lock4.png'
+import unlock1 from './../../../../img/unlock1.png'
+import unlock2 from './../../../../img/unlock2.png'
+import unlock3 from './../../../../img/unlock3.png'
+import unlock4 from './../../../../img/unlock4.png'
 
 class BaseLan extends Component {
   

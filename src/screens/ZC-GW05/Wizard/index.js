@@ -5,7 +5,7 @@ import {axios,HYID ,posturl,handleRedir,deepCopy} from '@/share';
 import ReactValidator from '@/share/validator/index.js';
 import logo_img from '@/logo.png';
 import './index.less'
-import Repeater from './../repeater'
+import Repeater from './../WANPrior/repeater'
 
 const {Option} = Select;
 export default class Quick extends React.Component{
