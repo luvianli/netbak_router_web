@@ -248,9 +248,9 @@ class Home extends Component {
             <div className='desc desc3'>{window.__('Router')}</div>
           </div>
           <div className='part part4'>
-            <div className='desc desc4'  onClick={()=>this.changeHash('WiFi/2G/Base')}>
-                <div><img src={wifi_2g===1?wifi_ok:wifi_fail}></img>2.4GHz</div>
-                <div><img src={wifi_5g===1?wifi_ok:wifi_fail}></img>5.8GHz</div>
+            <div className='desc desc4'>
+                <div onClick={()=>this.changeHash('WiFi/2G/Base')} className="cursor"><img src={wifi_2g===1?wifi_ok:wifi_fail}></img>2.4GHz</div>
+                <div onClick={()=>this.changeHash('WiFi/5G/Base')} className="cursor"><img src={wifi_5g===1?wifi_ok:wifi_fail}></img>5.8GHz</div>
               </div>
               <div onClick={()=>this.changeHash('Network/LAN/LAN')} className={wifi_2g===0?'home_connect_fail':'home_connect_ok line1'}></div>
             </div>
