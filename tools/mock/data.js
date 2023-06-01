@@ -84,7 +84,7 @@ module.exports = function (data) {
          case 9://get_quick_setting_config
             return {
                 "huayi_r":	{
-                    "wan_type":	"rep4g",
+                    "wan_type":	"rep",//rep4g,rep,mobile
                     "ssid_config":	{
                         "ssid_2g":	"HUAYI-2.4G",
                         "encry_2g":	0,
@@ -112,7 +112,7 @@ module.exports = function (data) {
                     "apn_name":    "3gnet",
                     "apn_usr":    " ",
                     "apn_pwd":    " ",
-                    "use_apn":    0,
+                    "use_apn":    1,
                     "proto_4g":    "dhcp",
                     "detect_ip": "192.168.88.1",
                     "detect_time": 300

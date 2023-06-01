@@ -234,6 +234,21 @@ class QuickNetSetting extends React.Component{
   handleSelect= name => value =>{   
     let wanmsg = deepCopy(this.state.wanmsg)
     wanmsg[name] = value;
+    if(name==="wan_type"&&value==="rep4g"){//无线wan+4g模式下，重新获取detect_ip和detect_time，因为其他模式下这两个初始值为空
+        axios.post({
+          url: posturl,
+          data: {
+            HYID: HYID.get_quick_setting_config
+          }
+        }).then((res)=>{
+          if(res.errcode === 2000){
+              wanmsg = {...wanmsg,
+              detect_ip: res.huayi_r.detect_ip,
+              detect_time: res.huayi_r.detect_time,
+            }
+          }
+        })
+    }
     this.setState({ wanmsg });
     this.props.setWanmsg(wanmsg)
     this.validator.hideMessages();
