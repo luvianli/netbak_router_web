@@ -455,6 +455,7 @@ module.exports = function (data) {
                 "huayi_r": {
                     "card":3,//   1表示卡槽1；2：表示卡槽2；3: 表示卡槽3；4：表示卡槽4。 从小到大顺序，最后一个卡槽一定是拔插卡
                     "operator":2, //   1表示电信；2表示联通；3表示移动
+                    "lock": false,
                     "card_info":[
                         {
                             "card":1,
@@ -469,11 +470,11 @@ module.exports = function (data) {
                             "operator":2,
                             "iccid":"89861122219044576047"    //表此卡可以切，值为空时代表卡不可切,切卡按钮至灰
                         },
-                        {
-                            "card":4,
-                            "operator":2,
-                            "iccid":"89861122219044576047"    //表此卡可以切，值为空时代表卡不可切,切卡按钮至灰
-                        }
+                        // {
+                        //     "card":4,
+                        //     "operator":2,
+                        //     "iccid":"89861122219044576047"    //表此卡可以切，值为空时代表卡不可切,切卡按钮至灰
+                        // }
                     ]
                 },
                 "huayierrtype":    "success",

@@ -28,6 +28,7 @@ import  LAN from '@/screens/MainRouter/screens/Network/LAN';
 import  DHCP from '@/screens/MainRouter/screens/Network/DHCP';
 import  EthStatus from '@/screens/MainRouter/screens/Network/EthStatus';
 import  LanStatus from '@/screens/MainRouter/screens/Network/LanStatus';
+import  Operator from '@/screens/4G300-H002-HY07/Operator';
 
 import  DeviceInformation from '@/screens/MainRouter/screens/Advanced/System/DeviceInformation';
 import  Upgrade from '@/screens/MainRouter/screens/Advanced/System/Upgrade';
@@ -78,6 +79,7 @@ export default class IRouter extends React.Component {
                 <Route  path="/Network/Ethernet/Status"  component={EthStatus}/>
                 <Route  path="/Network/Ethernet/WANPrior"  component={WANPrior}/>
                 <Route  path="/Network/LAN/LanStatus"  component={LanStatus}/>
+                <Route  path="/Network/Operator"  component={Operator}/>
                 
                 <Route  path="/WiFi/2G/Base"  component={WifiBase2g}/>
                 <Route  path="/WiFi/2G/Advanced"  component={WifiAdvanced2g}/>

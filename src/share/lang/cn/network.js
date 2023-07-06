@@ -78,5 +78,6 @@ export const network ={
     'CT':'电信',
     'External card':'插拔卡',
     'Internal card':'内置卡',
-    'Note: It takes a certain time for the device to switch to the network. If the blue light is always on, the network can be used normally!':'注意：设备网络切换需要一定时间，指示灯蓝灯常亮表示网络正常可以使用！',
+    'Note: It takes a certain time for the device to switch to the network. If the blue light is always on, the network can be used normally!':'注意：设备网络切换需要一定时间，指示灯蓝灯常亮表示网络正常可以使用！',   
+    'Lock Current Operator': '锁定当前运营商',
 }
