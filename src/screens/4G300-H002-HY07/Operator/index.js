@@ -129,7 +129,7 @@ export default class LAN extends Component {
   };
   changeLock=(event)=>{
     let {result} = this.state;
-    result.lock = event.target.checked
+    result.lock = event.target.checked? 1:0
     this.setState({ result })
   }
 
@@ -158,7 +158,7 @@ export default class LAN extends Component {
 							</Radio.Group>
 						</FormGroup>
             <FormRadioCheck>
-              <Checkbox checked={lock} onChange={this.changeLock}>
+              <Checkbox checked={lock===1?true:0} onChange={this.changeLock}>
                 {window.__('Lock Current Operator')}
               </Checkbox>
             </FormRadioCheck>					
