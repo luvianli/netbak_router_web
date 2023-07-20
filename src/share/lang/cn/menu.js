@@ -50,4 +50,5 @@ export const menu ={
     'WAN Prior Setting':'网络策略设置',
     'User List':'用户列表',
     'Operator Switching':'运营商切换',
+    'Maintenance':"设置维护",
 }

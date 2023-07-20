@@ -2122,7 +2122,16 @@ module.exports = function (data) {
                 "huayierrtype":    "success",
                 "errcode":    2000,
                 "progresstime":    0
-            }    
+            } 
+        case 189:
+            return{
+                "huayi_r":    {
+                    "hbp":    1,
+                },
+                "huayierrtype":    "success",
+                "errcode":    2000,
+                "progresstime":    0
+            }       
         default:            
             return{
                 "reconnection":	true,

@@ -348,6 +348,11 @@ export default class Menu{
                         key: '/Advanced/Tool/DHCPTest',
                         type:'',
                     },
+                    {
+                        title:  ('Maintenance'),
+                        key: '/Advanced/Tool/Maintenance',
+                        type:'',
+                    },
                 ]
             },
         ]

@@ -43,6 +43,7 @@ import  TimeSettings from '@/screens/MainRouter/screens/Advanced/System/TimeSett
 import  PingTest from '@/screens/MainRouter/screens/Advanced/Tool/PingTest';
 import  TracertRoute from '@/screens/MainRouter/screens/Advanced/Tool/TracertRoute';
 import  DHCPTest from '@/screens/MainRouter/screens/Advanced/Tool/DHCPTest';
+import  Maintenance from '@/screens/MainRouter/screens/Advanced/Tool/Maintenance';
 
 import  Devices from '@/screens/MainRouter/screens/Devices';
 
@@ -115,6 +116,7 @@ export default class IRouter extends React.Component {
                 <Route  path="/Advanced/Tool/Ping"  component={PingTest}/>
                 <Route  path="/Advanced/Tool/Tracert"  component={TracertRoute}/>
                 <Route  path="/Advanced/Tool/DHCPTest"  component={DHCPTest}/>
+                <Route  path="/Advanced/Tool/Maintenance"  component={Maintenance}/>
                 
                 <Route  path="/Devices"  component={Devices}/>
                 <Route  path="/QoS/1"  component={QoS}/>
