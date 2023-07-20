@@ -75,9 +75,9 @@ export default class WIFIBase extends Component {
           <FormGroup lable={window.__('Number Of Heartbeat Packets')}>
             <input value={hbp||''} onChange={this.handleChange('hbp')}/> 
             <div className="tip-err">
-            {this.validator.message('hbp', hbp, 'required&&range:1-100','',{
+            {this.validator.message('hbp', hbp, 'required'/*&&range:1-100*/,'',{
               default: window.__('Ping Count Field Required!'),
-              range: window.__('Ping Count Range Is 1-100!'),
+              // range: window.__('Ping Count Range Is 1-100!'),
             })}</div>   
           </FormGroup>
           
