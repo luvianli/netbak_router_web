@@ -119,7 +119,7 @@ export default class LAN extends Component {
     };
 		return arr.map((item,index)=>{
 			return(
-				<Radio value={index} style={radioStyle} key={index} disabled={!item.iccid}>{window.__('Internal card')}-{this.changeOp(item.operator)}</Radio>
+				<Radio value={index} style={radioStyle} key={index} disabled={!item.iccid||this.state.result.lock===1}>{window.__('Internal card')}-{this.changeOp(item.operator)}</Radio>
 			)
 		})
 	}
