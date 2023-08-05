@@ -146,9 +146,7 @@ export default class LAN extends Component {
 					/>
 					<FormGroup lable={window.__('Currently Used Card')}>
             <label style={{fontSize:14}}>
-							{card===card_info.length?<span>{window.__('External card')}-{this.changeOp(operator)}</span>
-							:<span>{window.__('Internal card')}-{this.changeOp(operator)}</span>
-							}
+              <span>{window.__('Internal card')}-{this.changeOp(operator)}</span>
 						</label>
         	</FormGroup>
 					<div className='verticle-top'>
