@@ -291,10 +291,6 @@ export const HYID = {
     get_quick_prior_config:187,
     /**设置快速设置网络策略配置 */
     set_quick_prior_config: 188,
-     /**获取心跳包 */
-     get_hbp_config:189,
-     /**设置心跳包 */
-     set_hbp_config: 190,
 }
 
 export default {}
