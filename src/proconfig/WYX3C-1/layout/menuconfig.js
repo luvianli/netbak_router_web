@@ -65,11 +65,11 @@ export default class Menu{
                     },
                 ]
             },
-            {
-                title:  ('Operator Switching'),
-                key: '/Network/Operator',
-                type:'',
-            },
+            // {
+            //     title:  ('Operator Switching'),
+            //     key: '/Network/Operator',
+            //     type:'',
+            // },
         ]
     },
     {
