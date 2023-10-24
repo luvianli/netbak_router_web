@@ -14,7 +14,7 @@ class SwitchC extends Component {
         data:{
           HYID:191
         },
-        url:"cgi-bin/external_card_enable.cgi"
+        url:"cgi-bin/cgi_huayi.cgi"
       }).then((res)=>{
         if(res.errcode===2000){        
             this.setState({enable: res.huayi_r.enable})
@@ -28,7 +28,7 @@ class SwitchC extends Component {
           HYID:192,
           enable:checked?1:0
         },
-        url:"cgi-bin/external_card_enable.cgi"
+        url:"cgi-bin/cgi_huayi.cgi"
       }).then((res)=>{
         if(res.errcode===2000){        
             this.getData()
