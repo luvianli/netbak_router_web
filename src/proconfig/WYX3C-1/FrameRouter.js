@@ -3,7 +3,7 @@ import {HashRouter , Route , Switch , Redirect} from 'react-router-dom';
 
 import sLogin from './login'
 import NoLogin from '@/screens/common/noLogin'
-// import Signal from '@/screens/common/signal'
+import SwitchC from '@/screens/common/SwitchC'
 import Frame from './layout/Frame';
 import Wizard from '@/screens/4G300-H002-HY07/Wizard';
 import Routes from './Router'
@@ -39,7 +39,7 @@ window.__ =lang.__;
           }
           />
           <Route path="/no_login" component={NoLogin} />
-          {/* <Route path="/abc" component={Signal} /> */}
+          <Route path="/switch" component={SwitchC} />
 
           <Route exact path="/login" component={sLogin} />          
           <Route path="/" render={()=>              
