@@ -159,19 +159,19 @@ export default class Menu{
         key: '/Devices',
         type:'',
     },
-    {
-        title:  ('QoS Setting'),
-        icon:'&#xe61a;',
-        key: '/QoS',
-        type:'',
-        children: [
-            {
-                title:  ('QoS Setting'),
-                key: '/QoS/1',
-                type:'',
-            },
-        ]
-    },
+    // {
+    //     title:  ('QoS Setting'),
+    //     icon:'&#xe61a;',
+    //     key: '/QoS',
+    //     type:'',
+    //     children: [
+    //         {
+    //             title:  ('QoS Setting'),
+    //             key: '/QoS/1',
+    //             type:'',
+    //         },
+    //     ]
+    // },
     // {
     //     title:  ('SMS Conversation'),
     //     icon:'&#xe61a;',
