@@ -11,17 +11,17 @@ import  WifiACL2g from '@/screens/MainRouter/screens/WIFI/2G/ACL';
 //import  WifiACL5g from '@/screens/MainRouter/screens/WIFI/5G/ACL';
 
 import  WANping from '@/screens/MainRouter/screens/Advanced/Firewall/WANping';
-import  DMZ from '@/screens/MainRouter/screens/Advanced/Firewall/DMZ';
+// import  DMZ from '@/screens/MainRouter/screens/Advanced/Firewall/DMZ';
 import  URL from '@/screens/MainRouter/screens/Advanced/Firewall/URL';
 import  Remote from '@/screens/MainRouter/screens/Advanced/Firewall/Remote';
 //import  HardwareNAT from '@/screens/MainRouter/screens/Advanced/Firewall/HardwareNAT';
 import  IPFilter from '@/screens/MainRouter/screens/Advanced/Firewall/IPFilter';
 import  MACFilter from '@/screens/MainRouter/screens/Advanced/Firewall/MACFilter';
-import  PortForward from '@/screens/MainRouter/screens/Advanced/Firewall/PortForward';
+// import  PortForward from '@/screens/MainRouter/screens/Advanced/Firewall/PortForward';
 import  UPNP from '@/screens/MainRouter/screens/Advanced/Firewall/UPNP';
 
 import  StaticRoutes from '@/screens/MainRouter/screens/Advanced/Router/StaticRoutes';
-import  DDNS from '@/screens/MainRouter/screens/Advanced/Router/DDNS';
+// import  DDNS from '@/screens/MainRouter/screens/Advanced/Router/DDNS';
 
 import  LAN from '@/screens/MainRouter/screens/Network/LAN';
 // import  WAN from '@/screens/MainRouter/screens/Network/WAN';
@@ -93,12 +93,12 @@ export default class IRouter extends React.Component {
                 <Route  path="/Advanced/Security/MAC"  component={MACFilter}/>
                 <Route  path="/Advanced/Security/IP"  component={IPFilter}/>
                 <Route  path="/Advanced/Security/Special"  component={WANping}/>
-                <Route  path="/Advanced/Security/DMZ"  component={DMZ}/>
+                {/* <Route  path="/Advanced/Security/DMZ"  component={DMZ}/> */}
                 <Route  path="/Advanced/Security/UPnP"  component={UPNP}/>
-                <Route  path="/Advanced/Security/PortForward"  component={PortForward}/>
+                {/* <Route  path="/Advanced/Security/PortForward"  component={PortForward}/> */}
                 <Route  path="/Advanced/Security/Domain"  component={URL}/>
 
-                <Route  path="/Advanced/System/DDNS"  component={DDNS}/>
+                {/* <Route  path="/Advanced/System/DDNS"  component={DDNS}/> */}
                 <Route  path="/Advanced/Router/Static"  component={StaticRoutes}/>
 
                 <Route  path="/Advanced/System/Restart"  component={Restart}/>

@@ -238,16 +238,16 @@ export default class Menu{
                         key: '/Advanced/Security/IP',
                         type:'',
                     },
-                    {
-                        title:  ('DMZ Setting'),
-                        key: '/Advanced/Security/DMZ',
-                        type:'',
-                    },
-                    {
-                        title:  ('Port Mapping'),
-                        key: '/Advanced/Security/PortForward',
-                        type:'',
-                    },
+                    // {
+                    //     title:  ('DMZ Setting'),
+                    //     key: '/Advanced/Security/DMZ',
+                    //     type:'',
+                    // },
+                    // {
+                    //     title:  ('Port Mapping'),
+                    //     key: '/Advanced/Security/PortForward',
+                    //     type:'',
+                    // },
                     {
                         title:  ('UPNP Setting'),
                         key: '/Advanced/Security/UPnP',
@@ -295,11 +295,11 @@ export default class Menu{
                         key: '/Advanced/System/ScheReboot',
                         type:'',
                     },
-                    {
-                        title:  ('DDNS'),
-                        key: '/Advanced/System/DDNS',
-                        type:'',
-                    },
+                    // {
+                    //     title:  ('DDNS'),
+                    //     key: '/Advanced/System/DDNS',
+                    //     type:'',
+                    // },
                     {
                         title:  ('NTP Setting'),
                         key: '/Advanced/System/Time',
