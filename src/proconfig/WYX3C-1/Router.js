@@ -10,10 +10,10 @@ import  WifiACL2g from '@/screens/MainRouter/screens/WIFI/2G/ACL';
 //import  WifiAdvanced5g from '@/screens/MainRouter/screens/WIFI/5G/Advance';
 //import  WifiACL5g from '@/screens/MainRouter/screens/WIFI/5G/ACL';
 
-import  WANping from '@/screens/MainRouter/screens/Advanced/Firewall/WANping';
+// import  WANping from '@/screens/MainRouter/screens/Advanced/Firewall/WANping';
 // import  DMZ from '@/screens/MainRouter/screens/Advanced/Firewall/DMZ';
 import  URL from '@/screens/MainRouter/screens/Advanced/Firewall/URL';
-import  Remote from '@/screens/MainRouter/screens/Advanced/Firewall/Remote';
+// import  Remote from '@/screens/MainRouter/screens/Advanced/Firewall/Remote';
 //import  HardwareNAT from '@/screens/MainRouter/screens/Advanced/Firewall/HardwareNAT';
 import  IPFilter from '@/screens/MainRouter/screens/Advanced/Firewall/IPFilter';
 import  MACFilter from '@/screens/MainRouter/screens/Advanced/Firewall/MACFilter';
@@ -89,10 +89,10 @@ export default class IRouter extends React.Component {
                 <Route  path="/WiFi/5G/ACL"  component={WifiACL5g}/>
                  
                 <Route  path="/Advanced/Security/HardwareNAT"  component={HardwareNAT}/>*/}
-                <Route  path="/Advanced/Security/Remote"  component={Remote}/>
+                {/* <Route  path="/Advanced/Security/Remote"  component={Remote}/> */}
                 <Route  path="/Advanced/Security/MAC"  component={MACFilter}/>
                 <Route  path="/Advanced/Security/IP"  component={IPFilter}/>
-                <Route  path="/Advanced/Security/Special"  component={WANping}/>
+                {/* <Route  path="/Advanced/Security/Special"  component={WANping}/> */}
                 {/* <Route  path="/Advanced/Security/DMZ"  component={DMZ}/> */}
                 <Route  path="/Advanced/Security/UPnP"  component={UPNP}/>
                 {/* <Route  path="/Advanced/Security/PortForward"  component={PortForward}/> */}

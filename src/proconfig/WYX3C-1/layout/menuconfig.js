@@ -218,11 +218,11 @@ export default class Menu{
                         key: '/Advanced/Security/HardwareNAT',
                         type:'',
                     },*/
-                    {
-                        title:  ('Remote Management'),
-                        key: '/Advanced/Security/Remote',
-                        type:'',
-                    },
+                    // {
+                    //     title:  ('Remote Management'),
+                    //     key: '/Advanced/Security/Remote',
+                    //     type:'',
+                    // },
                     {
                         title:  ('MAC Filter'),
                         key: '/Advanced/Security/MAC',
@@ -253,11 +253,11 @@ export default class Menu{
                         key: '/Advanced/Security/UPnP',
                         type:'',
                     },
-                    {
-                        title:  ('Wan Ping Setting'),
-                        key: '/Advanced/Security/Special',
-                        type:'',
-                    },
+                    // {
+                    //     title:  ('Wan Ping Setting'),
+                    //     key: '/Advanced/Security/Special',
+                    //     type:'',
+                    // },
                 ]
             },
             {
