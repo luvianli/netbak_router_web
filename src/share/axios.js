@@ -1,27 +1,5 @@
 import axios from 'axios'
 import { message,Modal } from 'antd'
-//export const post_url = 'cgi-bin/cgi_huayi.cgi';
-
-// axios.defaults.retry = 4;
-// axios.defaults.retryDelay = 1000;
-
-// axios.interceptors.response.use(undefined,function axiosRetryInterceptor(err){
-//     var config = err.config;
-// 		if(!config || !config.retry) return Promise.reject(err);
-// 		config.___retryCount = config.__retryCount || 0;
-// 		if(config.__retryCount >= config.retry){
-// 			return Promise.reject(err);
-// 		}
-// 		config.__retryCount += 1;
-// 		var backoff = new Promise(function(resolve){
-// 			setTimeout(function(){
-// 				resolve();
-// 			},config.retryDelay || 1);
-// 		})
-// 		return backoff.then(function(){
-// 			return axios(config);
-// 		})
-// })
 export default class Axios{
     static post(options){
         let baseApi = '';

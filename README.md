@@ -21,5 +21,8 @@ ZC-GW01-2:
     快速设置：4G、无线WAN、无线WAN+4G
 
 WYX3C-1(抄ZC-GW01-2)：
-    关闭运营商切换功能、QOS
+    隐藏运营商切换、QOS、DDNS、端口映射、DMZ、远程管理、Wan Ping设置
+    新增页面switch
     快速设置：4G
+
+ZC-GW08-C1(抄ZC-MCA4-G1)
