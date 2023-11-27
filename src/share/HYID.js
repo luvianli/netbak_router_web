@@ -122,6 +122,10 @@ export const HYID = {
     uploade_5g_module_upgrade_file : 'cgi-bin/cgi_stream.cgi?streamid=5',//&keep_setting=1/0
     /*清除模块升级文件*/
     clean_module_upgrade_file : 'cgi-bin/cgi_stream.cgi?streamid=6',
+    /*上传自定义脚本*/
+    custom_script_upload : 'cgi-bin/cgi_stream.cgi?streamid=7',
+    /*执行自定义脚本*/
+    custom_script_execute : 'cgi-bin/cgi_stream.cgi?streamid=8',
     /**获取升级信息 */
     get_upgrade_info:22,
     /**获取当前用户信息 */

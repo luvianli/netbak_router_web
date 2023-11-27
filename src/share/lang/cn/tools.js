@@ -37,4 +37,6 @@ export const tools={
     'Serial':'序列号',
     'IP Or Domain Format Invalid,Valid Format Is xxx.yyy.zzz(such as baidu.com,www.baidu.com)!':'IP地址或域名格式不正确,正确格式为xxx.yyy.zzz(例如baidu.com,www.baidu.com)!',
     'Number Of Heartbeat Packets':'心跳包个数',
+    'Custom Script': '自定义脚本',
+    'Execute The Script':'执行脚本'
 }
