@@ -348,11 +348,11 @@ export default class Menu{
                         key: '/Advanced/Tool/DHCPTest',
                         type:'',
                     },
-                    {
-                        title:  ('Custom Script'),
-                        key: '/Advanced/Tool/Script',
-                        type:'',
-                    },
+                    // {
+                    //     title:  ('Custom Script'),
+                    //     key: '/Advanced/Tool/Script',
+                    //     type:'',
+                    // },
                 ]
             },
         ]
