@@ -133,7 +133,12 @@ export default class WANPrior extends Component {
     let mobileValue = {}
     let result = deepCopy(this.state.result);
     let result_src = deepCopy(this.state.result_src)
-    // console.log(result_src.mac_addr.toUpperCase())
+    let range = 0
+    if(result.band<9){
+      range = 10008
+    }else{
+      range = 34041
+    }
     if (result.use_apn === 0) {//自动
       if (this.validator.someValid(['mhostname', 'mcc_mtu', 'mmac_addr'])) {
         // console.log(result_src.use_apn,result.use_apn,
@@ -153,7 +158,8 @@ export default class WANPrior extends Component {
           hostname: result.hostname,
           cc_mtu: result.cc_mtu,
           mac_addr: result.mac_addr,
-          proto: "dhcp"
+          proto: "dhcp",
+          range
         }
       } else {
         mobileChange = 1;
@@ -178,7 +184,8 @@ export default class WANPrior extends Component {
           apn_usr: result.apn_usr,
           apn_pwd: result.apn_pwd,
           auth_type: result.auth_type,
-          proto: "dhcp"
+          proto: "dhcp",
+          range
         }
       } else {
         mobileChange = 1;
@@ -203,16 +210,9 @@ export default class WANPrior extends Component {
     this.setState({ result })
   }
   renderBand = () =>{
-    let band = []
-    for(var i=0;i<=80;i++){
-      band.push(i)
-    }
+    let band = [1,3,5,8,34,38,39,40,41]
     return band.map((i,index)=>{
-      if(i===0){
-        return <Option value={i} key={index}>{window.__('AUTO')}</Option>
-      }else{  
-        return <Option value={i} key={index}>{i}</Option>
-      }
+      return <Option value={i} key={index}>{i}</Option>
     })
   }
   render() {

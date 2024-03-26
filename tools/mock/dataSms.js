@@ -80,7 +80,7 @@ module.exports = function (data) {
                     "def_mac_addr":'00:19:be:20:03:5c',
                     "mac_addr":'00:19:be:20:03:5B',
                     'cc_mtu':1500,
-                    "band":0
+                    "band":1
                   },
                 "huayierrtype":    "success",
                 "errcode":    2000,
