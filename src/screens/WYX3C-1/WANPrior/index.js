@@ -141,7 +141,6 @@ export default class WANPrior extends Component {
     }
     if (result.use_apn === 0) {//自动
       if (this.validator.someValid(['mhostname', 'mcc_mtu', 'mmac_addr'])) {
-        // console.log(result_src.use_apn,result.use_apn,
         //   result_src.hostname,result.hostname,
         //   result_src.cc_mtu,result.cc_mtu,
         //   result_src.mac_addr.toUpperCase(),result.mac_addr.toUpperCase())
@@ -210,9 +209,13 @@ export default class WANPrior extends Component {
     this.setState({ result })
   }
   renderBand = () =>{
-    let band = [1,3,5,8,34,38,39,40,41]
+    let band = [0,1,3,5,8,34,38,39,40,41]
     return band.map((i,index)=>{
-      return <Option value={i} key={index}>{i}</Option>
+      if(i===0){
+        return <Option value={i} key={index}>{window.__('AUTO')}</Option>
+      }else{
+        return <Option value={i} key={index}>{i}</Option>
+      }
     })
   }
   render() {
