@@ -48,11 +48,11 @@ export default class Menu{
                 key: '/Network/LAN',
                 type:'',
                 children:[
-                    {
-                        title:  ('LAN Setting'),
-                        key: '/Network/LAN/LAN',
-                        type:'',
-                    },
+                    // {
+                    //     title:  ('LAN Setting'),
+                    //     key: '/Network/LAN/LAN',
+                    //     type:'',
+                    // },
                     {
                         title:  ('LAN Status'),
                         key: '/Network/LAN/LanStatus',

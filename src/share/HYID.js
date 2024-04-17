@@ -60,11 +60,6 @@ export const sms_HYID = {
 
     /**测试数据结构  */
     cgi_get_no_data: 17,
-    //注意18、19在newui_mtk3.6中对应17、18
-    /**获取卡槽运营商信息  */
-    get_card :18,
-    /**设置卡槽运营商信息  */
-    set_card :19,
 }
 
 export const HYID = {
@@ -122,10 +117,6 @@ export const HYID = {
     uploade_5g_module_upgrade_file : 'cgi-bin/cgi_stream.cgi?streamid=5',//&keep_setting=1/0
     /*清除模块升级文件*/
     clean_module_upgrade_file : 'cgi-bin/cgi_stream.cgi?streamid=6',
-    /*上传自定义脚本*/
-    custom_script_upload : 'cgi-bin/cgi_stream.cgi?streamid=7',
-    /*执行自定义脚本*/
-    custom_script_execute : 'cgi-bin/cgi_stream.cgi?streamid=8',
     /**获取升级信息 */
     get_upgrade_info:22,
     /**获取当前用户信息 */

@@ -23,7 +23,7 @@ import  UPNP from '@/screens/MainRouter/screens/Advanced/Firewall/UPNP';
 import  StaticRoutes from '@/screens/MainRouter/screens/Advanced/Router/StaticRoutes';
 import  DDNS from '@/screens/MainRouter/screens/Advanced/Router/DDNS';
 
-import  LAN from '@/screens/MainRouter/screens/Network/LAN';
+// import  LAN from '@/screens/MainRouter/screens/Network/LAN';
 // import  WAN from '@/screens/MainRouter/screens/Network/WAN';
 import  DHCP from '@/screens/MainRouter/screens/Network/DHCP';
 import  EthStatus from '@/screens/MainRouter/screens/Network/EthStatus';
@@ -72,7 +72,7 @@ export default class IRouter extends React.Component {
 
                 {/* <Route  path="/Network/Ethernet/APN"  component={MobileNetwork}/> */}
                 
-                <Route  path="/Network/LAN/LAN"  component={LAN}/>
+                {/* <Route  path="/Network/LAN/LAN"  component={LAN}/> */}
                 <Route  path="/Network/LAN/DHCP"  component={DHCP}/>
                 {/* <Route  path="/Network/Ethernet/Settings"  component={WAN}/> */}
                 <Route  path="/Network/Ethernet/Status"  component={EthStatus}/>
