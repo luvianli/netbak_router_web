@@ -52,7 +52,7 @@ import  QoS from '@/screens/MainRouter/screens/QoS';
 // import  PINModify from '@/screens/MainRouter/screens/Advanced/System/PINModify';
 import  Home from '@/screens/4G300-H002-HY07/Home';
 
-import  WANPrior from '@/screens/MainRouter/screens/Network/WANPrior';
+import  WANPrior from '@/screens/ZC-MCA4-G1/WANPrior';
 
 
 

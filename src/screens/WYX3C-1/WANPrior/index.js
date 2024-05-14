@@ -134,9 +134,9 @@ export default class WANPrior extends Component {
     let result = deepCopy(this.state.result);
     let result_src = deepCopy(this.state.result_src)
     let range = 0
-    if(result.band<9){
+    if (result.band < 9) {
       range = 10008
-    }else{
+    } else {
       range = 34041
     }
     if (result.use_apn === 0) {//自动
@@ -208,12 +208,12 @@ export default class WANPrior extends Component {
     }
     this.setState({ result })
   }
-  renderBand = () =>{
-    let band = [0,1,3,5,8,34,38,39,40,41]
-    return band.map((i,index)=>{
-      if(i===0){
+  renderBand = () => {
+    let band = [0, 1, 3, 5, 8, 34, 38, 39, 40, 41]
+    return band.map((i, index) => {
+      if (i === 0) {
         return <Option value={i} key={index}>{window.__('AUTO')}</Option>
-      }else{
+      } else {
         return <Option value={i} key={index}>{i}</Option>
       }
     })
