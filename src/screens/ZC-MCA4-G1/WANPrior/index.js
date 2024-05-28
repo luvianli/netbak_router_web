@@ -209,7 +209,7 @@ export default class WANPrior extends Component {
           helpmsg={window.__("The Access Point Name (APN) is the name for the settings your device reads to set up a connection to the gateway between your carrier's cellular network and the public Internet. Most of the time, your device already has these settings in the system files, and can fill in the APN information automatically when it connects. If the APN can't connect to the Internet automatically, you can change the APN manually.")}
         />
         <FormGroup lable={window.__('Internet Type')}>
-          <Select value={wan_mode || ''} onChange={this.handleSelect('wan_mode')} disabled={true}>
+          <Select value={'mobile'} onChange={this.handleSelect('wan_mode')} disabled={true}>
             <Option value={'mobile'}>{window.__('4G')}</Option>
           </Select>
         </FormGroup>
