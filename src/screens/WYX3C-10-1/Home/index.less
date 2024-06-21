@@ -1,0 +1,401 @@
+@import '../../../theme.less';
+
+.home{
+    text-align: center;
+    background: #fff;
+    .desc{
+        font-size: 14px;
+    }
+    .desc3{
+        color: #000;    
+    }
+    .text{
+        cursor: text;
+    }
+    .home-pic{
+        height: 220px;
+        text-align: center;
+        display: inline-flex;
+        display: -webkit-inline-box !important;/* Safari 居中*/
+        margin: 0 auto;
+        .part{
+            margin: 0 25px;
+        }
+        .part1{
+            margin-top: 60px;
+            width: 120px;
+            .desc1{
+                color: #000;
+                margin-top: 20px;
+            }
+        }
+        .part2{
+            width: 85px;
+            margin-top: 80px;
+            .desc{
+                height: 50px;
+            }
+        }
+        .line1{
+            width: 85px;
+            height: 2px;
+            background: #ccc;
+            // margin: 110px 10px 0 10px;
+        }
+        .home_connect_ok_text,.home_connect_ok{
+            background: @mainthem-bg;
+        }
+        .part3{
+            margin-top: 80px;
+            width: 95px;
+            .home_router{
+                width: 95px;
+                height: 100px;
+                cursor: pointer;            
+                background: url('./../../../img/router.png') no-repeat;
+                background-size: 100% auto;
+            }
+            .desc3{
+                margin-top: 5px;
+            }
+        }
+        .part4{
+            margin-top: 80px;
+            .desc{
+                height: 50px;
+            }
+        }
+        .part5{
+            margin-top: 50px;
+            position: relative;
+            width: 160px;
+            .line2{
+                width: 2px;
+                height: 120px;
+                background: #ccc;
+                float: left;
+            }
+            img{
+                width: 80px;
+                float: left;
+                margin-left: 30px;
+                cursor: pointer;
+            }
+            .mobile_pic{
+                width: 90px;
+                margin-bottom: 10px;
+            }
+            .clien-num{
+                clear: both;
+                color: #000;
+                width: 80px;
+                cursor: pointer;
+                position: absolute;
+                top: 70px;
+                left: 30px;
+                .number{
+                    font-size: 31px;
+                    color: @mainthem-bg;
+                }
+            }
+            .desc5{
+                clear: both;
+                color: #000;
+                padding-top: 5px;
+            }
+        }
+        .part6{
+            width: 160px;
+            border: 1px solid @mainthem-bg;
+            border-radius: 10px;
+            color: @mainthem-bg;
+            padding: 0 5px;
+            .signal{
+                font-size: 65px;
+            }
+            button{
+                background: @mainthem-bg;
+                color: #fff;
+                margin-top: 10px;
+            }
+        }
+    }
+    .mobile_part6{
+        display: none;
+    }
+    .home_pic_bg{              
+        width: 100px;
+        height: 104px;
+        cursor: pointer;
+        background-size: 100% auto;
+        background-position: center;
+    }
+    //.home_no_sim
+    .no_sim{
+        background-image: url(../../img/no_sim.png);
+        background-repeat: no-repeat;
+    }
+    .sig0{
+        background-image: url(../../img/sig0.png);
+        background-repeat: no-repeat;
+    }
+    .sig1{
+        background-image: url(../../img/sig1.png);
+        background-repeat: no-repeat;
+    }
+    .sig2{
+        background-image: url(../../img/sig2.png);
+        background-repeat: no-repeat;
+    }
+    .sig3{
+        background-image: url(../../img/sig3.png);
+        background-repeat: no-repeat;
+    }
+    .sig4{
+        background-image: url(../../img/sig4.png);
+        background-repeat: no-repeat;
+    }
+    .sig5{
+        background-image: url(../../img/sig5.png);
+        background-repeat: no-repeat;
+    }
+    .eth_ok{
+        background-image: url(../../img/eth_ok.png);
+        background-size: 104px auto;
+        background-repeat: no-repeat;
+    }
+    .eth_fail{
+        background-image: url(../../img/eth_fail.png);
+        background-size: 104px auto;
+        background-repeat: no-repeat;
+    }
+
+
+    .home-footer{        
+        width: 1074px;
+        border-top: 1Px solid @mainthem-bg;
+        // position: absolute;
+        bottom: 80px;
+        height: 164px;
+        text-align: left;
+        margin-top: 80px;
+        .card{
+            border-bottom: none;
+            -webkit-box-shadow: none;
+            .card-header{
+                display: none;
+            }
+            h2{
+                color: @mainthem-bg;
+                margin-top: 35px;
+            }
+            .card-2pic{
+                width:49% ;
+                float:left;
+                max-width: 310px;
+                margin-right: 1%;
+                .dllist{
+                    width: 100%;
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+}
+
+ @media screen and (min-width: 768.1px) and (max-width:1024px) {
+    .home{
+        width: calc(100vw - 20px);
+    }
+    .home{
+        .home-footer{    
+            width: calc(100vw - 20px);
+        }
+    }
+}
+
+@media screen and (max-height: 768px) {
+    .home{
+        .home-footer{    
+            width:100%;
+            position: static;
+            margin-top: 20px;
+            bottom: auto;
+        }
+    }
+}
+@media screen and (min-width: 768.1px) {
+    .home{
+        .home-pic{
+            // margin-top: 50px;
+            .part4{
+                // margin: 127px 10px 0 10px;
+            }
+        }
+        .home-footer{
+            .card{
+                min-width: 1100px;
+                .card-2pic{
+                    width:49% ;
+                    float:left;
+                    .dllist{
+                        margin-right: 0;
+                    }
+                    &:nth-child(1){
+                        // margin-left: 70px;
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 768px) {
+    .home{
+        .home-footer{    
+            width:100%;
+            background: none;
+            padding-left: 0;
+            padding-top: 0;
+            border-top: 1Px solid #ddd;
+            margin-top: 0px;
+            .card-2pic{
+                width:100% !important;
+                max-width: 100% !important;
+                // float:left;
+                clear: both;
+            }
+        }
+        .home-pic{
+            height: 250px;
+            text-align: center;
+            display: inline-flex;
+            display: -webkit-inline-box !important;/* Safari 居中*/
+            margin: 0 auto;
+            .part{
+                margin-left: 0;
+                margin-right: 11px;
+            }
+            .part1{
+                margin-top: 70px;
+                width: 80px;
+                .desc{
+                    margin-top: 17px;
+                }
+            }
+            .line1{
+                width: 100%;
+                height: 2px;
+                background: #ccc;
+            }
+            .home_connect_ok_text,.home_connect_ok{
+                background: @mainthem-bg;
+            }
+            .part2{
+                width: 90px;
+            }
+            .part3{
+                margin-top: 90px;
+                width: 75px;
+                .home_router{
+                    width: 100%;
+                    background: url('./../../../img/router.png') no-repeat;
+                    background-size: 100% auto;
+                }
+                .desc{
+                    margin-top: 0px;
+                }
+            }
+            .part4{
+                width: 90px;
+            }
+            .part5{
+                margin-top: 50px;
+                position: relative;
+                width: 140px;
+                .line2{
+                    width: 1px;
+                    height: 120px;
+                    background: #000;
+                    float: left;
+                }
+                img{
+                    width: 80px;
+                    float: left;
+                    margin-left: 30px;
+                }
+                .mobile_pic{
+                    width: 90px;
+                    margin-bottom: 10px;
+                }
+                .desc5{
+                    padding-top: 10px;
+                }
+            }
+            .part6{
+                display: none;
+            }
+        }
+        .mobile_part6{
+            display: block;
+            border: 1px solid @mainthem-bg;
+            border-radius: 10px;
+            color: @mainthem-bg;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+            .signal{
+                font-size: 65px;
+            }
+            button{
+                background: @mainthem-bg;
+                color: #fff;
+                margin-top: 10px;
+            }
+        }
+        .home_pic_bg{              
+            width: 80px;
+            height: 104px;
+            cursor: pointer;
+            background-size: 100% auto;
+            // background-position: center;
+        }
+        //.home_no_sim
+        .no_sim{
+            background-image: url(../../img/no_sim.png);
+            background-repeat: no-repeat;
+        }
+        .sig0{
+            background-image: url(../../img/sig0.png);
+            background-repeat: no-repeat;
+        }
+        .sig1{
+            background-image: url(../../img/sig1.png);
+            background-repeat: no-repeat;
+        }
+        .sig2{
+            background-image: url(../../img/sig2.png);
+            background-repeat: no-repeat;
+        }
+        .sig3{
+            background-image: url(../../img/sig3.png);
+            background-repeat: no-repeat;
+        }
+        .sig4{
+            background-image: url(../../img/sig4.png);
+            background-repeat: no-repeat;
+        }
+        .sig5{
+            background-image: url(../../img/sig5.png);
+            background-repeat: no-repeat;
+        }
+        .eth_ok{
+            background-image: url(../../img/eth_ok.png);
+            background-size: 80px auto;
+            background-repeat: no-repeat;
+        }
+        .eth_fail{
+            background-image: url(../../img/eth_fail.png);
+            background-size: 80px auto;
+            background-repeat: no-repeat;
+        }
+    }
+}
