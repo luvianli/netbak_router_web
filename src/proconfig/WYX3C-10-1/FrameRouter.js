@@ -5,7 +5,7 @@ import sLogin from './login'
 import NoLogin from '@/screens/common/noLogin'
 import SwitchC from '@/screens/common/SwitchC'
 import Frame from './layout/Frame';
-import Wizard from '@/screens/WYX3C-1/Wizard';
+import Wizard from '@/screens/WYX3C-10-1/Wizard';
 import Routes from './Router'
 import { connect } from 'react-redux';
 import {actionCreater } from '../store';
