@@ -278,7 +278,7 @@ export default class DHCP extends Component {
               })}</div>
           </FormGroup>
           <FormGroup lable={window.__('End IP')}>
-            <input value={end_ip || ''} onChange={this.handleChange('end_ip')} />
+            <input value={end_ip || ''} onChange={this.handleChange('end_ip')} readOnly='readonly' />
             <div className="tip-err">
               {this.validator.message('end_ip', end_ip, 'required&&ip', '', {
                 default: window.__('End IP Field Required!'),

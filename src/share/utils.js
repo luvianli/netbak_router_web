@@ -40,10 +40,10 @@ export function ipRangeisExist(list, startip, endip) {
     let intstartip = ipToNumber(startip)
     let intendip = ipToNumber(endip)
     //let flag = true;
-    if (intstartip > intendip) {
-        message.error(window.__("Start IP Cannot Be Greater Than End IP!"))
-        return false
-    }
+    // if (intstartip > intendip) {
+    //     message.error(window.__("Start IP Cannot Be Greater Than End IP!"))
+    //     return false
+    // }
     if (list === '' || list.length === 0) {
         return true
     } else {
@@ -121,28 +121,28 @@ export function ipToNumber(ip) {
     return num;
 }
 export function ipPoolRange(minip, maxip, startip, endip) {
-    if (!minip || !maxip || !startip || !endip) {
-        message.error('获取数据错误：minip/maxip不正确！')
-        return false
-    }
-    let intminip = ipToNumber(minip)
-    let intmaxip = ipToNumber(maxip)
-    let intstartip = ipToNumber(startip)
-    let intendip = ipToNumber(endip)
-    if (intstartip > intendip) {
-        message.error(window.__("Start IP Cannot Be Greater Than End IP!"))
-        return false
-    }
-    if (intminip <= intstartip &&
-        intstartip <= intendip &&
-        intendip <= intmaxip) {
-        return true
-    }
-    else {
-        message.error(window.__('IP Ranage Conflict!'))
-        //message.error(`IP范围只能为${minip}-${maxip}`)
-        return false
-    }
+    //     if (!minip || !maxip || !startip || !endip) {
+    //         message.error('获取数据错误：minip/maxip不正确！')
+    //         return false
+    //     }
+    //     let intminip = ipToNumber(minip)
+    //     let intmaxip = ipToNumber(maxip)
+    //     let intstartip = ipToNumber(startip)
+    //     let intendip = ipToNumber(endip)
+    //     // if (intstartip > intendip) {
+    //     //     message.error(window.__("Start IP Cannot Be Greater Than End IP!"))
+    //     //     return false
+    //     // }
+    //     if (intminip <= intstartip &&
+    //         intstartip <= intendip &&
+    //         intendip <= intmaxip) {
+    //         return true
+    //     }
+    //     else {
+    //         message.error(window.__('IP Ranage Conflict!'))
+    //         //message.error(`IP范围只能为${minip}-${maxip}`)
+    //         return false
+    //     }
 }
 export function bitToNetmask(bit) {
     let srcNum = 0xFFFFFFFF;//ipToNumber("255.255.255.255");

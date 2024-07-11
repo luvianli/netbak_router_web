@@ -46,7 +46,6 @@ function LoginApp(props) {
       hy_userpwd: md5(password),
       HYID: HYID.do_login_auth
     }, props.isFirst);
-    console.log(password)
   }
 
   const onInputKeyUp = function (events, password) {
