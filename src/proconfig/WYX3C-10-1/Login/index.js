@@ -3,19 +3,19 @@ import { connect } from 'react-redux';
 import { actionCreater } from '../../store';
 import useWinSize from '@/screens/common/useWinSize';
 import { HYID } from '@/share';
-import JsEncrypt from 'jsencrypt';
+//import JsEncrypt from 'jsencrypt';
 import { message } from 'antd';
 import md5 from "md5";
 
 import Login from './Login';
 
-const jse = new JsEncrypt();
-jse.setPublicKey(`-----BEGIN PUBLIC KEY-----
-MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDppUIZsbdDZlC61T4HiHhGvISt
-2UW8Sx2DE7v65X2RqEZa9Pybhj0XbjFcWz0DwTsaXtijKL8zTmeGw2VkWcNAEZra
-PWmm3LeaWO/F0gGJMMRT0MW1m0Wf04/vb0AcQEDCkNW0Ou7wBV57O0RK1LAEmZpf
-LUaG8bYgtcMzdcur+wIDAQAB
------END PUBLIC KEY-----`);
+//const jse = new JsEncrypt();
+// jse.setPublicKey(`-----BEGIN PUBLIC KEY-----
+// MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDppUIZsbdDZlC61T4HiHhGvISt
+// 2UW8Sx2DE7v65X2RqEZa9Pybhj0XbjFcWz0DwTsaXtijKL8zTmeGw2VkWcNAEZra
+// PWmm3LeaWO/F0gGJMMRT0MW1m0Wf04/vb0AcQEDCkNW0Ou7wBV57O0RK1LAEmZpf
+// LUaG8bYgtcMzdcur+wIDAQAB
+// -----END PUBLIC KEY-----`);
 /*加密
 let password1 = jse.encrypt('admin');
  *解密
@@ -43,11 +43,11 @@ function LoginApp(props) {
     props.setLogin({
       hy_username: 'admin',
       // hy_userpwd:jse.encrypt(password),
-      hy_userpwd: password,
+      hy_userpwd: md5(password),
       HYID: HYID.do_login_auth
     }, props.isFirst);
   }
-
+  console.log(hy_userpwd)
   const onInputKeyUp = function (events, password) {
     //解决火狐浏览器不支持event事件的问题
     let e = events || window.event,
