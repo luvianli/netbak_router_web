@@ -39,11 +39,11 @@ export function portRangeisExist(list, startport, endport) {
 export function ipRangeisExist(list, startip, endip) {
     let intstartip = ipToNumber(startip)
     let intendip = ipToNumber(endip)
-    //let flag = true;
-    // if (intstartip > intendip) {
-    //     message.error(window.__("Start IP Cannot Be Greater Than End IP!"))
-    //     return false
-    // }
+    let flag = true;
+    if (intstartip > intendip) {
+        message.error(window.__("Start IP Cannot Be Greater Than End IP!"))
+        return false
+    }
     if (list === '' || list.length === 0) {
         return true
     } else {

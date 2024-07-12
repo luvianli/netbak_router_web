@@ -61,6 +61,10 @@ export default class DHCP extends Component {
     let result = deepCopy(this.state.result);
     let value = event.target.value;
     result[name] = value;
+    if (name === "start_ip") {
+      result["end_ip"] = value
+    }
+
     this.setState({ result });
   };
   handleChangeModal = name => event => {
@@ -218,6 +222,7 @@ export default class DHCP extends Component {
       mac_addr: mac_addr
     })
   }
+
   render() {
 
     this.columns = [
@@ -257,6 +262,8 @@ export default class DHCP extends Component {
     ]
     const { result: { static_dhcp_arr, dhcp_enable, min_ip, max_ip, start_ip, end_ip, lease_time },
       ip_addr, mac_addr, name, leasetime_modal } = this.state;
+    console.log("start_ip", this.state.result.start_ip)
+    console.log("end_ip", this.state.result.end_ip)
     return (
       <div>
         <PageText
@@ -278,7 +285,7 @@ export default class DHCP extends Component {
               })}</div>
           </FormGroup>
           <FormGroup lable={window.__('End IP')}>
-            <input value={start_ip || ''} onChange={this.handleChange('end_ip')} disabled={true} />
+            <input value={start_ip || ''} disabled={true} />
             <div className="tip-err">
               {this.validator.message('end_ip', end_ip, 'required&&ip', '', {
                 default: window.__('End IP Field Required!'),
