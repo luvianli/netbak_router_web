@@ -129,10 +129,10 @@ export function ipPoolRange(minip, maxip, startip, endip) {
     let intmaxip = ipToNumber(maxip)
     let intstartip = ipToNumber(startip)
     let intendip = ipToNumber(endip)
-    // if (intstartip > intendip) {
-    //     message.error(window.__("Start IP Cannot Be Greater Than End IP!"))
-    //     return false
-    // }
+    if (intstartip > intendip) {
+        message.error(window.__("Start IP Cannot Be Greater Than End IP!"))
+        return false
+    }
     if (intminip <= intstartip &&
         intstartip <= intendip &&
         intendip <= intmaxip) {
