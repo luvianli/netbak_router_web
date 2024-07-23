@@ -119,7 +119,9 @@ export default class LAN extends Component {
     };
 		return arr.map((item,index)=>{
 			return(
-				<Radio value={index} style={radioStyle} key={index} disabled={!item.iccid||this.state.result.lock===1}>{window.__('Internal card')}-{this.changeOp(item.operator)}</Radio>
+        <Radio value={index} style={radioStyle} key={index} >{window.__('Internal card')}-{this.changeOp(item.operator)}</Radio>
+
+        //<Radio value={index} style={radioStyle} key={index} disabled={!item.iccid||this.state.result.lock===1}>{window.__('Internal card')}-{this.changeOp(item.operator)}</Radio>
 			)
 		})
 	}
@@ -155,11 +157,11 @@ export default class LAN extends Component {
 								{this.renderCard(card_info)}
 							</Radio.Group>
 						</FormGroup>
-            <FormRadioCheck>
+            {/* <FormRadioCheck>
               <Checkbox checked={lock===1?true:0} onChange={this.changeLock}>
                 {window.__('Lock Current Operator')}
               </Checkbox>
-            </FormRadioCheck>					
+            </FormRadioCheck>					 */}
 					</div>
           
           <FormButton onClick={this.handleSave}>{window.__('Apply')}</FormButton>

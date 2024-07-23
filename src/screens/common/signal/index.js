@@ -49,6 +49,7 @@ class Signal extends Component {
 				},
 				url:smsurl
 			}).then((res)=>{
+				console.log("cgi_get_4g_signal",res)
 				if(res.errcode===2000){
 					this.state.list.unshift(res.huayi_r.signal)
 					this.setState({

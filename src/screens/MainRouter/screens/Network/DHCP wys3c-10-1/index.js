@@ -262,8 +262,6 @@ export default class DHCP extends Component {
     ]
     const { result: { static_dhcp_arr, dhcp_enable, min_ip, max_ip, start_ip, end_ip, lease_time },
       ip_addr, mac_addr, name, leasetime_modal } = this.state;
-    console.log("start_ip", this.state.result.start_ip)
-    console.log("end_ip", this.state.result.end_ip)
     return (
       <div>
         <PageText
