@@ -60,11 +60,6 @@ export const sms_HYID = {
 
     /**测试数据结构  */
     cgi_get_no_data: 17,
-    //注意18、19在newui_mtk3.6中对应17、18
-    /**获取卡槽运营商信息  */
-    get_card:18,
-    /**设置卡槽运营商信息  */
-    set_card :19,
 }
 
 export const HYID = {

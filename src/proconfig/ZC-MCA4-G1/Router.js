@@ -15,7 +15,7 @@ import  DMZ from '@/screens/MainRouter/screens/Advanced/Firewall/DMZ';
 import  URL from '@/screens/MainRouter/screens/Advanced/Firewall/URL';
 import  Remote from '@/screens/MainRouter/screens/Advanced/Firewall/Remote';
 //import  HardwareNAT from '@/screens/MainRouter/screens/Advanced/Firewall/HardwareNAT';
-import  IPFilter from '@/screens/MainRouter/screens/Advanced/Firewall/IPFilter';
+import  IPFilter from '../../screens/ZC-MCA4-G1/IPFilter';
 import  MACFilter from '@/screens/MainRouter/screens/Advanced/Firewall/MACFilter';
 import  PortForward from '@/screens/MainRouter/screens/Advanced/Firewall/PortForward';
 import  UPNP from '@/screens/MainRouter/screens/Advanced/Firewall/UPNP';

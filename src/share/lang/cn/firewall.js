@@ -21,6 +21,8 @@ export const firewall={
     'IP/Port Filter':"IP/端口过滤",
     'You can configure the parameters of IP/Port Filter, for deny LAN clients to access to the Internet.': '本页用于设置IP/端口过滤参数，它用于限制局域网用户访问互联网。',
     'IP/Port Filter List':'IP/端口过滤列表',
+    'Whitelist':'白名单',
+    'Blacklist':'黑名单',
     'Protocol':'协议',
     'Start Port':'起始端口',
     'End Port':'结束端口',

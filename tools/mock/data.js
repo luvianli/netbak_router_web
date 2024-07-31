@@ -215,7 +215,7 @@ module.exports = function (data) {
         case 20://get_ip_port_filter_config
             return {
                 "huayi_r":	{
-                    "ip_port_filter":	true,
+                    "ip_port_filter":	0,//0:关闭 1：开启黑名单2：开启白名单
                     "ipportfilter_arr":	[{
                             "src_addr":	"192.168.7.3",
                             "proto":	0,
