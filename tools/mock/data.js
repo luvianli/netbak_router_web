@@ -200,7 +200,7 @@ module.exports = function (data) {
             return {    
                 "huayi_r":   
                 {        
-                    "url_filter":   true,        
+                    "url_filter":   0,        //0:关闭 1：开启黑名单2：开启白名单
                     "urlfilter_arr":   [{                
                         "urlfilter_url":  "www.baidu3.com"            
                     }, 

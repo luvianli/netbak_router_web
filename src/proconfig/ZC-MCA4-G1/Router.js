@@ -12,7 +12,7 @@ import  WifiACL2g from '@/screens/MainRouter/screens/WIFI/2G/ACL';
 
 import  WANping from '@/screens/MainRouter/screens/Advanced/Firewall/WANping';
 import  DMZ from '@/screens/MainRouter/screens/Advanced/Firewall/DMZ';
-import  URL from '@/screens/MainRouter/screens/Advanced/Firewall/URL';
+import  URL from '../../screens/ZC-MCA4-G1/URL';
 import  Remote from '@/screens/MainRouter/screens/Advanced/Firewall/Remote';
 //import  HardwareNAT from '@/screens/MainRouter/screens/Advanced/Firewall/HardwareNAT';
 import  IPFilter from '../../screens/ZC-MCA4-G1/IPFilter';
