@@ -187,6 +187,7 @@ export default class MACFilter extends Component {
     let result = deepCopy(this.state.result);
     result.ip_port_filter = value;
     this.setState({ result });
+    this.setData(null,value);
   }
   renderContent() {
     const { result: { ip_port_filter, ipportfilter_arr },
@@ -330,77 +331,6 @@ export default class MACFilter extends Component {
             <Option value={2}>{window.__('Whitelist')}</Option>
           </Select>
         </FormGroup>
-        {/* {ip_port_filter === true ? <>
-          <div style={{ marginBottom: 30 }}></div>
-          <Table
-            title={window.__('IP/Port Filter List')}
-            selectKey={false}
-            columns={this.columns}
-            showAdd={true}
-            dataSource={ipportfilter_arr}
-            opration={this.handleModal} />
-
-
-          <Modal
-            title={window.__('IP/Port Filter')}
-            style={{ width: 650, }}
-            visible={this.state.visible}
-            closeModel={this.handleCloseModal}
-            close={true}
-          >
-            <FormGroup lable={window.__('IP Address')}>
-              <input value={src_addr || ''} onChange={this.handleChangeModal('src_addr')} />
-              <div className="tip-err">
-                {this.validator.message('src_addr', src_addr, 'required&&ip', '', {
-                  default: window.__('IP Address Field Required!'),
-                  ip: window.__('IP Address Format Invalid!'),
-                })}</div>
-            </FormGroup>
-
-            <FormGroup lable={window.__('Protocol')}>
-              <Select value={proto || 0} onChange={this.handleSelect('proto')}>
-                <Option value={0}>TCP+UDP</Option>
-                <Option value={1}>TCP</Option>
-                <Option value={2}>UDP</Option>
-              </Select>
-            </FormGroup>
-
-            <FormGroup lable={window.__('Start Port')}>
-              <input value={start_port || ''} onChange={this.handleChangeModal('start_port')} />
-              <div className="tip-err">
-                {this.validator.message('start_port', start_port, 'required&&range:1-65535', '', {
-                  default: window.__('Start Port Field Required!'),
-                  range: window.__('Start Port Range Is 1-65535!')
-                })}</div>
-            </FormGroup>
-
-            <FormGroup lable={window.__('End Port')}>
-              <input value={end_port || ''} onChange={this.handleChangeModal('end_port')} />
-              <div className="tip-err">
-                {this.validator.message('end_port', end_port, 'required&&range:1-65535', '', {
-                  default: window.__('End Port Field Required!'),
-                  range: window.__('End Port Range Is 1-65535!')
-                })}</div>
-            </FormGroup>
-
-            <FormGroup lable={window.__('Comment')}>
-              <input value={com || ''} onChange={this.handleChangeModal('com')} />
-            </FormGroup>
-            <div className="tip-err">
-              {this.validator.message('com', com, 'max:16&&houtais', '', {
-                default: 'comment_atmost',
-                max: window.__('Comment At Most 16 Characters!'),
-                houtais: window.__('Limited To English Letters And Characters, Numbers, And Chinese Characters,But Not Contain The Following: \" \' ` \\'),
-              })}</div>
-
-            <ScanList scanData={this.scanData} />
-
-            <button className='modal-confirm-btn'
-              onClick={this.handleCloseModal}>{window.__('Cancel')}</button>
-            <button className='modal-confirm-btn'
-              onClick={this.handleSave}>{window.__('OK')}</button>
-          </Modal>
-        </> : null} */}
         {this.renderContent()}
       </div>
     );
