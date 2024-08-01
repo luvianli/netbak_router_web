@@ -36,8 +36,11 @@ export default class URL extends Component {
       }
     })
   };
-  setData = (rules = null, value) => {
+  setData = (rules = null, value = null) => {
     let result = deepCopy(this.state.result);
+    console.log('this.state.resul', this.state.result)
+    console.log('result', result)
+    console.log('value', value)
     if (rules !== null) {
       result.urlfilter_arr = rules;
     }
@@ -45,14 +48,14 @@ export default class URL extends Component {
       result.url_filter = 0;
     } else if (value === 1) {
       result.url_filter = 1;
-    } else if(value === 2) {
+    } else if (value === 2) {
       result.url_filter = 2;
     }
     this.setState({ result });
     axios.post({
       data: {
         HYID: HYID.set_url_filter_config,
-        ...this.state.result,
+        ...result,
       },
       url: posturl
     }).then((res) => {
@@ -229,6 +232,7 @@ export default class URL extends Component {
       },
     ]
     const { result: { url_filter, urlfilter_arr }, urlfilter_url } = this.state;
+
     return (
       <div>
         <PageText
