@@ -45,7 +45,7 @@ export default class MACFilter extends Component {
       result.ip_port_filter = 0;
     } else if (value === 1) {
       result.ip_port_filter = 1;
-    } else {
+    } else if (value === 2) {
       result.ip_port_filter = 2;
     }
     this.setState({ result });
