@@ -14,9 +14,9 @@ export default class URL extends Component {
     result_src: {},
     urlTest: true
   }
-  componentWillMount() {
-    this.validator = new ReactValidator();
-  }
+  // componentWillMount() {
+  //   this.validator = new ReactValidator();
+  // }
 
   componentDidMount() {
     this.getData()
@@ -95,21 +95,20 @@ export default class URL extends Component {
       urlfilter_url: '',
       urlTest: true
     })
-    this.validator.hideMessages();
+    //this.validator.hideMessages();
   }
   handleSave = () => {
     const urlfilter_url = urldomainToLowercase(this.state.urlfilter_url);
     const listIndex = this.state.listIndex;
     const rules = deepCopy(this.state.result.urlfilter_arr);
-    if (!urlReg.test(urlfilter_url)) {
-      this.setState({
-        urlTest: false
-      })
-      this.validator.showMessages();
-      this.forceUpdate();
-      return false;
-    }
-    if (this.validator.allValid()) {
+    // if (!urlReg.test(urlfilter_url)) {
+    //   this.setState({
+    //     urlTest: false
+    //   })
+    //   //this.validator.showMessages();
+    //   this.forceUpdate();
+    //   return false;
+    // }
       this.setState({
         urlTest: true
       })
@@ -135,10 +134,7 @@ export default class URL extends Component {
         rules.push({ urlfilter_url });
         this.setData(rules)
       }
-    } else {
-      this.validator.showMessages();
-      this.forceUpdate();
-    }
+     
   }
 
   handleEdit = (index) => {
@@ -194,13 +190,13 @@ export default class URL extends Component {
             {this.validator.message('urlfilter_url', urlfilter_url, 'required&&notcn&&min:2','',{
             default: window.__('URL format'),})}</div>*/}
 
-              {!this.state.urlTest && <div className="tip-err">{window.__('URL Format Invalid,Valid Format Is xxx.yyy.zzz(such as baidu.com,www.baidu.com)!')}</div>}
-              <div className="tip-err">
+              {/* {!this.state.urlTest && <div className="tip-err">{window.__('URL Format Invalid,Valid Format Is xxx.yyy.zzz(such as baidu.com,www.baidu.com)!')}</div>} */}
+              {/* <div className="tip-err">
                 {this.validator.message('urlfilter_url', urlfilter_url, 'required&&max:63', '', {
                   default: window.__('URL Field Required!'),
                   // url: window.__('URL Format Invalid,Valid Format Is xxx.yyy.zzz !'),            
                   max: window.__('URL Keywords At Most 63 Characters!'),
-                })}</div>
+                })}</div> */}
             </FormGroup>
 
             <button className='modal-confirm-btn'
