@@ -6,7 +6,7 @@ import 'babel-polyfill'
 import './common.less'
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './proconfig/ZC-MCA4-G1/App';
+import App from './proconfig/PT6/App';
 import 'lib-flexible'
 
 ReactDOM.render(<App/>, document.getElementById('root'));
