@@ -62,6 +62,7 @@ class Header extends Component {
             </Select>
             {this.props.nobar===true?null:
             <div className='bar-icon'>
+               
               <Logout/>
               <Reboot />
               {/* <Mode/> */}

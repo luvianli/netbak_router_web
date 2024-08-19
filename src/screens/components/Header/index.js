@@ -9,7 +9,7 @@ import Logout from '@/screens/common/Logout';
 import './index.less';
 import {connect} from 'react-redux'
 import {actionCreater } from '@/proconfig/store'
-
+import NewSMS from '../Header4G/newSMS';
 const { Option } = Select;
 const local_support_language = {
   "cn":"简体中文", 
@@ -63,9 +63,10 @@ class Header extends Component {
             {this.props.nobar===true?null:
               <div className='bar-icon'>
                 {/*<Icon title={window.__('Upgrade')} onClick={()=>changeHash('Advanced/System/Upgrade')} type="arrow-up" />*/}
-
-
+                
+                <NewSMS/>
                 {
+                  
                   prdy>1594?<Logout/>:null
                 }
                 <Reboot />
