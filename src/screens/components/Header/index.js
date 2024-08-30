@@ -64,7 +64,7 @@ class Header extends Component {
               <div className='bar-icon'>
                 {/*<Icon title={window.__('Upgrade')} onClick={()=>changeHash('Advanced/System/Upgrade')} type="arrow-up" />*/}
                 
-                <NewSMS/>
+                {/* <NewSMS/> */}
                 {
                   
                   prdy>1594?<Logout/>:null

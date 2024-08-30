@@ -172,19 +172,19 @@ export default class Menu{
     //         },
     //     ]
     // },
-    {
-        title:  ('SMS Conversation'),
-        icon:'&#xe61a;',
-        key: '/SMS',
-        type:'',
-        children: [
-            {
-                title:  ('SMS Conversation'),
-                key: '/SMS/Conversation',
-                type:'',
-            },
-        ]
-    },
+    // {
+    //     title:  ('SMS Conversation'),
+    //     icon:'&#xe61a;',
+    //     key: '/SMS',
+    //     type:'',
+    //     children: [
+    //         {
+    //             title:  ('SMS Conversation'),
+    //             key: '/SMS/Conversation',
+    //             type:'',
+    //         },
+    //     ]
+    // },
     {
         title: ('Advanced Setting'),
         icon:'&#xe66d;',

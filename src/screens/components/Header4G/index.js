@@ -59,7 +59,7 @@ class Header4G extends Component {
             </Select>
             {this.props.nobar===true?null:
             <div className='bar-icon'>
-              <NewSMS/>
+
               {
                 prdy>1594?<Logout/>:null
               }
