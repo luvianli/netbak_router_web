@@ -209,11 +209,14 @@ export default class WANPrior extends Component {
     this.setState({ result })
   }
   renderBand = () => {
-    let band = [0, 1, 3, 5, 8, 34, 38, 39, 40, 41]
+    let band = [0, 1, 3, 5, 8, 34, 38, 39, 40, 41,999]
     return band.map((i, index) => {
       if (i === 0) {
         return <Option value={i} key={index}>{window.__('AUTO')}</Option>
-      } else {
+      }else if (i === 999) {
+        return <Option value={i} key={index}>{window.__('禁用5和8')}</Option>
+      }
+      else {
         return <Option value={i} key={index}>{i}</Option>
       }
     })
