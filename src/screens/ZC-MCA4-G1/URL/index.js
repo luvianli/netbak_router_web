@@ -247,7 +247,7 @@ export default class URL extends Component {
           <Select value={url_filter} onChange={this.handleUrlFilterChange} >
             <Option value={0}>{window.__('OFF')}</Option>
             <Option value={1}>{window.__('Blacklist')}</Option>
-            <Option value={2}>{window.__('Whitelist')}</Option>
+            {/* <Option value={2}>{window.__('Whitelist')}</Option> */}
           </Select>
         </FormGroup>
         {this.renderUrlFilterContent()}

@@ -328,7 +328,7 @@ export default class MACFilter extends Component {
           <Select value={ip_port_filter} onChange={this.handleIpPortFilterChange} >
             <Option value={0}>{window.__('OFF')}</Option>
             <Option value={1}>{window.__('Blacklist')}</Option>
-            <Option value={2}>{window.__('Whitelist')}</Option>
+            {/* <Option value={2}>{window.__('Whitelist')}</Option> */}
           </Select>
         </FormGroup>
         {this.renderContent()}
