@@ -5,7 +5,7 @@ import sLogin from './login'
 import NoLogin from '@/screens/common/noLogin'
 // import Signal from '@/screens/common/signal'
 import Frame from './layout/Frame';
-import Wizard from '@/screens/WYX3C-1/Wizard';
+import Wizard from '@/screens/4G300-H002-HY07/Wizard';
 import Routes from './Router'
 import { connect } from 'react-redux';
 import {actionCreater } from '../store';

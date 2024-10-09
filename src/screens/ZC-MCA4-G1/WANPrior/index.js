@@ -107,7 +107,12 @@ export default class WANPrior extends Component {
   handleSelect = name => value => {
     let result = deepCopy(this.state.result);
     if (name === 'wan_mode') {
-      result.proto = 'dhcp';
+      if (value === 'mobile') {
+        result.proto = 'dhcp';
+      }
+      else if (value === 'rep' || 'rep4g') {
+        result.proto = this.state.result_src.proto;
+      }
     }
     result[name] = value;
     this.setState({ result });
@@ -209,7 +214,9 @@ export default class WANPrior extends Component {
           helpmsg={window.__("The Access Point Name (APN) is the name for the settings your device reads to set up a connection to the gateway between your carrier's cellular network and the public Internet. Most of the time, your device already has these settings in the system files, and can fill in the APN information automatically when it connects. If the APN can't connect to the Internet automatically, you can change the APN manually.")}
         />
         <FormGroup lable={window.__('Internet Type')}>
-          <Select value={'mobile'} onChange={this.handleSelect('wan_mode')} disabled={true}>
+          <Select value={wan_mode || ''} onChange={this.handleSelect('wan_mode')}>
+            <Option value={'rep4g'}>{window.__('Wireless WAN+4G')}</Option>
+            <Option value={'rep'}>{window.__('Wireless WAN')}</Option>
             <Option value={'mobile'}>{window.__('4G')}</Option>
           </Select>
         </FormGroup>
