@@ -105,18 +105,13 @@ export default class LAN extends Component {
   }
 
 	changeOp=(operator)=>{
-		// if(operator===1){
-		// 	return window.__('CT')
-		// }else if(operator===2){
-		// 	return window.__('UNICOM')
-		// }else{
-		// 	return window.__('CMCC')
-		// }
-    if(operator===2){
-      return window.__('UNICOM')
-    }else if(operator===3){
-      return window.__('CMCC')
-    }
+		if(operator===1){
+			return window.__('CT')
+		}else if(operator===2){
+			return window.__('UNICOM')
+		}else{
+			return window.__('CMCC')
+		}
 	}
 	renderCard=(arr)=>{
 		const radioStyle = {
@@ -142,7 +137,6 @@ export default class LAN extends Component {
 
   render(){
     const {result:{card,operator,lock},card_info,cardItem} = this.state;
-    console.log(card_info)
     return (
       <div>
         <div style={{height:20}}></div>
