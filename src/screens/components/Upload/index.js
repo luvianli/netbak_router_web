@@ -73,7 +73,8 @@ handleCheck=event=>{
 }
 
 handleRedirect=()=>{
-  handleRedir(this.state.redir,this.state.redir_ip)
+  // handleRedir(this.state.redir,this.state.redir_ip)
+  window.location.reload()
   this.setState({
     showProgress:false,
   })
