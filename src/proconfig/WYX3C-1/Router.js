@@ -52,7 +52,7 @@ import  Devices from '@/screens/MainRouter/screens/Devices';
 // import  MobileNetwork from '@/screens/MainRouter/screens/Network/MobileNetwork';
 // import  PINCode from '@/screens/MainRouter/screens/Advanced/System/PINCode';
 // import  PINModify from '@/screens/MainRouter/screens/Advanced/System/PINModify';
-import  Home from '@/screens/4G300-H002-HY07/Home';
+import  Home from '@/screens/WYX3C-1/Home';
 
 import  WANPrior from '@/screens/WYX3C-1/WANPrior';
 

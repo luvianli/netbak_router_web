@@ -38,7 +38,8 @@ module.exports = function (data) {
                     "tx_bytes":    37162,
                     "wifi_2g":1,
                     "wifi_5g":1,
-                    "signal_4g":"90"
+                    "signal_4g":"90",
+                    "band":"3"
                 },
                 "huayierrtype":    "success",
                 "errcode":    2000,
