@@ -4,7 +4,7 @@ import { Header } from '@/screens/components'
 // import { Footer} from '@/screens/components/index3.js'
 
 import logo_img from '@/logo.png';
-import Login from './Login';
+import Login from './Login/Login.jsx';
 
 function LoginApp(props){
   

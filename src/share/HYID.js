@@ -16,7 +16,7 @@ export const sms_HYID = {
     /**获取首页状态  */
     get_overview_info:0,
     // /**获取外网配置  */
-    // get_wan_config:1,
+    get_wan_config:1,
     // /**设置以太网上网参数  */
     // set_eth_wan_config:2,   
     //4G300-H002-HY07产品特有替换接口
@@ -143,7 +143,7 @@ export const HYID = {
     /**设置内网配置 */
     set_lan_config:29,
     /**获取外网配置  */
-    get_wan_config:30,
+    // get_wan_config:30,
     /**获取DHCP检测结果  */
     get_dhcp_detect_result:31,
     /**开始DHCP检测  */

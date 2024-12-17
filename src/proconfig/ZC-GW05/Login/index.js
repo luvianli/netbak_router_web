@@ -7,7 +7,7 @@ import JsEncrypt from 'jsencrypt';
 import {message} from 'antd';
 import md5 from "md5";
 
-import Login from './Login';
+import Login from './Login/index';
 
 const jse = new JsEncrypt();
 jse.setPublicKey(`-----BEGIN PUBLIC KEY-----
