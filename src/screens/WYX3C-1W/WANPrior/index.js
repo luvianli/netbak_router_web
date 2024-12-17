@@ -346,10 +346,21 @@ class WANPrior extends Component {
     }
     this.setState({ result })
   }
+  renderBand = () => {
+    let band = [0, 1, 3, 5, 8, 34, 38, 39, 40, 41]
+    return band.map((i, index) => {
+      if (i === 0) {
+        return <Option value={i} key={index}>{window.__('AUTO')}</Option>
+      }
+      else {
+        return <Option value={i} key={index}>{i}</Option>
+      }
+    })
+  }
   render() {
     const { result: { wan_mode, def_mac_addr, proto, ip_addr, subnet_mask, gateway, dns_arr,
       usr, pwd, ac, service, hostname, mac_addr, ppp_mtu, cc_mtu, auth_type, apn_name,
-      apn_usr, apn_pwd, use_apn, proto_4g, detect_ip } } = this.state;
+      apn_usr, apn_pwd, use_apn, proto_4g, detect_ip ,band} } = this.state;
 
     return (
       <div>
@@ -389,6 +400,11 @@ class WANPrior extends Component {
             </FormGroup> */}
         </>}
         <div style={{ height: 20 }}></div>
+                <FormGroup lable={window.__('Band')}>
+                  <Select value={band} onChange={this.handleSelect('band')}>
+                    {this.renderBand()}
+                  </Select>
+                </FormGroup>
         {wan_mode !== 'mobile' && <>
           {wan_mode === 'prior' && <div style={{ fontSize: 22 }}>{window.__('Wired')}</div>}
           <FormGroup lable={window.__('Internet Access Mode')}>
