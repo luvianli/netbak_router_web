@@ -250,6 +250,7 @@ class Home extends Component {
           <div className='part part2'>
             <div className='desc desc4 text'>
               {
+
                   conect==='ok'?<>
                   <div style={{color:'green'}}><Icon type="arrow-up" />{totalTrafficbps(tx_bps)}</div>
                   <div style={{color:'red'}}><Icon type="arrow-down" />{totalTrafficbps(rx_bps)}</div>

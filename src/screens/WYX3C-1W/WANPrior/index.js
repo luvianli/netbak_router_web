@@ -37,7 +37,6 @@ class WANPrior extends Component {
       },
       url: smsurl
     }).then((res) => {
-      console.log(res, 'res')
       if (res.errcode === 2000) {
         this.setState({
           result: deepCopy(res.huayi_r),
@@ -173,13 +172,14 @@ class WANPrior extends Component {
     let mobileValue = {}
     let result = deepCopy(this.state.result);
     let result_src = deepCopy(this.state.result_src)
+    console.log(result);
     if (result.wan_mode === "mobile") {//4g
       if (result.use_apn === 0) {//自动
         if (this.validator.someValid(['mhostname', 'mcc_mtu', 'mmac_addr'])) {
           if (result_src.use_apn === result.use_apn &&
             result_src.hostname === result.hostname &&
             result_src.cc_mtu === result.cc_mtu &&
-            result_src.mac_addr.toUpperCase() === result.mac_addr.toUpperCase()) {
+            result_src.mac_addr.toUpperCase() === result.mac_addr.toUpperCase()&&result_src.band === result.band) {
             mobileChange = 2;
           }
           mobileValue = {
@@ -187,7 +187,8 @@ class WANPrior extends Component {
             hostname: result.hostname,
             cc_mtu: result.cc_mtu,
             mac_addr: result.mac_addr,
-            proto: "dhcp"
+            proto: "dhcp",
+            band:result.band
           }
         } else {
           mobileChange = 1;
