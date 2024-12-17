@@ -18,7 +18,7 @@ export const sms_HYID = {
     // /**获取外网配置  */
     get_wan_config:1,
     // /**设置以太网上网参数  */
-    // set_eth_wan_config:2,   
+    set_eth_wan_config:2,   
     //4G300-H002-HY07产品特有替换接口
     /**获取无线WAN+4G  */
     cgi_get_wan_or_wan4g_config :1,
@@ -89,7 +89,7 @@ export const HYID = {
     /**设置快速设置配置 */
     set_quick_setting_config:10,
     /**设置以太网上网参数  */
-    set_eth_wan_config:11,
+    // set_eth_wan_config:11,
     /**获取静态路由配置 */
     get_static_router_config:12,
     /**设置静态路由配置 */

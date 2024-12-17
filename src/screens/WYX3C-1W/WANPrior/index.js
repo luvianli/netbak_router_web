@@ -47,6 +47,7 @@ class WANPrior extends Component {
     })
   };
   setEthWanConfig = (values) => {
+
     axios.post({
       data: {
         HYID: sms_HYID.set_eth_wan_config,
