@@ -206,7 +206,8 @@ class WANPrior extends Component {
           use_apn: 0,
           hostname: result_src.hostname,
           cc_mtu: result_src.cc_mtu,
-          proto_4g: "dhcp"
+          proto_4g: "dhcp",
+          band:result.band
         }
       }
     }
@@ -217,7 +218,7 @@ class WANPrior extends Component {
             result_src.apn_name === result.apn_name &&
             result_src.apn_usr === result.apn_usr &&
             result_src.apn_pwd === result.apn_pwd &&
-            result_src.auth_type === result.auth_type) {
+            result_src.auth_type === result.auth_type&&result_src.band === result.band) {
             mobileChange = 2;
           }
           mobileValue = {
@@ -226,7 +227,8 @@ class WANPrior extends Component {
             apn_usr: result.apn_usr,
             apn_pwd: result.apn_pwd,
             auth_type: result.auth_type,
-            proto: "dhcp"
+            proto: "dhcp",
+            band:result.band
           }
         } else {
           mobileChange = 1;
@@ -247,7 +249,7 @@ class WANPrior extends Component {
         if (result_src.proto === result.proto &&
           result_src.hostname === result.hostname &&
           result_src.mac_addr.toUpperCase() === result.mac_addr.toUpperCase() &&
-          result_src.cc_mtu === result.cc_mtu) {
+          result_src.cc_mtu === result.cc_mtu&&result_src.band === result.band) {
           wiredChange = 2
           this.setState({ wiredChange, wiredValue })
         }
@@ -256,6 +258,7 @@ class WANPrior extends Component {
           cc_mtu: result.cc_mtu,
           hostname: result.hostname,
           mac_addr: result.mac_addr.toUpperCase(),
+          band:result.band
         }
       } else {
         wiredChange = 1
@@ -275,7 +278,7 @@ class WANPrior extends Component {
           result_src.gateway === result.gateway &&
           String(result_src.dns_arr) === String(result.dns_arr) &&
           result_src.mac_addr.toUpperCase() === result.mac_addr.toUpperCase() &&
-          result_src.cc_mtu === result.cc_mtu) {
+          result_src.cc_mtu === result.cc_mtu&&result_src.band === result.band) {
           wiredChange = 2
         }
         wiredValue = {
@@ -286,6 +289,7 @@ class WANPrior extends Component {
           dns_arr: result.dns_arr,
           mac_addr: result.mac_addr,
           cc_mtu: result.cc_mtu,
+          band:result.band
         }
       } else {
         wiredChange = 1
@@ -300,7 +304,7 @@ class WANPrior extends Component {
           result_src.service === result.service &&
           result_src.ppp_mtu === result.ppp_mtu &&
           result_src.ac === result.ac &&
-          result_src.mac_addr.toUpperCase() === result.mac_addr.toUpperCase()) {
+          result_src.mac_addr.toUpperCase() === result.mac_addr.toUpperCase()&&result_src.band === result.band) {
           wiredChange = 2
         }
         wiredValue = {
@@ -311,6 +315,7 @@ class WANPrior extends Component {
           mac_addr: result.mac_addr.toUpperCase(),
           usr: result.usr,
           pwd: result.pwd,
+          band:result.band
         }
       } else {
         wiredChange = 1
@@ -362,7 +367,6 @@ class WANPrior extends Component {
     const { result: { wan_mode, def_mac_addr, proto, ip_addr, subnet_mask, gateway, dns_arr,
       usr, pwd, ac, service, hostname, mac_addr, ppp_mtu, cc_mtu, auth_type, apn_name,
       apn_usr, apn_pwd, use_apn, proto_4g, detect_ip ,band} } = this.state;
-
     return (
       <div>
         <div style={{ height: 20 }}></div>

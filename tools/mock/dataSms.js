@@ -24,7 +24,7 @@ module.exports = function (data) {
             // }
             return{
                 "huayi_r":    {
-                    "wan_mode":    "mobile",
+                    "wan_mode":    "prior",
                     "wan_up":    1,
                     "wan_uptime":    335,
                     "sim_state":    1,
@@ -70,7 +70,7 @@ module.exports = function (data) {
         case 1://cgi_get_wan_or_wan4g_config
             return{
                 "huayi_r": {
-                    "wan_mode":"mobile",  //wired表示有线，mobile表示4G，prior表示有线优先，rep4g表示无线WAN+4G, rep表示无线WAN
+                    "wan_mode":"wired",  //wired表示有线，mobile表示4G，prior表示有线优先，rep4g表示无线WAN+4G, rep表示无线WAN
                     "auth_type":    "0",
                     "apn_name":    "3gnet",
                     "apn_usr":    " ",
