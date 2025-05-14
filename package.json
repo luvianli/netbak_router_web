@@ -173,8 +173,5 @@
   },
   "devDependencies": {
     "webpack-bundle-analyzer": "^3.6.0"
-  },
-  "resolutions": {
-    "fsevents": false
   }
 }
