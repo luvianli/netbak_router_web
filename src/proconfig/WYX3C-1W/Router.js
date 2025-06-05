@@ -55,7 +55,13 @@ import  Devices from '@/screens/MainRouter/screens/Devices';
 import  Home from '@/screens/WYX3C-1W/Home';
 
 import  WANPrior from '@/screens/WYX3C-1W/WANPrior';
-
+import PPTP from '@/screens/MainRouter/screens/Advanced/VPN/PPTP'
+import L2TP from '@/screens/MainRouter/screens/Advanced/VPN/L2TP'
+import PPTPClient from '@/screens/MainRouter/screens/Advanced/VPN/PPTPClient'
+import L2TPClient from '@/screens/MainRouter/screens/Advanced/VPN/L2TPClient'
+import VPNUser from '@/screens/MainRouter/screens/Advanced/VPN/VPNUser'
+import VPNStatus from '@/screens/MainRouter/screens/Advanced/VPN/VPNStatus'
+import OpenVPN from '@/screens/MainRouter/screens/Advanced/VPN/OpenVPN'
 
 
 export default class IRouter extends React.Component {
@@ -116,6 +122,14 @@ export default class IRouter extends React.Component {
                 <Route  path="/Advanced/Tool/Ping"  component={PingTest}/>
                 <Route  path="/Advanced/Tool/Tracert"  component={TracertRoute}/>
                 <Route  path="/Advanced/Tool/DHCPTest"  component={DHCPTest}/>
+                <Route path="/Advanced/vpn/pptpd" component={PPTP} />
+                <Route path="/Advanced/vpn/xl2tpd" component={L2TP} />
+                <Route path="/Advanced/vpn/xl2tp" component={L2TPClient} />
+                <Route path="/Advanced/vpn/pptp" component={PPTPClient} />
+                <Route path="/Advanced/vpn/vpnUser" component={VPNUser} />
+                <Route path="/Advanced/vpn/vpnStatus" component={VPNStatus} />
+                <Route path="/Advanced/vpn/vpnUser" component={VPNUser} />
+                <Route path="/Advanced/vpn/openVPN" component={OpenVPN} />
                 {/* <Route  path="/Advanced/Tool/Script"  component={Script}/> */}
                 
                 <Route  path="/Devices"  component={Devices}/>

@@ -295,6 +295,37 @@ export const HYID = {
     get_quick_prior_config:187,
     /**设置快速设置网络策略配置 */
     set_quick_prior_config: 188,
-}
+     /**设置pptp服务器配置 */
+    set_pptpd_server_config:158,
+    /**获取pptp服务器配置 */
+    get_pptpd_server_config:159,
+    
+    /**设置l2tp服务器配置 */
+    set_xl2tpd_server_config:160,
+    /**获取l2tp服务器配置 */
+    get_xl2tpd_server_config:161,
 
-export default {}
+    /**设置pptp服务器配置 */
+    set_pptp_client_config:162,
+    /**获取pptp客户端配置 */
+    get_pptp_client_config:163,
+
+    /**设置l2tp服务器配置 */
+    set_l2tp_client_config:164,
+	/**获取l2tp客户端配置 */
+    get_l2tp_client_config:165,
+
+    /**设置用户管理信息 */
+    set_vpn_user_config:166,
+    /**获取用户管理信息 */
+    get_vpn_user_config:167,
+
+    /**获取VPN在线用户 */
+    get_vpn_user_onlien:168,
+    /**设置VPN在线用户 */
+    set_vpn_user_onlien:171,
+       /**获取openvpn客户端 */
+    get_openvpn_config:191,
+    /**设置openvpn客户端 */
+    set_openvpn_config: 192,
+}
