@@ -126,6 +126,10 @@ export const HYID = {
     custom_script_upload : 'cgi-bin/cgi_stream.cgi?streamid=7',
     /*执行自定义脚本*/
     custom_script_execute : 'cgi-bin/cgi_stream.cgi?streamid=8',
+        /*openvpn文件配置*/
+    upload_openvpn_file : 'cgi-bin/cgi_stream.cgi?streamid=9',
+    /*openvpn认证*/
+    openvpn_certify : 'cgi-bin/cgi_stream.cgi?streamid=10&name=',
     /**获取升级信息 */
     get_upgrade_info:22,
     /**获取当前用户信息 */
@@ -325,7 +329,7 @@ export const HYID = {
     /**设置VPN在线用户 */
     set_vpn_user_onlien:171,
        /**获取openvpn客户端 */
-    get_openvpn_config:191,
+    get_openvpn_config:193,
     /**设置openvpn客户端 */
-    set_openvpn_config: 192,
+    set_openvpn_config: 194,
 }

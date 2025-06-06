@@ -31,6 +31,7 @@ export default class LAN extends Component {
       url: posturl
     }).then((res) => {
       if (res.errcode === 2000) {
+        console.log(res)
         this.setState({
           result: deepCopy(res.huayi_r),
           result_src: deepCopy(res.huayi_r)

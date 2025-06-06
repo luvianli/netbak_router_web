@@ -46,7 +46,6 @@ export const vpn={
     "L2TP Work In Client Mode, Service Temporarily Unavailable!":"L2TP 工作在客户端模式，服务端暂不可用!",
     "Remote IP Format Invalid!":"分配IP地址格式不正确!",
     "Dial IP":'拨入IP',
-    "Assign IP":"分配IP",
     "Advance":"显示高级参数",
     "JoinTime": "连接时间",
     "PPTP Static Router List": "PPTP静态路由列表",
@@ -61,4 +60,13 @@ export const vpn={
     "Server Static Router Format Invalid!":"服务器静态路由格式不正确!",
     "Format:192.168.7.0/24 For Multiple Network Segments; Separate":"格式:192.168.7.0/24 多个网段用;分隔",
     "The Assign IP Must Be In The Range Of Start IP And End IP!": "分配IP必须在起始IP和结束IP范围内!",
+    "OpenVPN Client":"OpenVPN客户端",
+    "OpenVPN Client Setting":"OpenVPN客户端设置",
+    "Collocation Method":"配置方式",
+    "Form Configuration":"表单配置",
+    "Upload File":"上传文件",
+    "Configure File":"配置文件",
+    "Authentication File":"认证文件",
+    'The key path is "/path/to/", please synchronize the authentication path of the configuration file with the key path.':'密钥路径为“/path/to/”，配置文件认证路径请与秘钥路径同步。',
+    'Please Upload The Configuration File!':'请上传配置文件！'
 }

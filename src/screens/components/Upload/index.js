@@ -5,6 +5,8 @@ import {Progress} from '@/screens/components';
 import { message } from 'antd';
 import {handleRedir} from '@/share/redirect';
 import './index.less'
+import {connect} from 'react-redux'
+import {actionCreater } from '@/proconfig/store'
 
 //import './index.css'
 //const MAXSIZE = 8*1024*1024;
@@ -17,6 +19,7 @@ class Upload extends Component {
     showProgress:false,
     locktime:0,
     clickUploadbtn:false,
+    uploadStatus: false,
   }
   handleSendFiled=()=>{
     if(!this.state.files || this.state.files.length<1){ 
@@ -34,12 +37,19 @@ class Upload extends Component {
 
     var formData = new FormData();
     formData.append("userfile", this.state.files);
+    let fileurl = this.props.fileurl;
+    if(this.props.setFileName){
+      fileurl = fileurl + formData.get('userfile').name
+    }
     axios.post({
         data:formData,
-        url:this.props.fileurl
+        url:fileurl
     }).then((res)=>{
       this.setState({clickUploadbtn:false})
-      if(res.errcode === 2000){    
+      if(res.errcode === 2000){
+        if(res.progresstime!==0) {
+          this.props.setFresh(false)
+        }
         this.setState({
           files:[],
           filename:'',
@@ -47,6 +57,11 @@ class Upload extends Component {
           redir_ip:res.reconnection_addr,
           showProgress:res.progresstime!==0,
           locktime:res.progresstime,
+          uploadStatus: true,
+        },()=>{
+          if(this.props.setUploadStatus){
+            this.props.setUploadStatus({uploadStatus:this.state.uploadStatus})
+          }
         })   
         let file = document.getElementById('file');
         file.value = '';
@@ -73,13 +88,14 @@ handleCheck=event=>{
 }
 
 handleRedirect=()=>{
-  // handleRedir(this.state.redir,this.state.redir_ip)
-  window.location.reload()
+  handleRedir(this.state.redir,this.state.redir_ip)
   this.setState({
     showProgress:false,
-  })
+  },()=>{this.props.setFresh(true)})
 }
   render() {
+    console.log(this.props.FormData)
+    console.log(this.props.fileurl)
     return (
       <div>
       <div className='input-file'>        
@@ -117,4 +133,14 @@ Upload.defaultProps = {
   max_size_tip:'',
   title:'',
 };
-export default Upload;
+const mapState = (state)=>({
+  canFresh:state.getIn(['common','canFresh']),
+})
+
+const mapDispatch = (dispatch) =>({
+  setFresh(args){
+      dispatch(actionCreater.setFresh(args))
+  },
+})
+
+export default connect(mapState,mapDispatch)(Upload)
