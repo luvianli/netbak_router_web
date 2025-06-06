@@ -125,7 +125,6 @@ export default class LAN extends Component {
     this.setState({
       showProgress: false
     })
-    window.location.reload()
   }
   render() {
     const { enable, host_name, usr, pwd, port, status, option } = this.state.result;
@@ -207,6 +206,7 @@ export default class LAN extends Component {
               UploadText={'Upload'}
               message={window.__("Configuring...Please Do Not Shut Down The Device,Completed After ")}
               setUploadStatus={this.setUploadStatus}
+              setFresh={false}
             />
             <Upload 
               title={'Authentication File'}
@@ -216,6 +216,7 @@ export default class LAN extends Component {
               UploadText={'Upload'}
               message={window.__("Configuring...Please Do Not Shut Down The Device,Completed After ")}
               setFileName={true}
+              setFresh={false}
             />
             <div className='tip'>{window.__('The key path is "/path/to/", please synchronize the authentication path of the configuration file with the key path.')}</div>
           </>
@@ -233,4 +234,3 @@ export default class LAN extends Component {
     );
   }
 }
-
