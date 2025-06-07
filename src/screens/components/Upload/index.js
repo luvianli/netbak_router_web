@@ -47,9 +47,6 @@ class Upload extends Component {
     }).then((res)=>{
       this.setState({clickUploadbtn:false})
       if(res.errcode === 2000){
-        if(res.progresstime!==0) {
-          this.props.setFresh(false)
-        }
         this.setState({
           files:[],
           filename:'',
@@ -91,7 +88,7 @@ handleRedirect=()=>{
   handleRedir(this.state.redir,this.state.redir_ip)
   this.setState({
     showProgress:false,
-  },()=>{this.props.setFresh(true)})
+  })
 }
   render() {
     console.log(this.props.FormData)
