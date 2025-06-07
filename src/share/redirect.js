@@ -10,10 +10,13 @@ export function logout(){
     window.location.hash="#/Login"
 }
 
-export const handleRedir = (redir=false,redir_ip='')=>{
+export const handleRedir = (redir=false,redir_ip='', skipReload=false)=>{
     /**redir为false,不跳转， 为true跳转到redir_ip */
-    if(redir===false){        
-        window.location.reload(true);   
+    if(redir===false){
+        console.log('handleRedir called with redir=false, skipReload=', skipReload);
+        if (!skipReload) {
+            window.location.reload(true);
+        }
         return;  
     }
     if(redir===true && redir_ip===''){ 

@@ -21,7 +21,22 @@ class Upload extends Component {
     clickUploadbtn:false,
     uploadStatus: false,
   }
+  
+  componentDidMount() {
+    console.log('Upload组件已加载', this.props);
+  }
+  
+  componentDidUpdate(prevProps, prevState) {
+    console.log('Upload组件已更新', {
+      prevProps,
+      currentProps: this.props,
+      prevState,
+      currentState: this.state
+    });
+  }
+  
   handleSendFiled=()=>{
+    console.log('开始上传文件');
     if(!this.state.files || this.state.files.length<1){ 
       message.warning(window.__('Please Select The File To Upload!'))
       return
@@ -41,12 +56,15 @@ class Upload extends Component {
     if(this.props.setFileName){
       fileurl = fileurl + formData.get('userfile').name
     }
+    console.log('开始发送请求', fileurl);
     axios.post({
         data:formData,
         url:fileurl
     }).then((res)=>{
+      console.log('上传请求返回', res);
       this.setState({clickUploadbtn:false})
       if(res.errcode === 2000){
+        console.log('上传成功，设置进度条', res.progresstime);
         this.setState({
           files:[],
           filename:'',
@@ -56,7 +74,9 @@ class Upload extends Component {
           locktime:res.progresstime,
           uploadStatus: true,
         },()=>{
+          console.log('上传状态已更新', this.state);
           if(this.props.setUploadStatus){
+            console.log('调用父组件setUploadStatus');
             this.props.setUploadStatus({uploadStatus:this.state.uploadStatus})
           }
         })   
@@ -85,9 +105,13 @@ handleCheck=event=>{
 }
 
 handleRedirect=()=>{
-  handleRedir(this.state.redir,this.state.redir_ip)
+  console.log('进度条完成，调用handleRedirect');
+  console.log('重定向信息:', this.state.redir, this.state.redir_ip);
+  handleRedir(this.state.redir, this.state.redir_ip, true);
   this.setState({
     showProgress:false,
+  }, () => {
+    console.log('进度条已隐藏');
   })
 }
   render() {

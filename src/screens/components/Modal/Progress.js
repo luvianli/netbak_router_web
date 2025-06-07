@@ -11,24 +11,29 @@ class Progress extends Component {
       };
       
       componentWillUnmount() {
+        console.log('Progress组件卸载');
         clearInterval(this.timer);
       }
-      componentDidMount(){        
+      componentDidMount(){
+        console.log('Progress组件加载, showProgress:', this.props.showProgress);
         if (this.props.showProgress===true) {
           this.handleOpen();
         }
       }
       componentWillReceiveProps(nextProps) {
+        console.log('Progress组件接收新props:', nextProps);
         this.setState({currentime:nextProps.locktime})
         if (nextProps.showProgress===true) {
           this.handleOpen();
         }
       } 
       handleClose = () => {
+        console.log('关闭进度条');
         this.setState({ visible: false ,completed:0,currentime:''});
       };
       
       handleOpen = () => {
+        console.log('打开进度条, locktime:', this.props.locktime);
         let locktime = 0  
         let n = 0,currentime = 0
         this.timer = setInterval(()=>{
@@ -37,9 +42,11 @@ class Progress extends Component {
           currentime=locktime-n
           n=n+1 
           if (completed === 100) {
+            console.log('进度到达100%, 调用handleClose');
             this.handleClose()
             clearInterval(this.timer);
-            //进行重启完清楚登陆信息、跳转到登陆/其他IP，不清除登陆信息，回到当前页面处理 
+            //进行重启完清楚登陆信息、跳转到登陆/其他IP，不清除登陆信息，回到当前页面处理
+            console.log('调用handleRedirect');
             this.props.handleRedirect()
           } else {
             const diff = 100/locktime
