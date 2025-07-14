@@ -206,7 +206,7 @@ export default class LAN extends Component {
               UploadText={'Upload'}
               message={window.__("Configuring...Please Do Not Shut Down The Device,Completed After ")}
               setUploadStatus={this.setUploadStatus}
-              setFresh={true}
+              setFresh={false}
             />
             <Upload 
               title={'Authentication File'}

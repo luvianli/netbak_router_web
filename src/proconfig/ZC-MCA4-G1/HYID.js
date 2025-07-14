@@ -117,6 +117,10 @@ export const HYID = {
     uploade_5g_module_upgrade_file : 'cgi-bin/cgi_stream.cgi?streamid=5',//&keep_setting=1/0
     /*清除模块升级文件*/
     clean_module_upgrade_file : 'cgi-bin/cgi_stream.cgi?streamid=6',
+                /*openvpn文件配置*/
+    upload_openvpn_file : 'cgi-bin/cgi_stream.cgi?streamid=9',
+    /*openvpn认证*/
+    openvpn_certify : 'cgi-bin/cgi_stream.cgi?streamid=10&name=',
     /**获取升级信息 */
     get_upgrade_info:22,
     /**获取当前用户信息 */

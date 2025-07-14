@@ -16,9 +16,9 @@ export const sms_HYID = {
     /**获取首页状态  */
     get_overview_info:0,
     // /**获取外网配置  */
-    get_wan_config:1,
+    // get_wan_config:1,
     // /**设置以太网上网参数  */
-    set_eth_wan_config:2,   
+    // set_eth_wan_config:2,   
     //4G300-H002-HY07产品特有替换接口
     /**获取无线WAN+4G  */
     cgi_get_wan_or_wan4g_config :1,
@@ -60,11 +60,6 @@ export const sms_HYID = {
 
     /**测试数据结构  */
     cgi_get_no_data: 17,
-    //注意18、19在newui_mtk3.6中对应17、18
-    /**获取卡槽运营商信息  */
-    get_card :18,
-    /**设置卡槽运营商信息  */
-    set_card :19,
 }
 
 export const HYID = {
@@ -89,7 +84,7 @@ export const HYID = {
     /**设置快速设置配置 */
     set_quick_setting_config:10,
     /**设置以太网上网参数  */
-    // set_eth_wan_config:11,
+    set_eth_wan_config:11,
     /**获取静态路由配置 */
     get_static_router_config:12,
     /**设置静态路由配置 */
@@ -122,11 +117,7 @@ export const HYID = {
     uploade_5g_module_upgrade_file : 'cgi-bin/cgi_stream.cgi?streamid=5',//&keep_setting=1/0
     /*清除模块升级文件*/
     clean_module_upgrade_file : 'cgi-bin/cgi_stream.cgi?streamid=6',
-    /*上传自定义脚本*/
-    custom_script_upload : 'cgi-bin/cgi_stream.cgi?streamid=7',
-    /*执行自定义脚本*/
-    custom_script_execute : 'cgi-bin/cgi_stream.cgi?streamid=8',
-        /*openvpn文件配置*/
+                /*openvpn文件配置*/
     upload_openvpn_file : 'cgi-bin/cgi_stream.cgi?streamid=9',
     /*openvpn认证*/
     openvpn_certify : 'cgi-bin/cgi_stream.cgi?streamid=10&name=',
@@ -147,7 +138,7 @@ export const HYID = {
     /**设置内网配置 */
     set_lan_config:29,
     /**获取外网配置  */
-    // get_wan_config:30,
+    get_wan_config:30,
     /**获取DHCP检测结果  */
     get_dhcp_detect_result:31,
     /**开始DHCP检测  */
@@ -295,41 +286,10 @@ export const HYID = {
     set_thinap:112,
     /**设置第一次登陆 */
     set_first_boot: 185,
-    /**获取快速设置网络策略配置 */
-    get_quick_prior_config:187,
-    /**设置快速设置网络策略配置 */
-    set_quick_prior_config: 188,
-     /**设置pptp服务器配置 */
-    set_pptpd_server_config:158,
-    /**获取pptp服务器配置 */
-    get_pptpd_server_config:159,
-    
-    /**设置l2tp服务器配置 */
-    set_xl2tpd_server_config:160,
-    /**获取l2tp服务器配置 */
-    get_xl2tpd_server_config:161,
-
-    /**设置pptp服务器配置 */
-    set_pptp_client_config:162,
-    /**获取pptp客户端配置 */
-    get_pptp_client_config:163,
-
-    /**设置l2tp服务器配置 */
-    set_l2tp_client_config:164,
-	/**获取l2tp客户端配置 */
-    get_l2tp_client_config:165,
-
-    /**设置用户管理信息 */
-    set_vpn_user_config:166,
-    /**获取用户管理信息 */
-    get_vpn_user_config:167,
-
-    /**获取VPN在线用户 */
-    get_vpn_user_onlien:168,
-    /**设置VPN在线用户 */
-    set_vpn_user_onlien:171,
-       /**获取openvpn客户端 */
-    get_openvpn_config:193,
+  /**获取openvpn客户端 */
+    get_openvpn_config:187,
     /**设置openvpn客户端 */
-    set_openvpn_config: 194,
+    set_openvpn_config: 188,
 }
+
+export default {}

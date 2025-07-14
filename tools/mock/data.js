@@ -1796,6 +1796,28 @@ module.exports = function (data) {
                 "errcode":    2000,
                 "progresstime":    0
             }
+             /**获取pptp服务器配置 */
+        case 159:
+            return {
+                "huayi_r":    {
+                    "pptpd_enable":    true,
+                    "pptpd_start_addr":    "172.1.1.10",
+                    "pptpd_end_addr":    "172.1.1.20",
+                    "server_addr":    "192.168.91.1",
+                    "mppe":    0,
+                    "dns_enable":    false,
+                    "primary_dns":    "",
+                    "secondary_dns":    "",
+                    "mtu":    1482,
+                    "mru":    1482,
+                    "xl2tpd_start_addr":    "172.1.1.30",
+                    "xl2tpd_end_addr":    "172.1.1.40",
+                    "proto":    "dhcp"
+                },
+                "huayierrtype":    "success",
+                "errcode":    2000,
+                "progresstime":    0
+            }
         case 160:
             return {
                 "huayi_r":    {

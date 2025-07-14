@@ -54,12 +54,7 @@ import  Home from '@/screens/4G300-H002-HY07/Home';
 
 import  WANPrior from '@/screens/MainRouter/screens/Network/WANPrior';
 
-import PPTP from '@/screens/MainRouter/screens/Advanced/VPN/PPTP'
-import L2TP from '@/screens/MainRouter/screens/Advanced/VPN/L2TP'
-import PPTPClient from '@/screens/MainRouter/screens/Advanced/VPN/PPTPClient'
-import L2TPClient from '@/screens/MainRouter/screens/Advanced/VPN/L2TPClient'
-import VPNUser from '@/screens/MainRouter/screens/Advanced/VPN/VPNUser'
-import VPNStatus from '@/screens/MainRouter/screens/Advanced/VPN/VPNStatus'
+
 import OpenVPN from '@/screens/MainRouter/screens/Advanced/VPN/OpenVPN'
 
 
