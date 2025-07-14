@@ -322,6 +322,21 @@ export default class Menu{
                     // },
                 ]
             },
+              {
+                title:window.__('VPN Service'),
+                icon:'&#xe623;',
+                key: '/Advanced/vpn',
+                type:'',
+                children:[
+                   
+                    {
+                        title: window.__('OpenVPN Client'),
+                        key: '/Advanced/vpn/openVPN',
+                        type:'',
+                    }
+                ]
+            },
+
             {
                 title: ('System Tools'),
                 icon:'&#xe66d;',

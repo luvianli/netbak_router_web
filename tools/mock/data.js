@@ -2132,6 +2132,21 @@ module.exports = function (data) {
                 "errcode":    2000,
                 "progresstime":    0
             } 
+        case 187:
+            return{
+                "huayi_r":{
+                      "enable": true,
+                      "option": 1,//0:表单提交；1：配置文件上传
+                      "host_name": "Host Name",
+                      "usr":"1",
+                      "pwd":"12345678",
+                      "port":7547,
+                      "status":2,//0:失败；1：成功；2：未连接
+                },
+                "huayierrtype":	"success",
+                "errcode":	2000,
+                "progresstime":	0
+            }
         case 193:
             return{
                 "huayi_r":{

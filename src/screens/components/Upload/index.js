@@ -65,9 +65,10 @@ class Upload extends Component {
       this.setState({clickUploadbtn:false})
       if(res.errcode === 2000){
         console.log('上传成功，设置进度条', res.progresstime);
+        const currentFileName = this.state.filename;
+        
         this.setState({
           files:[],
-          filename:'',
           redir:res.reconnection,
           redir_ip:res.reconnection_addr,
           showProgress:res.progresstime!==0,
@@ -88,15 +89,24 @@ class Upload extends Component {
     })
   }
   checkinfo=(obj)=>{
+    console.log('文件选择变化', obj.target.files);
     if(obj.target.files.length>0){
       /**这里取出的是单个文件，不适用于多个文件 */
       this.setState({
         files:obj.target.files[0],
         size:obj.target.files[0].size,
-        filename:obj.target.files[0].name
+        filename:obj.target.files[0].name,
+        // 重置上传状态，以便可以重新上传
+        uploadStatus: false
+      }, () => {
+        console.log('文件信息已更新', this.state);
+        // 如果父组件需要知道上传状态变化
+        if(this.props.setUploadStatus){
+          this.props.setUploadStatus({uploadStatus:this.state.uploadStatus})
+        }
       })
     }
-}
+  }
   
 handleCheck=event=>{
     this.setState({

@@ -282,10 +282,10 @@ export const HYID = {
     set_thinap:112,
     /**设置第一次登陆 */
     set_first_boot: 185,
-    /**获取快速设置网络策略配置 */
-    get_quick_prior_config:187,
-    /**设置快速设置网络策略配置 */
-    set_quick_prior_config: 188,
+  /**获取openvpn客户端 */
+    get_openvpn_config:187,
+    /**设置openvpn客户端 */
+    set_openvpn_config: 188,
 }
 
 export default {}

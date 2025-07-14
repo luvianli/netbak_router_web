@@ -204,7 +204,7 @@ export default class LAN extends Component {
               max_size = {1*1024*1024}
               max_size_tip = {"1M"}
               UploadText={'Upload'}
-              message={window.__("Configuring...Please Do Not Shut Down The Device,Completed After1 ")}
+              message={window.__("Configuring...Please Do Not Shut Down The Device,Completed After ")}
               setUploadStatus={this.setUploadStatus}
               setFresh={true}
             />
@@ -214,7 +214,7 @@ export default class LAN extends Component {
               max_size = {1*1024*1024}
               max_size_tip = {"1M"}
               UploadText={'Upload'}
-              message={window.__("Configuring...Please Do Not Shut Down The Device,Completed After2 ")}
+              message={window.__("Configuring...Please Do Not Shut Down The Device,Completed After ")}
               setFileName={true}
               setFresh={true}
             />
