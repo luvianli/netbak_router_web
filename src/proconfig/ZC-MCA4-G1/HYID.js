@@ -304,6 +304,10 @@ export const HYID = {
     set_l2tp_client_config:164,
 	/**获取l2tp客户端配置 */
     get_l2tp_client_config:165,
+       /**设置用户管理信息 */
+    set_vpn_user_config:166,
+    /**获取用户管理信息 */
+    get_vpn_user_config:167,
     /**设置第一次登陆 */
     set_first_boot: 185,
   /**获取openvpn客户端 */
