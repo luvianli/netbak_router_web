@@ -284,6 +284,26 @@ export const HYID = {
     get_thinap:111,
     /**设置瘦AP信息 */
     set_thinap:112,
+        
+    /**设置pptp服务器配置 */
+    set_pptpd_server_config:158,
+    /**获取pptp服务器配置 */
+    get_pptpd_server_config:159,
+    
+    /**设置l2tp服务器配置 */
+    set_xl2tpd_server_config:160,
+    /**获取l2tp服务器配置 */
+    get_xl2tpd_server_config:161,
+
+    /**设置pptp服务器配置 */
+    set_pptp_client_config:162,
+    /**获取pptp客户端配置 */
+    get_pptp_client_config:163,
+
+    /**设置l2tp服务器配置 */
+    set_l2tp_client_config:164,
+	/**获取l2tp客户端配置 */
+    get_l2tp_client_config:165,
     /**设置第一次登陆 */
     set_first_boot: 185,
   /**获取openvpn客户端 */
