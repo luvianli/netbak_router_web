@@ -308,6 +308,10 @@ export const HYID = {
     set_vpn_user_config:166,
     /**获取用户管理信息 */
     get_vpn_user_config:167,
+        /**获取VPN在线用户 */
+    get_vpn_user_onlien:168,
+    /**设置VPN在线用户 */
+    set_vpn_user_onlien:171,
     /**设置第一次登陆 */
     set_first_boot: 185,
   /**获取openvpn客户端 */
