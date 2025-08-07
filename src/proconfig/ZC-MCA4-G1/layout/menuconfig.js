@@ -67,87 +67,87 @@ export default class Menu{
             },
         ]
     },
-    // {
-    //     title:  ('Wireless Setting'),
-    //     icon:'&#xe60a;',
-    //     key: '/WiFi',
-    //     type:'',
-    //     children:[
-    //         {
-    //             title:   ('2.4G Wireless Setting'),
-    //             key: '/WiFi/2G',
-    //             type:'',
-    //             children:[
-    //                 {
-    //                     title:  ('Basic Setting'),
-    //                     key: '/WiFi/2G/Base',
-    //                     type:'',
-    //                 },
-    //                 {
-    //                     title:  ('Advanced Setting'),
-    //                     key: '/WiFi/2G/Advanced',
-    //                     type:'',
-    //                 },
-    //                 {
-    //                     title:  ('Wireless ACL'),
-    //                     key: '/WiFi/2G/ACL',
-    //                     type:'',
-    //                 },
-    //             ]
-    //             /*children:option.enable2g===1?[
-    //                 {
-    //                     title:  ('Basic Setting'),
-    //                     key: '/WiFi/2G/Base',
-    //                     type:'',
-    //                 },
-    //                 {
-    //                     title:  ('Advanced Setting'),
-    //                     key: '/WiFi/2G/Advanced',
-    //                     type:'',
-    //                 },
-    //                 {
-    //                     title:  ('Wireless ACL'),
-    //                     key: '/WiFi/2G/ACL',
-    //                     type:'',
-    //                 },
-    //             ]:[
-    //                 {
-    //                     title:  ('Basic Setting'),
-    //                     key: '/WiFi/2G/Base',
-    //                     type:'',
-    //                 }
-    //             ]*/
-    //         },
-    //         /*{
-    //             title:   ('5.8G Wireless Setting'),
-    //             key: '/WiFi/5G',
-    //             type:'',
-    //             children:option.enable5g===1?[
-    //                 {
-    //                     title:  ('Basic Setting'),
-    //                     key: '/WiFi/5G/Base',
-    //                     type:'',
-    //                 },
-    //                 {
-    //                     title:  ('Advanced Setting'),
-    //                     key: '/WiFi/5G/Advanced',
-    //                     type:'',
-    //                 },
-    //                 {
-    //                     title:  ('Wireless ACL'),
-    //                     key: '/WiFi/5G/ACL',
-    //                     type:'',
-    //                 },
-    //             ]:[
-    //                 {
-    //                     title:  ('Basic Setting'),
-    //                     key: '/WiFi/5G/Base',
-    //                     type:'',
-    //                 },
-    //             ]
-    //         },*/
-    //     ]
-    // },
+    {
+        title:  ('Wireless Setting'),
+        icon:'&#xe60a;',
+        key: '/WiFi',
+        type:'',
+        children:[
+            {
+                title:   ('2.4G Wireless Setting'),
+                key: '/WiFi/2G',
+                type:'',
+                children:[
+                    {
+                        title:  ('Basic Setting'),
+                        key: '/WiFi/2G/Base',
+                        type:'',
+                    },
+                    {
+                        title:  ('Advanced Setting'),
+                        key: '/WiFi/2G/Advanced',
+                        type:'',
+                    },
+                    {
+                        title:  ('Wireless ACL'),
+                        key: '/WiFi/2G/ACL',
+                        type:'',
+                    },
+                ]
+                /*children:option.enable2g===1?[
+                    {
+                        title:  ('Basic Setting'),
+                        key: '/WiFi/2G/Base',
+                        type:'',
+                    },
+                    {
+                        title:  ('Advanced Setting'),
+                        key: '/WiFi/2G/Advanced',
+                        type:'',
+                    },
+                    {
+                        title:  ('Wireless ACL'),
+                        key: '/WiFi/2G/ACL',
+                        type:'',
+                    },
+                ]:[
+                    {
+                        title:  ('Basic Setting'),
+                        key: '/WiFi/2G/Base',
+                        type:'',
+                    }
+                ]*/
+            },
+            // {
+            //     title:   ('5.8G Wireless Setting'),
+            //     key: '/WiFi/5G',
+            //     type:'',
+            //     children:option.enable5g===1?[
+            //         {
+            //             title:  ('Basic Setting'),
+            //             key: '/WiFi/5G/Base',
+            //             type:'',
+            //         },
+            //         {
+            //             title:  ('Advanced Setting'),
+            //             key: '/WiFi/5G/Advanced',
+            //             type:'',
+            //         },
+            //         {
+            //             title:  ('Wireless ACL'),
+            //             key: '/WiFi/5G/ACL',
+            //             type:'',
+            //         },
+            //     ]:[
+            //         {
+            //             title:  ('Basic Setting'),
+            //             key: '/WiFi/5G/Base',
+            //             type:'',
+            //         },
+            //     ]
+            // },
+        ]
+    },
     {
         title:  ('Home Devices'),
         icon:'&#xe61a;',
