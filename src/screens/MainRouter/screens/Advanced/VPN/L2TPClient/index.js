@@ -361,14 +361,13 @@ export default class LAN extends Component {
                 password: window.__('Only Supports ASCII Code!')
               })}</div>
           </div>
-          {/* } */}
-          {/* <FormGroup lable={window.__('Routing Mode')}>
+          { <FormGroup lable={window.__('Routing Mode')}>
             <Select value={route_type} onChange={this.handleSelect('route_type')}>
                 <Option value={0}>{window.__('Manual')}</Option>
                 <Option value={1}>{window.__('Automatic')}</Option>
             </Select>
-            </FormGroup> */}
-          {/* {route_type===0&&<>
+            </FormGroup> }
+          { route_type===0&&<>
               <div style={{marginBottom:30}}></div>
               <Table 
                 title={window.__('L2TP Static Router List')}
@@ -410,7 +409,7 @@ export default class LAN extends Component {
                 <button className='modal-confirm-btn'
                   onClick={this.handleModalSave}>{window.__('OK')}</button>
               </Modal>
-            </>} */}
+            </>} 
         </div>
 
         <FormButton onClick={this.handleSave}>{window.__('Apply')}</FormButton>
