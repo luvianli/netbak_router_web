@@ -63,4 +63,17 @@ export const wifi={
     '2.4G Cipher Mode': '2.4G 加密类型',
     '5.8G Security Mode': '5.8G 加密方式',
     '5.8G Cipher Mode': '5.8G 加密类型',
+    // Enterprise Authentication
+    'Authentication Server': '认证服务器',
+    'Authentication Port': '认证端口',
+    'Authentication Secret': '认证密钥',
+    'Enter server address': '请输入服务器地址',
+    'Enter server port (e.g., 1812)': '请输入服务器端口（例如：1812）',
+    'Enter server secret key': '请输入服务器密钥',
+    'Authentication Server Field Required!': '认证服务器不能为空！',
+    'Authentication Port Field Required!': '认证端口不能为空！',
+    'Authentication Secret Field Required!': '认证密钥不能为空！',
+    'Port must be between 1 and 65535!': '端口必须在1-65535之间！',
+    'Secret must be at least 1 character!': '密钥至少需要1个字符！',
+    'Secret must be at most 128 characters!': '密钥最多128个字符！',
 }

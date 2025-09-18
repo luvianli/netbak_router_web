@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { FormGroup, PageText, FormButton, FormRadioCheck, FormPassword, Progress } from '@/screens/components';
 import { axios, HYID, posturl, deepCopy, handleRedir } from '@/share';
 import ReactValidator from '@/share/validator/index.js';
-import { message, Switch, Select, Checkbox, Radio } from 'antd';
+import { message, Switch, Select, Checkbox, Radio, Input } from 'antd';
 import { connect } from 'react-redux'
 import { actionCreater } from './store'
 const { Option } = Select;
@@ -82,7 +82,10 @@ class Base2G extends Component {
     let result_src = this.state.result_src
     let validarr = ['ssid', 'max_num'];
     if(result.auth_mode){
-      if(result.auth_mode!=="disable"){
+      if(result.auth_mode === "WPA2-Enterprise" || result.auth_mode === "WPA3-Enterprise"){
+        // Enterprise mode validation
+        validarr.push('auth_server', 'auth_port', 'auth_secret')
+      } else if(result.auth_mode!=="disable"){
         validarr.push('key')
       }
     }else if (encryp !== 0) {
@@ -123,27 +126,57 @@ class Base2G extends Component {
             this.setData(values)
           }
         }else{
-          if (result_src.ssid === ssid &&
-            result_src.max_num === max_num&&
-            result_src.hwmode === hwmode&&
-            result_src.wifi_admin === wifi_admin&&
-            result_src.noforward === noforward&&
-            result_src.band_steering === band_steering&&
-            result_src.band === band&&
-            result_src.channel === channel&&
-            result_src.tx_power === tx_power&&
-            result_src.hidden === hidden&&
-            result_src.auth_mode === result.auth_mode &&
-            result_src.cipher_mode === result.cipher_mode &&
-            result_src.key === key) {
-            message.success(window.__('Data Up to Date'))
-            return;
-          }else {
-            let values = {
-              wifi_admin, noforward, band_steering, hwmode, band, channel, hidden,
-              tx_power, ssid, max_num, auth_mode:result.auth_mode, cipher_mode:result.cipher_mode, key
+          // Check if it's Enterprise mode
+          if(result.auth_mode === "WPA2-Enterprise" || result.auth_mode === "WPA3-Enterprise"){
+            if (result_src.ssid === ssid &&
+              result_src.max_num === max_num&&
+              result_src.hwmode === hwmode&&
+              result_src.wifi_admin === wifi_admin&&
+              result_src.noforward === noforward&&
+              result_src.band_steering === band_steering&&
+              result_src.band === band&&
+              result_src.channel === channel&&
+              result_src.tx_power === tx_power&&
+              result_src.hidden === hidden&&
+              result_src.auth_mode === result.auth_mode &&
+              result_src.cipher_mode === result.cipher_mode &&
+              result_src.auth_server === result.auth_server &&
+              result_src.auth_port === result.auth_port &&
+              result_src.auth_secret === result.auth_secret) {
+              message.success(window.__('Data Up to Date'))
+              return;
+            }else {
+              let values = {
+                wifi_admin, noforward, band_steering, hwmode, band, channel, hidden,
+                tx_power, ssid, max_num, auth_mode:result.auth_mode, cipher_mode:result.cipher_mode,
+                auth_server: result.auth_server, auth_port: result.auth_port, auth_secret: result.auth_secret
+              }
+              this.setData(values)
             }
-            this.setData(values)
+          } else {
+            // Non-Enterprise modes
+            if (result_src.ssid === ssid &&
+              result_src.max_num === max_num&&
+              result_src.hwmode === hwmode&&
+              result_src.wifi_admin === wifi_admin&&
+              result_src.noforward === noforward&&
+              result_src.band_steering === band_steering&&
+              result_src.band === band&&
+              result_src.channel === channel&&
+              result_src.tx_power === tx_power&&
+              result_src.hidden === hidden&&
+              result_src.auth_mode === result.auth_mode &&
+              result_src.cipher_mode === result.cipher_mode &&
+              result_src.key === key) {
+              message.success(window.__('Data Up to Date'))
+              return;
+            }else {
+              let values = {
+                wifi_admin, noforward, band_steering, hwmode, band, channel, hidden,
+                tx_power, ssid, max_num, auth_mode:result.auth_mode, cipher_mode:result.cipher_mode, key
+              }
+              this.setData(values)
+            }
           }
         }
       }else{
@@ -409,9 +442,11 @@ class Base2G extends Component {
                     <Option value={"WPAPSK"} >{window.__("WPAPSK")}</Option>
                     <Option value={"WPA2PSK"} >{window.__("WPA2PSK")}</Option>
                     <Option value={"WPAPSKWPA2PSK"} >{window.__("WPAPSKWPA2PSK")}</Option>
+                    <Option value={"WPA2-Enterprise"} >{window.__("WPA2-Enterprise")}</Option>
+                    <Option value={"WPA3-Enterprise"} >{window.__("WPA3-Enterprise")}</Option>
                   </Select>
                 </FormGroup>
-                {result.auth_mode !== "disable" && <>
+                {result.auth_mode !== "disable" &&result.auth_mode !=="WPA2-Enterprise"&&result.auth_mode !=="WPA3-Enterprise" && <>
                   <FormRadioCheck lable={window.__('Cipher Mode')}>
                     <Radio.Group onChange={this.handleChange('cipher_mode')} value={result.cipher_mode}>
                       <Radio value={"TKIP"}>{window.__('TKIP')}</Radio>
@@ -431,6 +466,49 @@ class Base2G extends Component {
                       max: window.__('Password At Most 63 Characters!'),
                       password: window.__('Only Supports ASCII Code!')
                     })}</div>
+                </>
+                }
+                {(result.auth_mode === "WPA2-Enterprise" || result.auth_mode === "WPA3-Enterprise") && <>
+                  <FormGroup lable={window.__('Authentication Server')}>
+                    <Input
+                      value={result.auth_server || ""}
+                      onChange={this.handleChange('auth_server')}
+                      placeholder={window.__('Enter server address')}
+                    />
+
+                    <div className="tip-err">
+                      {this.validator.message('auth_server', result.auth_server, 'required', '', {
+                        default: window.__('Authentication Server Field Required!')
+                      })}
+                    </div>
+                  </FormGroup>
+
+                  <FormGroup lable={window.__('Authentication Port')}>
+                    <Input
+                      value={result.auth_port || ""}
+                      onChange={this.handleChange('auth_port')}
+                      placeholder={window.__('Enter server port (e.g., 1812)')}
+                    />
+                    <div className="tip-err">
+                      {this.validator.message('auth_port', result.auth_port, 'required&&range:1-65535', '', {
+                        default: window.__('Authentication Port Field Required!'),
+                        range: window.__('Port must be between 1 and 65535!')
+                      })}
+                    </div>
+                  </FormGroup>
+
+                  <FormPassword lable={window.__('Authentication Secret')}
+                    value={result.auth_secret || ""}
+                    onChange={this.handleChange('auth_secret')}
+                    placeholder={window.__('Enter server secret key')}>
+                  </FormPassword>
+                  <div className="tip-err">
+                    {this.validator.message('auth_secret', result.auth_secret, 'required&&min:1&&max:128', '', {
+                      default: window.__('Authentication Secret Field Required!'),
+                      min: window.__('Secret must be at least 1 character!'),
+                      max: window.__('Secret must be at most 128 characters!')
+                    })}
+                  </div>
                 </>}
               </div>
               :

@@ -569,8 +569,12 @@ module.exports = function (data) {
                     "ssid":"     wif      i2.4G  ",
                     "encryp":0,
                     "key":"12345678",
-                    "auth_mode": "disable",//WPAPSK
+                    "auth_mode": "WPA2-Enterprise",//disable,WPAPSK,WPA2PSK,WPAPSKWPA2PSK,WPA2-Enterprise,WPA3-Enterprise
                     "cipher_mode": "TKIPAES",
+                    // Enterprise Authentication fields
+                    "auth_server": "192.168.1.100",
+                    "auth_port": "1812",
+                    "auth_secret": "radius_secret_key"
                 },
                 "huayierrtype":"success",
                 "errcode":	2000,
@@ -2183,8 +2187,8 @@ module.exports = function (data) {
                 "huayierrtype":	"success",
                 "errcode":	2000,
                 "progresstime":	0
-            }       
-        default:            
+            }
+        default:
             return{
                 "reconnection":	true,
                 //"reconnection_addr":	"192.168.88.1",
