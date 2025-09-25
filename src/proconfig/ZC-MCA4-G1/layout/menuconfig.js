@@ -322,49 +322,49 @@ export default class Menu{
                     // },
                 ]
             },
-              {
-                 title:window.__('VPN Service'),
-                icon:'&#xe623;',
-                key: '/Advanced/vpn',
-                type:'',
-                children:[
-                    {
-                        title: window.__('PPTP Server'),
-                        key: '/Advanced/vpn/pptpd',
-                        type:'',
-                    },
-                    {
-                        title: window.__('L2TP Server'),
-                        key: '/Advanced/vpn/xl2tpd',
-                        type:'',
-                    },
-                    {
-                        title: window.__('PPTP Client'),
-                        key: '/Advanced/vpn/pptp',
-                        type:'',
-                    },
-                    {
-                        title: window.__('L2TP Client'),
-                        key: '/Advanced/vpn/xl2tp',
-                        type:'',
-                    },
-                    {
-                        title: window.__('User Management'),
-                        key: '/Advanced/vpn/vpnUser',
-                        type:'',
-                    },
-                    {
-                        title: window.__('Account Status'),
-                        key: '/Advanced/vpn/vpnStatus',
-                        type:'',
-                    },
-                    {
-                        title: window.__('OpenVPN Client'),
-                        key: '/Advanced/vpn/openVPN',
-                        type:'',
-                    }
-                ]
-            },
+            //   {
+            //      title:window.__('VPN Service'),
+            //     icon:'&#xe623;',
+            //     key: '/Advanced/vpn',
+            //     type:'',
+            //     children:[
+            //         {
+            //             title: window.__('PPTP Server'),
+            //             key: '/Advanced/vpn/pptpd',
+            //             type:'',
+            //         },
+            //         {
+            //             title: window.__('L2TP Server'),
+            //             key: '/Advanced/vpn/xl2tpd',
+            //             type:'',
+            //         },
+            //         {
+            //             title: window.__('PPTP Client'),
+            //             key: '/Advanced/vpn/pptp',
+            //             type:'',
+            //         },
+            //         {
+            //             title: window.__('L2TP Client'),
+            //             key: '/Advanced/vpn/xl2tp',
+            //             type:'',
+            //         },
+            //         {
+            //             title: window.__('User Management'),
+            //             key: '/Advanced/vpn/vpnUser',
+            //             type:'',
+            //         },
+            //         {
+            //             title: window.__('Account Status'),
+            //             key: '/Advanced/vpn/vpnStatus',
+            //             type:'',
+            //         },
+            //         {
+            //             title: window.__('OpenVPN Client'),
+            //             key: '/Advanced/vpn/openVPN',
+            //             type:'',
+            //         }
+            //     ]
+            // },
 
             {
                 title: ('System Tools'),

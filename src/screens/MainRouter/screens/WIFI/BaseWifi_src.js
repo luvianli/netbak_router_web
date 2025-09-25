@@ -82,7 +82,7 @@ class Base2G extends Component {
     let result_src = this.state.result_src
     let validarr = ['ssid', 'max_num'];
     if(result.auth_mode){
-      if(result.auth_mode === "WPA2-Enterprise" || result.auth_mode === "WPA3-Enterprise"){
+      if(result.auth_mode === "WPA-Enterprise" ||result.auth_mode === "WPA2-Enterprise" || result.auth_mode === "WPAWPA2-Enterprise"){
         // Enterprise mode validation
         validarr.push('auth_server', 'auth_port', 'auth_secret')
       } else if(result.auth_mode!=="disable"){
@@ -127,7 +127,7 @@ class Base2G extends Component {
           }
         }else{
           // Check if it's Enterprise mode
-          if(result.auth_mode === "WPA2-Enterprise" || result.auth_mode === "WPA3-Enterprise"){
+          if(result.auth_mode === "WPA-Enterprise" ||result.auth_mode === "WPA2-Enterprise" || result.auth_mode === "WPAWPA2-Enterprise"){
             if (result_src.ssid === ssid &&
               result_src.max_num === max_num&&
               result_src.hwmode === hwmode&&
@@ -442,11 +442,12 @@ class Base2G extends Component {
                     <Option value={"WPAPSK"} >{window.__("WPAPSK")}</Option>
                     <Option value={"WPA2PSK"} >{window.__("WPA2PSK")}</Option>
                     <Option value={"WPAPSKWPA2PSK"} >{window.__("WPAPSKWPA2PSK")}</Option>
+                    <Option value={"WPA-Enterprise"} >{window.__("WPA-Enterprise")}</Option>
                     <Option value={"WPA2-Enterprise"} >{window.__("WPA2-Enterprise")}</Option>
-                    <Option value={"WPA3-Enterprise"} >{window.__("WPA3-Enterprise")}</Option>
+                    <Option value={"WPAWPA2-Enterprise"} >{window.__("WPAWPA2-Enterprise")}</Option>
                   </Select>
                 </FormGroup>
-                {result.auth_mode !== "disable" &&result.auth_mode !=="WPA2-Enterprise"&&result.auth_mode !=="WPA3-Enterprise" && <>
+                {result.auth_mode !== "disable" &&result.auth_mode !=="WPA-Enterprise"&&result.auth_mode !=="WPA2-Enterprise"&&result.auth_mode !=="WPAWPA2-Enterprise" && <>
                   <FormRadioCheck lable={window.__('Cipher Mode')}>
                     <Radio.Group onChange={this.handleChange('cipher_mode')} value={result.cipher_mode}>
                       <Radio value={"TKIP"}>{window.__('TKIP')}</Radio>
@@ -468,7 +469,7 @@ class Base2G extends Component {
                     })}</div>
                 </>
                 }
-                {(result.auth_mode === "WPA2-Enterprise" || result.auth_mode === "WPA3-Enterprise") && <>
+                {(result.auth_mode === "WPA-Enterprise" ||result.auth_mode === "WPA2-Enterprise" || result.auth_mode === "WPAWPA2-Enterprise") && <>
                   <FormGroup lable={window.__('Authentication Server')}>
                     <Input
                       value={result.auth_server || ""}
