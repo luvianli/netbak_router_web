@@ -50,7 +50,7 @@ import  QoS from '@/screens/MainRouter/screens/QoS';
 // import  MobileNetwork from '@/screens/MainRouter/screens/Network/MobileNetwork';
 // import  PINCode from '@/screens/MainRouter/screens/Advanced/System/PINCode';
 // import  PINModify from '@/screens/MainRouter/screens/Advanced/System/PINModify';
-import  Home from '@/screens/4G300-H002-HY07/Home';
+import  Home from '@/screens/ZC-MCA4-G1/Home';
 
 import  WANPrior from '@/screens/MainRouter/screens/Network/WANPrior';
 

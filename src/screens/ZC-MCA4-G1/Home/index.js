@@ -304,6 +304,10 @@ class Home extends Component {
                     // {key:window.__('Tx Bytes'),value:totalTrafficByte(wan_infos.tx_bytes)},
                     // {key:window.__('Rx Bytes'),value:totalTrafficByte(wan_infos.rx_bytes)},
                     {key:window.__('Internet Access Mode'),value:window.__(wan_infos.net_type)},
+                    ...(wan_infos.net_type === 'WISP' ? [
+                        {key:window.__('Remote SSID'),value:wan_infos.apcli_ssid},
+                        {key:window.__('Remote Password'),value:wan_infos.apcli_passwd},
+                    ] : []),
                 ]
                 // :
                 // [
